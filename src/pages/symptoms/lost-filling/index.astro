@@ -3,260 +3,272 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 import PageHero from "../../../components/PageHero.astro";
 import Breadcrumb from "../../../components/Breadcrumb.astro";
 import SectionCTA from "../../../components/SectionCTA.astro";
-import { SITE } from "../../../data/site";
 ---
 
 <BaseLayout
   title="詰め物が取れた"
-  description="詰め物・被せ物が取れた方へ。できるだけ早めの受診をおすすめします。湘南桑田歯科で対応いたします。"
+  description="詰め物や被せ物が取れたときの応急的な考え方、受診の目安、原因をまとめました。できるだけ早めにご相談ください。"
 >
   <PageHero
     title="詰め物が取れた"
-    subtitle="お早めの受診をおすすめします"
-    image="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=1400&q=80"
+    subtitle="取れてしまったときの対応と受診の目安をご案内します"
+    image="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=1600&q=80&auto=format&fit=crop"
   />
 
   <div class="container-narrow">
     <Breadcrumb items={[{ label: "症状から探す" }, { label: "詰め物が取れた" }]} />
   </div>
 
-  <!-- 応急処置のアドバイス -->
   <section class="section-padding">
     <div class="container-narrow">
-      <h2 class="section-title">取れてしまったときの応急処置</h2>
+      <div class="section-kicker">Symptoms</div>
+      <h2 class="section-title section-title-left">まずは落ち着いて対応しましょう</h2>
+      <p class="section-lead">
+        詰め物や被せ物が取れたときは、焦って戻そうとせず、状態を保ったまま来院いただくのが基本です。
+      </p>
       <div class="advice-box">
         <ul class="advice-list">
           <li>
-            <strong>取れた詰め物は捨てずに保管してください</strong>
-            <p>状態が良ければそのまま戻せる場合があります。小さな容器やラップに包んでお持ちください。</p>
+            <strong>取れたものは保管してください</strong>
+            <p>状態が良ければそのまま戻せることがあります。小さな容器や清潔な袋に入れてお持ちください。</p>
           </li>
           <li>
-            <strong>自分で接着剤で戻さないでください</strong>
-            <p>市販の接着剤を使うと、歯や詰め物を傷めてしまうことがあります。</p>
+            <strong>市販の接着剤で戻さないでください</strong>
+            <p>歯や詰め物を傷めることがあり、後の処置が難しくなることがあります。</p>
           </li>
           <li>
-            <strong>取れた側でなるべく噛まないようにしてください</strong>
-            <p>詰め物が取れた歯はもろくなっていることがあります。硬いものは反対側で噛むようにしましょう。</p>
+            <strong>取れた側で硬いものを噛まないようにしてください</strong>
+            <p>歯が欠けやすくなっている場合があります。反対側でやさしく噛むようにしましょう。</p>
           </li>
           <li>
             <strong>できるだけ早めにご来院ください</strong>
-            <p>放置すると虫歯が進行したり、歯が欠けるリスクが高まることがあります。</p>
+            <p>放置すると、内部で虫歯が進行することがあります。</p>
           </li>
         </ul>
       </div>
     </div>
   </section>
 
-  <!-- 考えられる原因 -->
-  <section class="section-padding bg-soft">
+  <section class="section-padding section-alt">
     <div class="container-narrow">
-      <h2 class="section-title">詰め物が取れる原因</h2>
-      <div class="cause-grid">
-        <div class="cause-card card">
-          <h3>接着剤の経年劣化</h3>
-          <p>詰め物を固定している接着剤は、年月とともに劣化します。特に長期間経過した詰め物は、日常の噛む力で徐々に外れやすくなることがあります。</p>
-        </div>
-        <div class="cause-card card">
+      <div class="section-kicker">Causes</div>
+      <h2 class="section-title section-title-left">詰め物が取れる原因</h2>
+      <div class="card-grid">
+        <article class="soft-card card">
+          <h3>接着部分の劣化</h3>
+          <p>長く使っているうちに接着力が弱まり、少しずつ外れやすくなることがあります。</p>
+        </article>
+        <article class="soft-card card">
           <h3>詰め物の下の虫歯</h3>
-          <p>詰め物の下で虫歯が進行すると、歯と詰め物の間にすき間ができて外れやすくなります。</p>
-        </div>
-        <div class="cause-card card">
-          <h3>噛み合わせの変化</h3>
-          <p>歯ぎしりや食いしばり、あるいは周囲の歯の変化により、詰め物に過度な力がかかって外れることがあります。</p>
-        </div>
-        <div class="cause-card card">
-          <h3>歯の破折</h3>
-          <p>歯そのものにひびが入ったり欠けたりすることで、詰め物が固定できなくなるケースもあります。</p>
-        </div>
+          <p>詰め物の下で虫歯が進むと、密着が悪くなって外れやすくなります。</p>
+        </article>
+        <article class="soft-card card">
+          <h3>噛み合わせの力</h3>
+          <p>歯ぎしりや食いしばりなどで強い力がかかると、外れる原因になります。</p>
+        </article>
+        <article class="soft-card card">
+          <h3>歯のひびや破折</h3>
+          <p>歯自体にひびが入ると、詰め物が安定しにくくなることがあります。</p>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- 当院での対応 -->
   <section class="section-padding">
-    <div class="container-narrow">
-      <h2 class="section-title">当院での対応</h2>
-      <div class="flow-steps">
-        <div class="flow-step">
-          <span class="flow-number">1</span>
-          <div>
-            <h3>取れた詰め物と歯の状態を確認します</h3>
-            <p>お持ちいただいた詰め物と、歯の状態をそれぞれ確認します。必要に応じてレントゲンで歯の内部の状態も調べます。</p>
-          </div>
+    <div class="container-narrow two-col">
+      <div>
+        <div class="section-kicker">When to visit</div>
+        <h2 class="section-title section-title-left">受診の目安</h2>
+        <div class="callout">
+          <ul class="list compact">
+            <li>取れたまま数日以上過ごしている</li>
+            <li>しみる、痛む、噛みにくい</li>
+            <li>取れた歯の周辺に穴や黒い部分がある</li>
+            <li>同じ場所を何度も修理している</li>
+            <li>取れた詰め物が手元にある</li>
+          </ul>
         </div>
-        <div class="flow-step">
-          <span class="flow-number">2</span>
-          <div>
-            <h3>治療の選択肢をご説明します</h3>
-            <p>そのまま戻せる場合、作り直しが必要な場合、虫歯治療が必要な場合など、状態に応じた選択肢を丁寧にご説明します。</p>
-          </div>
-        </div>
-        <div class="flow-step">
-          <span class="flow-number">3</span>
-          <div>
-            <h3>ご納得いただいてから処置を行います</h3>
-            <p>費用や治療期間なども含めてご説明し、ご理解いただいた上で治療を進めます。保険適用の素材から自費の素材まで、ご希望に合わせて対応いたします。</p>
-          </div>
+      </div>
+      <div>
+        <div class="section-kicker">At home</div>
+        <h2 class="section-title section-title-left">応急的な考え方</h2>
+        <div class="callout">
+          <ul class="list compact">
+            <li>取れたものは持参する</li>
+            <li>食べ物が詰まりやすい場合はやさしく清掃する</li>
+            <li>痛みやしみが強い場合は早めに予約する</li>
+            <li>自己流で接着しない</li>
+            <li>必要に応じて虫歯治療や再装着を検討する</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 関連ページ -->
-  <section class="section-padding bg-soft">
+  <section class="section-padding section-alt">
     <div class="container-narrow">
-      <h2 class="section-title">関連する診療案内</h2>
+      <div class="section-kicker">Related care</div>
+      <h2 class="section-title section-title-left">関連する診療案内</h2>
       <div class="related-links">
-        <a href="/services/cavity/" class="related-link card">
+        <a href="/services/cavity/" class="related-card card">
           <span class="related-label">虫歯治療</span>
-          <span class="related-arrow">&rarr;</span>
+          <span class="related-copy">再装着だけでなく、虫歯の有無も確認したい方へ</span>
+          <span class="related-arrow">→</span>
         </a>
-        <a href="/services/preventive/" class="related-link card">
+        <a href="/services/preventive/" class="related-card card">
           <span class="related-label">予防歯科</span>
-          <span class="related-arrow">&rarr;</span>
+          <span class="related-copy">外れにくい状態を保ちたい、再発を防ぎたい方へ</span>
+          <span class="related-arrow">→</span>
         </a>
+      </div>
+      <div class="reserve-link-wrap">
+        <a href="/reserve/" class="btn-primary">ご予約・ご相談はこちら</a>
       </div>
     </div>
   </section>
 
-  <SectionCTA />
+  <SectionCTA
+    heading="取れたら早めの相談が安心です"
+    text="再装着で済む場合もあれば、虫歯の治療や作り直しが必要な場合もあります。まずは状態を確認します。"
+  />
 </BaseLayout>
 
 <style>
-  .advice-box {
-    background: var(--color-bg-soft);
-    border-radius: var(--radius);
-    padding: 2rem;
+  .section-kicker {
+    font-size: 0.82rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+  .section-title-left {
+    text-align: left;
+    margin-bottom: 1rem;
+  }
+  .section-lead {
+    max-width: 720px;
+    color: var(--color-text-light);
+    margin-bottom: 2rem;
+  }
+  .section-alt {
+    background: linear-gradient(180deg, var(--color-bg-alt) 0%, rgba(255,255,255,0) 100%);
+  }
+  .advice-box,
+  .callout {
+    background: var(--color-bg);
     border: 1px solid var(--color-border);
+    border-radius: 28px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-card);
   }
   .advice-list {
     list-style: none;
     padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
+    display: grid;
+    gap: 1.15rem;
+    margin: 0;
   }
   .advice-list li {
-    padding-left: 1.5rem;
+    padding-left: 1.35rem;
     position: relative;
   }
   .advice-list li::before {
     content: "";
     position: absolute;
     left: 0;
-    top: 0.35rem;
-    width: 0.75rem;
-    height: 0.75rem;
-    background: var(--color-primary);
-    border-radius: 50%;
+    top: 0.42rem;
+    width: 0.7rem;
+    height: 0.7rem;
+    background: var(--color-accent);
+    border-radius: 999px;
   }
   .advice-list strong {
     display: block;
-    font-size: 1.05rem;
+    font-size: 1.02rem;
     margin-bottom: 0.25rem;
+    color: var(--color-text-heading);
   }
   .advice-list p {
-    font-size: 0.9rem;
-    line-height: 1.7;
+    font-size: 0.94rem;
+    line-height: 1.75;
     color: var(--color-text-light);
     margin: 0;
   }
-  .symptom-list {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    margin-bottom: 1.5rem;
-  }
-  .symptom-list li {
-    padding: 1rem 1.25rem;
-    background: var(--color-bg-soft);
-    border-radius: var(--radius);
-    border-left: 4px solid var(--color-primary);
-    font-weight: 500;
-  }
-  .note {
-    color: var(--color-text-light);
-    font-size: 0.9rem;
-    line-height: 1.8;
-  }
-  .cause-grid {
+  .list {
+    margin: 0;
+    padding-left: 1.1rem;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 1.5rem;
-    margin-bottom: 1.5rem;
+    gap: 0.85rem;
+    color: var(--color-text);
   }
-  .cause-card {
+  .compact {
+    gap: 0.7rem;
+  }
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+  .soft-card {
     padding: 1.5rem;
   }
-  .cause-card h3 {
-    font-size: 1.1rem;
-    color: var(--color-primary);
-    margin-bottom: 0.5rem;
+  .soft-card h3 {
+    font-size: 1.08rem;
+    margin-bottom: 0.6rem;
+    color: var(--color-text-heading);
   }
-  .cause-card p {
-    font-size: 0.95rem;
+  .soft-card p {
+    color: var(--color-text-light);
     line-height: 1.8;
-    color: var(--color-text);
+    margin: 0;
   }
-  .flow-steps {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-  .flow-step {
-    display: flex;
-    gap: 1.25rem;
-    align-items: flex-start;
-  }
-  .flow-number {
-    flex-shrink: 0;
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-    background: var(--color-primary);
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 1.1rem;
-  }
-  .flow-step h3 {
-    font-size: 1.05rem;
-    margin-bottom: 0.4rem;
-  }
-  .flow-step p {
-    font-size: 0.95rem;
-    line-height: 1.8;
-    color: var(--color-text);
+  .two-col {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
   }
   .related-links {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1rem;
   }
-  .related-link {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.25rem 1.5rem;
+  .related-card {
+    display: grid;
+    gap: 0.5rem;
     text-decoration: none;
     color: var(--color-text);
-    transition: box-shadow 0.2s ease;
+    position: relative;
+    overflow: hidden;
   }
-  .related-link:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  .related-card:hover {
+    transform: translateY(-2px);
   }
   .related-label {
-    font-weight: 600;
+    font-weight: 700;
+    color: var(--color-text-heading);
+  }
+  .related-copy {
+    color: var(--color-text-light);
+    line-height: 1.7;
+    padding-right: 2rem;
   }
   .related-arrow {
-    color: var(--color-primary);
+    position: absolute;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    color: var(--color-accent);
     font-size: 1.2rem;
+    font-weight: 700;
   }
-  .bg-soft {
-    background: var(--color-bg-soft);
+  .reserve-link-wrap {
+    margin-top: 1.5rem;
+  }
+  @media (max-width: 900px) {
+    .card-grid,
+    .two-col,
+    .related-links {
+      grid-template-columns: 1fr;
+    }
   }
 </style>

@@ -11,19 +11,15 @@ const faqCategories = [
     items: [
       {
         q: "初めての来院ですが、何を持っていけばいいですか？",
-        a: "保険証をお持ちください。お薬手帳がある方はそちらもご持参いただけると助かります。問診票は院内でご記入いただけますので、ご予約時間の10分ほど前にお越しいただけるとスムーズです。",
+        a: "保険証またはマイナンバーカードをお持ちください。お薬手帳や紹介状があれば、あわせてご持参いただくと診療が進めやすくなります。",
       },
       {
-        q: "初診の所要時間はどれくらいですか？",
-        a: "初回は問診・検査・カウンセリングを含めて、45分～1時間程度お時間をいただいております。お口の状態をしっかり把握したうえで、丁寧にご説明いたします。",
+        q: "初診はどれくらい時間がかかりますか？",
+        a: "問診、検査、ご説明を含めて45分から1時間程度を目安にしています。症状が強い場合は、応急処置を優先することもあります。",
       },
       {
         q: "予約なしでも受診できますか？",
-        a: "急な痛みなど、お困りの場合は予約なしでもできる限り対応いたします。ただし、ご予約の方が優先となりますので、お待ちいただく場合がございます。事前のご連絡をおすすめしています。",
-      },
-      {
-        q: "小さな子どもを連れて行っても大丈夫ですか？",
-        a: "はい、お子さま連れでも安心してお越しください。待合室にはキッズスペースもございます。お子さまの治療も対応しておりますので、ご家族でご来院いただけます。",
+        a: "急な痛みなどの場合は、まずお電話でご相談ください。ご予約の方を優先していますが、できる限り状況に合わせて対応します。",
       },
     ],
   },
@@ -31,24 +27,20 @@ const faqCategories = [
     title: "治療について",
     items: [
       {
-        q: "歯医者が怖いのですが、大丈夫ですか？",
-        a: "大丈夫です。当院では無理に治療を始めることはありません。まずはお話を聞かせていただき、患者さまのペースに合わせて進めます。怖いと感じたらいつでもお伝えください。",
+        q: "久しぶりの歯医者で気まずいのですが大丈夫ですか？",
+        a: "もちろん大丈夫です。状態を責めることはありません。今の状況を確認したうえで、これからどう整えるかを一緒に考えます。",
       },
       {
-        q: "痛みが少ない治療はできますか？",
-        a: "はい。表面麻酔や極細の注射針を使用し、痛みを最小限に抑える工夫をしています。治療中に痛みがあれば、遠慮なくお伝えください。すぐに対応いたします。",
-      },
-      {
-        q: "久しぶりの歯医者で恥ずかしいのですが…",
-        a: "ご安心ください。当院には久しぶりに歯医者にいらっしゃる方がたくさん通われています。どんな状態でもお気持ちに寄り添い、一緒に治療計画を考えてまいります。",
+        q: "痛みに弱いのですが相談できますか？",
+        a: "はい。麻酔の打ち方や治療の進め方に配慮し、できるだけ負担を少なく進めます。不安が強い場合は、先にその旨をお伝えください。",
       },
       {
         q: "治療の説明はしてもらえますか？",
-        a: "もちろんです。治療を始める前に、現在の状態と治療方針を丁寧にご説明いたします。モニターを使ってお口の中の写真をお見せしながら、わかりやすくお伝えします。",
+        a: "治療前に、現在の状態、治療方法の選択肢、通院の見通しをご説明します。わかりにくい点があれば、その場で遠慮なくご質問ください。",
       },
       {
-        q: "治療期間はどれくらいかかりますか？",
-        a: "お口の状態によって異なりますが、初回のカウンセリング時におおよその期間をお伝えします。なるべく少ない通院回数で済むよう、効率的な治療計画を心がけています。",
+        q: "その日に治療まで進みますか？",
+        a: "症状やご希望によります。まずは検査とご説明を優先し、急を要する場合のみ応急処置を行うことがあります。",
       },
     ],
   },
@@ -56,16 +48,16 @@ const faqCategories = [
     title: "費用について",
     items: [
       {
-        q: "保険診療で治療できますか？",
-        a: "はい、一般的な虫歯治療・歯周病治療・抜歯などは保険適用です。保険診療の場合、窓口でのお支払いは原則3割負担となります。治療前に費用の目安をお伝えすることも可能です。",
+        q: "保険診療は対応していますか？",
+        a: "はい、虫歯治療、歯周病治療、抜歯などの一般的な診療は保険診療で対応できます。費用の目安は診察時にご案内します。",
       },
       {
-        q: "クレジットカードは使えますか？",
-        a: "自費診療については各種クレジットカードをご利用いただけます。また、高額な治療にはデンタルローンもご案内しておりますので、お気軽にご相談ください。",
+        q: "自費診療の費用は事前にわかりますか？",
+        a: "はい。ホワイトニングなどの自費診療は、費用、回数、注意点を事前にご説明します。納得いただいてから進めます。",
       },
       {
-        q: "ホワイトニングの費用はどれくらいですか？",
-        a: "オフィスホワイトニングは1回22,000円～、ホームホワイトニングは上下セットで33,000円～となっております。詳しくは料金表ページをご覧いただくか、お問い合わせください。",
+        q: "支払い方法を教えてください",
+        a: "保険診療は現金、自費診療は医院の案内に沿ってお支払いいただけます。詳細は受付にてご確認ください。",
       },
     ],
   },
@@ -73,38 +65,66 @@ const faqCategories = [
     title: "その他",
     items: [
       {
-        q: "駐車場はありますか？",
-        a: "提携駐車場がございます。詳しくはアクセスページをご確認いただくか、お電話にてお問い合わせください。",
+        q: "子ども連れでも通えますか？",
+        a: "はい。お子さま連れでも通院しやすいように配慮しています。小児歯科も行っていますので、ご家族でご相談ください。",
       },
       {
-        q: "車椅子でも通院できますか？",
-        a: "はい、院内はバリアフリー対応となっておりますので、車椅子の方も安心してご来院いただけます。",
+        q: "駐車場はありますか？",
+        a: "近隣の駐車場をご案内しています。車でお越しの方は、アクセスページをご確認ください。",
       },
       {
         q: "急に歯が痛くなった場合はどうすればいいですか？",
-        a: `まずはお電話（${SITE.phone}）にてご連絡ください。診療時間内であれば、できる限り当日対応いたします。夜間や休診日の場合は、藤沢市の休日歯科診療所もご案内できます。`,
+        a: `まずはお電話（${SITE.phone}）にてご連絡ください。診療時間内であれば、できる限り状況に応じて対応します。`,
       },
     ],
   },
 ];
 ---
 
-<BaseLayout title="よくあるご質問" description="湘南桑田歯科へのよくあるご質問と回答。初診、治療、費用についてお答えします。">
-  <PageHero title="よくあるご質問" />
+<BaseLayout
+  title="よくあるご質問"
+  description="湘南桑田歯科のよくあるご質問。初診、痛み、費用、予約、通院についてご案内します。"
+>
+  <PageHero
+    title="よくあるご質問"
+    subtitle="初めての方が気にしやすいポイントを、先にまとめました"
+    image="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=1400&q=80"
+  />
 
   <div class="container-narrow">
     <Breadcrumb items={[{ label: "よくあるご質問" }]} />
   </div>
 
-  <!-- ========== FAQ ========== -->
-  <section class="faq section-padding">
+  <section class="section-padding faq-intro">
+    <div class="container-narrow intro-grid">
+      <div>
+        <p class="eyebrow">FAQ</p>
+        <h2 class="section-title-left">予約、初診、治療、費用の不安を先に減らしておきます。</h2>
+        <p>
+          実際の来院前によくいただく質問を、できるだけ実務的にまとめました。
+          迷っている段階でもご覧いただけるよう、回答は短く、必要な情報がすぐ見つかるようにしています。
+        </p>
+      </div>
+      <div class="intro-panel card">
+        <p class="panel-title">すぐ確認したい方へ</p>
+        <ul class="quick-links">
+          <li><a href="/first-visit/">初診の流れ</a></li>
+          <li><a href="/dental-anxiety/">歯医者が怖い方へ</a></li>
+          <li><a href="/reserve/">予約方法</a></li>
+          <li><a href="/access/">アクセス</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding">
     <div class="container-narrow">
       {faqCategories.map((cat) => (
         <div class="faq-category">
-          <h2 class="category-title">{cat.title}</h2>
+          <p class="eyebrow">{cat.title}</p>
           <div class="faq-list">
             {cat.items.map((item) => (
-              <details class="faq-item">
+              <details class="faq-item card">
                 <summary>{item.q}</summary>
                 <p>{item.a}</p>
               </details>
@@ -115,65 +135,134 @@ const faqCategories = [
     </div>
   </section>
 
+  <section class="section-padding bg-section">
+    <div class="container-narrow cta-linkbox">
+      <div>
+        <p class="eyebrow">NEXT</p>
+        <h2>詳しい来院の流れは、初めての方へをご覧ください。</h2>
+        <p>持ち物や所要時間を先に確認しておくと、初診当日の不安を減らせます。</p>
+      </div>
+      <a href="/first-visit/" class="btn-primary">初めての方へ</a>
+    </div>
+  </section>
+
   <SectionCTA />
 </BaseLayout>
 
 <style>
-  /* ---------- FAQ ---------- */
-  .faq-category {
-    margin-bottom: 3rem;
+  .eyebrow {
+    letter-spacing: 0.18em;
+    font-size: 0.8rem;
+    color: var(--color-accent);
+    font-weight: 700;
+    margin-bottom: 0.75rem;
   }
-  .faq-category:last-child {
-    margin-bottom: 0;
-  }
-  .category-title {
-    font-size: 1.3rem;
-    color: var(--color-primary);
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid var(--color-primary-light);
+  .section-title-left {
+    font-size: 1.8rem;
+    line-height: 1.55;
     margin-bottom: 1rem;
   }
+  .faq-intro p {
+    line-height: 1.9;
+    color: var(--color-text);
+  }
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 1.5rem;
+    align-items: start;
+  }
+  .intro-panel {
+    background:
+      radial-gradient(circle at top right, rgba(212, 132, 90, 0.1), transparent 40%),
+      var(--color-bg);
+  }
+  .panel-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    margin-bottom: 0.8rem;
+  }
+  .quick-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.65rem;
+  }
+  .quick-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-weight: 600;
+  }
+  .quick-links a::before {
+    content: "→";
+    color: var(--color-accent);
+  }
+  .faq-category {
+    margin-bottom: 2.5rem;
+  }
   .faq-list {
-    max-width: 800px;
+    display: grid;
+    gap: 1rem;
   }
   .faq-item {
-    border-bottom: 1px solid var(--color-border);
-    padding: 1.25rem 0;
+    padding: 1.25rem 1.4rem;
   }
   .faq-item summary {
-    font-weight: 600;
-    cursor: pointer;
-    padding: 0.25rem 0;
-    padding-right: 2rem;
     list-style: none;
+    cursor: pointer;
+    padding-right: 2rem;
     position: relative;
-    line-height: 1.6;
+    font-weight: 700;
+    line-height: 1.7;
+  }
+  .faq-item summary::-webkit-details-marker {
+    display: none;
   }
   .faq-item summary::before {
     content: "Q. ";
     color: var(--color-primary);
-    font-weight: 700;
   }
   .faq-item summary::after {
     content: "+";
     position: absolute;
     right: 0;
-    top: 0.25rem;
+    top: 0;
+    color: var(--color-accent);
     font-size: 1.25rem;
-    color: var(--color-primary);
-    transition: transform 0.2s;
   }
   .faq-item[open] summary::after {
-    content: "-";
-  }
-  .faq-item summary::-webkit-details-marker {
-    display: none;
+    content: "−";
   }
   .faq-item p {
-    margin-top: 0.75rem;
-    padding-left: 1.5rem;
-    font-size: 0.9rem;
+    margin: 0.9rem 0 0;
+    padding-left: 1.4rem;
+    color: var(--color-text-light);
+    line-height: 1.9;
+  }
+  .cta-linkbox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+  }
+  .cta-linkbox h2 {
+    font-size: 1.35rem;
+    margin-bottom: 0.5rem;
+  }
+  .cta-linkbox p {
+    margin: 0;
     color: var(--color-text-light);
     line-height: 1.8;
+  }
+  @media (max-width: 900px) {
+    .intro-grid,
+    .cta-linkbox {
+      grid-template-columns: 1fr;
+      display: grid;
+    }
   }
 </style>

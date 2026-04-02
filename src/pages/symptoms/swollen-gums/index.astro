@@ -3,216 +3,253 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 import PageHero from "../../../components/PageHero.astro";
 import Breadcrumb from "../../../components/Breadcrumb.astro";
 import SectionCTA from "../../../components/SectionCTA.astro";
-import { SITE } from "../../../data/site";
 ---
 
 <BaseLayout
   title="歯茎が腫れた"
-  description="歯茎の腫れ・出血でお悩みの方へ。歯周病の可能性も含め、丁寧に診察いたします。"
+  description="歯茎の腫れや出血が気になる方へ。歯周病や親知らずなどの可能性を確認し、必要な対応をご案内します。"
 >
   <PageHero
     title="歯茎が腫れた"
-    subtitle="腫れや出血の原因を丁寧に診察いたします"
-    image="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=1400&q=80"
+    subtitle="腫れや出血の原因を確認し、必要な対応をご案内します"
+    image="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=1600&q=80&auto=format&fit=crop"
   />
 
   <div class="container-narrow">
     <Breadcrumb items={[{ label: "症状から探す" }, { label: "歯茎が腫れた" }]} />
   </div>
 
-  <!-- こんな症状はありませんか？ -->
   <section class="section-padding">
     <div class="container-narrow">
-      <h2 class="section-title">こんな症状はありませんか？</h2>
-      <ul class="symptom-list">
-        <li>歯茎が赤く腫れている</li>
-        <li>歯磨きのときに出血する</li>
-        <li>歯茎を押すと痛い・膿が出る</li>
-        <li>歯茎が以前より下がった気がする</li>
-        <li>口臭が気になるようになった</li>
-        <li>奥歯の周りが腫れて口が開きにくい</li>
-      </ul>
-      <p class="note">
-        歯茎の腫れは、放っておくと症状が悪化する場合があります。痛みがなくても、気になる症状があれば早めにご相談ください。
+      <div class="section-kicker">Symptoms</div>
+      <h2 class="section-title section-title-left">こんな症状がある方へ</h2>
+      <p class="section-lead">
+        歯茎の腫れは、見た目の変化だけでなく、出血や口臭、痛みを伴うことがあります。小さな違和感のうちに確認しておくと安心です。
       </p>
-    </div>
-  </section>
-
-  <!-- 考えられる原因 -->
-  <section class="section-padding bg-soft">
-    <div class="container-narrow">
-      <h2 class="section-title">考えられる原因</h2>
-      <div class="cause-grid">
-        <div class="cause-card card">
-          <h3>歯周病（歯肉炎・歯周炎）</h3>
-          <p>歯と歯茎の間にたまったプラーク（歯垢）の中の細菌が原因で、歯茎に炎症が起きる病気です。進行すると歯を支える骨にまで影響が及ぶことがあります。</p>
+      <div class="symptom-grid">
+        <div class="info-panel">
+          <ul class="list">
+            <li>歯茎が赤く腫れている</li>
+            <li>歯みがきのたびに出血する</li>
+            <li>歯茎を押すと痛い、膿が出る</li>
+            <li>歯茎が下がってきた気がする</li>
+            <li>口臭が気になるようになった</li>
+            <li>奥歯の周囲だけ繰り返し腫れる</li>
+          </ul>
         </div>
-        <div class="cause-card card">
-          <h3>根尖病変（こんせんびょうへん）</h3>
-          <p>歯の根の先に膿がたまる状態です。過去に治療した歯でも再び感染が起き、歯茎が腫れることがあります。</p>
-        </div>
-        <div class="cause-card card">
-          <h3>親知らずの炎症</h3>
-          <p>親知らずが斜めに生えていたり、一部だけ出ている場合、周囲の歯茎に炎症が起きやすくなります。</p>
-        </div>
-        <div class="cause-card card">
-          <h3>歯ブラシによる傷</h3>
-          <p>力を入れすぎたブラッシングや、硬すぎるブラシの使用で歯茎を傷つけ、腫れや出血につながることがあります。</p>
-        </div>
-      </div>
-      <p class="note">
-        上記は一般的な例です。腫れの原因はさまざまですので、検査で確認されることをおすすめします。
-      </p>
-    </div>
-  </section>
-
-  <!-- 当院での対応 -->
-  <section class="section-padding">
-    <div class="container-narrow">
-      <h2 class="section-title">当院での対応</h2>
-      <div class="flow-steps">
-        <div class="flow-step">
-          <span class="flow-number">1</span>
-          <div>
-            <h3>お口の状態を丁寧に確認します</h3>
-            <p>腫れの範囲や程度、出血の有無などを確認し、痛みがある場合はまず症状を和らげる処置を行います。</p>
-          </div>
-        </div>
-        <div class="flow-step">
-          <span class="flow-number">2</span>
-          <div>
-            <h3>検査で原因を特定します</h3>
-            <p>歯周ポケットの測定やレントゲン撮影などで、歯周病の進行度や歯の根の状態を調べます。</p>
-          </div>
-        </div>
-        <div class="flow-step">
-          <span class="flow-number">3</span>
-          <div>
-            <h3>原因に合わせた治療を進めます</h3>
-            <p>歯周病であればクリーニングやスケーリング、根の病変であれば根管治療など、原因に応じた治療計画をご説明し、ご納得いただいた上で進めます。</p>
-          </div>
+        <div class="note-card">
+          <p class="eyebrow">確認したいこと</p>
+          <p>
+            腫れは歯周病だけでなく、歯の根の炎症や親知らずの周囲炎でも起こります。痛みが軽くても早めの確認が勧められます。
+          </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 関連ページ -->
-  <section class="section-padding bg-soft">
+  <section class="section-padding section-alt">
     <div class="container-narrow">
-      <h2 class="section-title">関連する診療案内</h2>
+      <div class="section-kicker">Causes</div>
+      <h2 class="section-title section-title-left">考えられる原因</h2>
+      <div class="card-grid">
+        <article class="soft-card card">
+          <h3>歯周病</h3>
+          <p>歯と歯茎の間に細菌がたまることで炎症が起こり、腫れや出血の原因になります。</p>
+        </article>
+        <article class="soft-card card">
+          <h3>歯の根の炎症</h3>
+          <p>過去に治療した歯でも、根の先に炎症や膿がたまることで歯茎が腫れることがあります。</p>
+        </article>
+        <article class="soft-card card">
+          <h3>親知らずの周囲炎</h3>
+          <p>親知らずの周囲に汚れがたまりやすい場合、腫れや痛みが出やすくなります。</p>
+        </article>
+        <article class="soft-card card">
+          <h3>ブラッシングの刺激</h3>
+          <p>強すぎるブラッシングや合わない清掃方法で、歯茎が傷つくこともあります。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding">
+    <div class="container-narrow two-col">
+      <div>
+        <div class="section-kicker">When to visit</div>
+        <h2 class="section-title section-title-left">受診の目安</h2>
+        <div class="callout">
+          <ul class="list compact">
+            <li>腫れが数日以上続いている</li>
+            <li>出血や痛みを伴っている</li>
+            <li>膿が出る、口臭が強くなった</li>
+            <li>同じ場所が繰り返し腫れる</li>
+            <li>発熱や開口しづらさがある</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="section-kicker">At home</div>
+        <h2 class="section-title section-title-left">応急的な考え方</h2>
+        <div class="callout">
+          <ul class="list compact">
+            <li>腫れている部分を強く押さない</li>
+            <li>清掃はやさしく続ける</li>
+            <li>熱い刺激や飲酒は控える</li>
+            <li>膿や出血があっても自己判断でつぶさない</li>
+            <li>早めに原因を確認し、必要な治療を受ける</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding section-alt">
+    <div class="container-narrow">
+      <div class="section-kicker">Related care</div>
+      <h2 class="section-title section-title-left">関連する診療案内</h2>
       <div class="related-links">
-        <a href="/services/periodontal/" class="related-link card">
+        <a href="/services/periodontal/" class="related-card card">
           <span class="related-label">歯周病治療</span>
-          <span class="related-arrow">&rarr;</span>
+          <span class="related-copy">腫れや出血が歯周病と関係しているか確認したい方へ</span>
+          <span class="related-arrow">→</span>
         </a>
-        <a href="/services/preventive/" class="related-link card">
+        <a href="/services/preventive/" class="related-card card">
           <span class="related-label">予防歯科</span>
-          <span class="related-arrow">&rarr;</span>
+          <span class="related-copy">再発を防ぐためのケアを整えたい方へ</span>
+          <span class="related-arrow">→</span>
         </a>
+      </div>
+      <div class="reserve-link-wrap">
+        <a href="/reserve/" class="btn-primary">ご予約・ご相談はこちら</a>
       </div>
     </div>
   </section>
 
-  <SectionCTA />
+  <SectionCTA
+    heading="腫れや出血は早めの確認が安心です"
+    text="原因によって必要な対応は変わります。症状が軽いうちでも、気になる場合はご相談ください。"
+  />
 </BaseLayout>
 
 <style>
-  .symptom-list {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    margin-bottom: 1.5rem;
+  .section-kicker {
+    font-size: 0.82rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    font-weight: 700;
+    margin-bottom: 0.75rem;
   }
-  .symptom-list li {
-    padding: 1rem 1.25rem;
-    background: var(--color-bg-soft);
-    border-radius: var(--radius);
-    border-left: 4px solid var(--color-primary);
-    font-weight: 500;
+  .section-title-left {
+    text-align: left;
+    margin-bottom: 1rem;
   }
-  .note {
+  .section-lead {
+    max-width: 720px;
     color: var(--color-text-light);
-    font-size: 0.9rem;
-    line-height: 1.8;
+    margin-bottom: 2rem;
   }
-  .cause-grid {
+  .section-alt {
+    background: linear-gradient(180deg, var(--color-bg-alt) 0%, rgba(255,255,255,0) 100%);
+  }
+  .symptom-grid,
+  .two-col {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1.5rem;
-    margin-bottom: 1.5rem;
   }
-  .cause-card {
+  .info-panel,
+  .note-card,
+  .callout {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 28px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-card);
+  }
+  .note-card {
+    display: grid;
+    align-content: start;
+    background: linear-gradient(180deg, rgba(43, 107, 138, 0.06), rgba(255,255,255,1));
+  }
+  .eyebrow {
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    color: var(--color-primary);
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+  }
+  .list {
+    margin: 0;
+    padding-left: 1.1rem;
+    display: grid;
+    gap: 0.85rem;
+    color: var(--color-text);
+  }
+  .compact {
+    gap: 0.7rem;
+  }
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+  .soft-card {
     padding: 1.5rem;
   }
-  .cause-card h3 {
-    font-size: 1.1rem;
-    color: var(--color-primary);
-    margin-bottom: 0.5rem;
+  .soft-card h3 {
+    font-size: 1.08rem;
+    margin-bottom: 0.6rem;
+    color: var(--color-text-heading);
   }
-  .cause-card p {
-    font-size: 0.95rem;
+  .soft-card p {
+    color: var(--color-text-light);
     line-height: 1.8;
-    color: var(--color-text);
-  }
-  .flow-steps {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-  .flow-step {
-    display: flex;
-    gap: 1.25rem;
-    align-items: flex-start;
-  }
-  .flow-number {
-    flex-shrink: 0;
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-    background: var(--color-primary);
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 1.1rem;
-  }
-  .flow-step h3 {
-    font-size: 1.05rem;
-    margin-bottom: 0.4rem;
-  }
-  .flow-step p {
-    font-size: 0.95rem;
-    line-height: 1.8;
-    color: var(--color-text);
+    margin: 0;
   }
   .related-links {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1rem;
   }
-  .related-link {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.25rem 1.5rem;
+  .related-card {
+    display: grid;
+    gap: 0.5rem;
     text-decoration: none;
     color: var(--color-text);
-    transition: box-shadow 0.2s ease;
+    position: relative;
+    overflow: hidden;
   }
-  .related-link:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  .related-card:hover {
+    transform: translateY(-2px);
   }
   .related-label {
-    font-weight: 600;
+    font-weight: 700;
+    color: var(--color-text-heading);
+  }
+  .related-copy {
+    color: var(--color-text-light);
+    line-height: 1.7;
+    padding-right: 2rem;
   }
   .related-arrow {
-    color: var(--color-primary);
+    position: absolute;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    color: var(--color-accent);
     font-size: 1.2rem;
+    font-weight: 700;
   }
-  .bg-soft {
-    background: var(--color-bg-soft);
+  .reserve-link-wrap {
+    margin-top: 1.5rem;
+  }
+  @media (max-width: 900px) {
+    .symptom-grid,
+    .two-col,
+    .card-grid,
+    .related-links {
+      grid-template-columns: 1fr;
+    }
   }
 </style>

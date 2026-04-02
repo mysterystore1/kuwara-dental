@@ -1,539 +1,1028 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SectionCTA from "../components/SectionCTA.astro";
+import DentalIcon from "../components/DentalIcon.astro";
 import { SITE, THREE_PROMISES } from "../data/site";
+
+const symptomItems = [
+  {
+    href: "/symptoms/toothache/",
+    title: "歯が痛い",
+    description: "ズキズキ痛む、噛むと痛い、夜になるとつらい",
+    icon: "tooth",
+  },
+  {
+    href: "/symptoms/sensitivity/",
+    title: "歯がしみる",
+    description: "冷たいものや甘いものでキーンとする",
+    icon: "spark",
+  },
+  {
+    href: "/symptoms/swollen-gums/",
+    title: "歯茎が腫れた",
+    description: "歯ぐきの腫れ、出血、違和感がある",
+    icon: "gum",
+  },
+  {
+    href: "/symptoms/lost-filling/",
+    title: "詰め物が取れた",
+    description: "外れたままにせず、まずは状態を確認します",
+    icon: "hand",
+  },
+] as const;
+
+const serviceItems = [
+  { href: "/services/cavity/", title: "虫歯治療", description: "できるだけ歯を残しながら治療します", icon: "tooth" },
+  { href: "/services/periodontal/", title: "歯周病治療", description: "歯ぐきと歯を支える骨の健康を守ります", icon: "gum" },
+  { href: "/services/preventive/", title: "予防歯科", description: "定期管理で再発しにくい口内環境を目指します", icon: "shield" },
+  { href: "/services/pediatric/", title: "小児歯科", description: "お子さまのペースに合わせて進めます", icon: "child" },
+  { href: "/services/whitening/", title: "ホワイトニング", description: "自然な明るさを目指す審美ケアです", icon: "whitening" },
+] as const;
+
+const reasonItems = [
+  {
+    number: "01",
+    title: "初診は、いきなり治療から始めません",
+    text: "まずは困っていることや不安に思っていることをうかがい、必要な検査とご説明から進めます。相談だけで終わっても構いません。",
+    image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=900&q=80&auto=format&fit=crop",
+    alt: "カウンセリングの様子",
+  },
+  {
+    number: "02",
+    title: "痛みや怖さに配慮しながら進めます",
+    text: "麻酔の方法や治療の進め方は、お口の状態と患者さまのご不安に合わせて調整します。つらいときは、その場で止めながら進めます。",
+    image: "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=900&q=80&auto=format&fit=crop",
+    alt: "歯科治療の風景",
+  },
+  {
+    number: "03",
+    title: "治療内容を、できるだけわかりやすく説明します",
+    text: "今どんな状態なのか、どの治療が必要なのか、通院回数の目安まで、診療チェアの上で置いていかない説明を心がけています。",
+    image: "https://images.unsplash.com/photo-1629909615184-74f495363b67?w=900&q=80&auto=format&fit=crop",
+    alt: "明るい受付と待合スペース",
+  },
+] as const;
+
+const faqPreview = [
+  {
+    q: "初診の所要時間はどれくらいですか？",
+    a: "問診、必要な検査、カウンセリングを含めて45分から1時間ほどを目安にしています。痛みが強い場合は応急処置を優先します。",
+  },
+  {
+    q: "久しぶりの歯医者でも大丈夫ですか？",
+    a: "大丈夫です。お口の状態を責めることはありません。今の状態からどう整えていくかを、一緒に考えていきます。",
+  },
+  {
+    q: "予約なしでも診てもらえますか？",
+    a: "急な痛みがある場合は、できる限り対応します。まずはお電話でご連絡いただくとご案内がスムーズです。",
+  },
+] as const;
 ---
 
-<BaseLayout>
-  <!-- ========== HERO ========== -->
-  <section class="hero">
-    <div class="hero-bg">
-      <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1400&q=80" alt="明るい歯科医院の待合室" loading="eager" />
-    </div>
-    <div class="hero-content container-narrow">
-      <p class="hero-lead">湘南エリアで安心して通える歯医者</p>
-      <h1 class="hero-title">「怖い」を<br class="sp-only" />我慢しなくていい<br />歯科医院</h1>
-      <p class="hero-sub">
-        歯医者が久しぶりの方も、怖いと感じている方も大丈夫。<br />
-        まずはお話を聞くところから始めます。
-      </p>
-      <div class="hero-buttons">
-        <a href="/reserve/" class="btn-primary">ご予約・ご相談はこちら</a>
-        <a href="/first-visit/" class="btn-secondary" style="border-color:#fff;color:#fff;">初めての方へ</a>
+<BaseLayout
+  title="歯医者が久しぶりの方も、安心して相談できる歯科医院"
+  description="初診はカウンセリングと必要な検査から。歯医者が怖い方、久しぶりの方も相談しやすいよう、丁寧な説明と痛みに配慮した診療を大切にしています。"
+>
+  <section class="home-hero wave-divider">
+    <div class="container-narrow home-hero__inner">
+      <div class="home-hero__copy">
+        <p class="section-kicker">First visit welcome</p>
+        <p class="home-hero__clinic">{SITE.name}</p>
+        <h1 class="home-hero__title">歯医者が久しぶりの方も、<br />安心してご相談ください。</h1>
+        <p class="home-hero__text">
+          {SITE.name}では、まず困っていることをうかがい、お口の状態を確認したうえで、
+          必要な検査とご説明から進めます。治療を急がせず、相談しやすい距離感を大切にしています。
+        </p>
+
+        <div class="home-hero__actions">
+          <a href="/reserve/" class="btn-primary">WEB予約へ進む</a>
+          <a href="/first-visit/" class="btn-secondary">初めての方へ</a>
+        </div>
+
+        <div class="home-hero__chips">
+          <span class="icon-chip"><DentalIcon name="pin" size={18} /> {SITE.address.station}</span>
+          <span class="icon-chip"><DentalIcon name="clock" size={18} /> 平日19時まで診療</span>
+          <span class="icon-chip"><DentalIcon name="chat" size={18} /> まずは相談からでも可</span>
+        </div>
+      </div>
+
+      <div class="home-hero__visual">
+        <div class="hero-orb hero-orb--one"></div>
+        <div class="hero-orb hero-orb--two"></div>
+        <figure class="hero-photo hero-photo--main">
+          <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1100&q=80&auto=format&fit=crop" alt="明るい歯科医院の待合室" loading="eager" />
+        </figure>
+        <figure class="hero-photo hero-photo--card">
+          <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=700&q=80&auto=format&fit=crop" alt="カウンセリングの様子" loading="eager" />
+          <figcaption>
+            <span class="eyebrow">Consultation</span>
+            <strong>まずは今の状態を確認し、無理のない進め方をご提案します。</strong>
+          </figcaption>
+        </figure>
       </div>
     </div>
   </section>
 
-  <!-- ========== THREE PROMISES ========== -->
-  <section class="promises section-padding">
+  <section class="section-padding blob-section">
+    <div class="container-narrow reassurance">
+      <div class="reassurance__lead">
+        <p class="section-kicker">Before your visit</p>
+        <h2 class="section-title">来院前に感じやすい不安を、先回りして整えます。</h2>
+        <p class="section-lead">
+          歯科医院を探しているとき、多くの方が気にしているのは「何をされるか」よりも「どう扱われるか」です。
+          その不安を軽くしてから、必要な治療の話に進みます。
+        </p>
+      </div>
+
+      <div class="reassurance__layout">
+        <div class="reassurance__chips">
+          <span class="reassurance__chip">何年も歯医者に行っていない</span>
+          <span class="reassurance__chip">怒られそうで行きづらい</span>
+          <span class="reassurance__chip">痛い治療のイメージが強い</span>
+          <span class="reassurance__chip">まずは相談だけしたい</span>
+        </div>
+
+        <div class="reassurance__panel">
+          <p class="eyebrow">How we respond</p>
+          <h3>状態を責めず、まずは今の困りごとから整理します。</h3>
+          <p>
+            すぐに治療を進めるのではなく、痛みの有無、ご不安、ご希望を整理したうえで、必要な検査や応急対応をご案内します。
+            説明を受けてから考えたい方にも、無理のない形で進めます。
+          </p>
+          <a href="/dental-anxiety/" class="btn-secondary">歯医者が怖い方へ</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding promise-section">
     <div class="container-narrow">
-      <h2 class="section-title">3つの約束</h2>
-      <p class="section-lead">当院が大切にしていること</p>
-      <div class="promises-grid">
-        {THREE_PROMISES.map((p) => (
-          <div class="promise-card card">
-            <div class="promise-icon">
-              {p.icon === "shield" && (
-                <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                  <path d="M24 4L6 12v10c0 11.1 7.7 21.5 18 24 10.3-2.5 18-12.9 18-24V12L24 4z" fill="var(--color-primary-light)" stroke="var(--color-primary)" stroke-width="2"/>
-                  <path d="M18 24l4 4 8-8" stroke="var(--color-primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-              )}
-              {p.icon === "heart" && (
-                <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                  <path d="M24 42s-16-9.5-16-21c0-5.5 4.5-10 10-10 3.5 0 5.5 2 6 3 .5-1 2.5-3 6-3 5.5 0 10 4.5 10 10 0 11.5-16 21-16 21z" fill="var(--color-primary-light)" stroke="var(--color-primary)" stroke-width="2"/>
-                </svg>
-              )}
-              {p.icon === "hand" && (
-                <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-                  <path d="M14 28V16a2 2 0 014 0v8" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"/>
-                  <path d="M18 18V12a2 2 0 014 0v12" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"/>
-                  <path d="M22 14V10a2 2 0 014 0v14" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"/>
-                  <path d="M26 16V14a2 2 0 014 0v10" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"/>
-                  <path d="M14 28c0 8 4 14 12 14s12-6 12-14" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round" fill="var(--color-primary-light)"/>
-                </svg>
-              )}
+      <p class="section-kicker">Promise</p>
+      <h2 class="section-title">診療の土台にしている3つの約束</h2>
+      <div class="promise-rows">
+        {reasonItems.map((item, index) => (
+          <article class:list={["promise-row", index % 2 === 1 && "reverse"]}>
+            <div class="promise-row__visual shape-wrap">
+              <img src={item.image} alt={item.alt} loading="lazy" />
             </div>
-            <h3 class="promise-title">{p.title}</h3>
-            <p class="promise-desc">{p.description}</p>
+            <div class="promise-row__copy">
+              <span class="promise-row__number">{item.number}</span>
+              <p class="section-kicker">Our standard</p>
+              <h3>{item.title}</h3>
+              <p>{item.text}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+
+      <div class="promise-summary">
+        {THREE_PROMISES.map((promise) => (
+          <div class="promise-summary__item soft-panel">
+            <span class="promise-summary__icon">
+              <DentalIcon name={promise.icon === "shield" ? "shield" : promise.icon === "heart" ? "heart" : "hand"} size={24} />
+            </span>
+            <div>
+              <h3>{promise.title}</h3>
+              <p>{promise.description}</p>
+            </div>
           </div>
         ))}
       </div>
     </div>
   </section>
 
-  <!-- ========== FIRST VISIT ========== -->
-  <section class="first-visit section-padding bg-alt">
-    <div class="container-narrow first-visit-inner">
-      <div class="first-visit-text">
-        <h2 class="section-title" style="text-align:left;">初めての方へ</h2>
-        <p>当院では、初めてご来院いただく方にも安心していただけるよう、まずはカウンセリングからスタートします。いきなり治療を始めることはありません。</p>
-        <p>久しぶりの歯医者で不安な方、以前嫌な経験をされた方も、遠慮なくお気持ちをお聞かせください。</p>
-        <div style="margin-top:1.5rem;display:flex;gap:1rem;flex-wrap:wrap;">
-          <a href="/first-visit/" class="btn-primary">詳しく見る</a>
-          <a href="/dental-anxiety/" class="btn-secondary">歯医者が怖い方へ</a>
+  <section class="section-padding first-step">
+    <div class="container-narrow first-step__inner">
+      <div class="first-step__copy">
+        <p class="section-kicker">First visit</p>
+        <h2 class="section-title">初診は、相談から治療までを急がず進めます。</h2>
+        <p class="section-lead">
+          初回は問診、必要な検査、カウンセリング、ご説明が中心です。強い痛みがある場合は、応急的な処置を優先します。
+        </p>
+        <div class="first-step__grid">
+          <div class="soft-panel">
+            <p class="first-step__label">Step 01</p>
+            <h3>ご予約・受付</h3>
+            <p>WEB、LINE、お電話からご予約いただけます。初診の方はご予約時間の10分前を目安にお越しください。</p>
+          </div>
+          <div class="soft-panel">
+            <p class="first-step__label">Step 02</p>
+            <h3>カウンセリングと検査</h3>
+            <p>気になっている症状や不安をうかがい、必要に応じてレントゲンや口腔内写真で状態を確認します。</p>
+          </div>
+          <div class="soft-panel">
+            <p class="first-step__label">Step 03</p>
+            <h3>ご説明と今後のご提案</h3>
+            <p>現在の状態、必要な治療、通院の目安をご説明し、ご希望に合わせた進め方をご案内します。</p>
+          </div>
+        </div>
+        <div class="first-step__links">
+          <a href="/first-visit/" class="btn-primary">初診の流れを見る</a>
+          <a href="/faq/" class="btn-secondary">持ち物とよくあるご質問</a>
         </div>
       </div>
-      <div class="first-visit-image">
-        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&q=80" alt="カウンセリングの様子" loading="lazy" />
+
+      <div class="first-step__visual shape-wrap">
+        <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=1000&q=80&auto=format&fit=crop" alt="診療の説明を受ける患者さま" loading="lazy" />
       </div>
     </div>
   </section>
 
-  <!-- ========== SYMPTOMS ========== -->
-  <section class="symptoms section-padding">
+  <section class="section-padding symptoms-overview blob-section">
     <div class="container-narrow">
-      <h2 class="section-title">症状から探す</h2>
-      <p class="section-lead">気になる症状はありますか？</p>
-      <div class="symptom-grid">
-        <a href="/symptoms/toothache/" class="symptom-card">
-          <div class="symptom-img">
-            <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=400&q=80" alt="歯が痛い" loading="lazy" />
-          </div>
-          <div class="symptom-body">
-            <span class="symptom-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"><path d="M12 2a5 5 0 015 5c0 2-1 3.5-2 5s-2 4-2 6h-2c0-2-1-4.5-2-6s-2-3-2-5a5 5 0 015-5z"/><line x1="10" y1="18" x2="14" y2="18"/><line x1="10" y1="21" x2="14" y2="21"/></svg>
+      <div class="section-header">
+        <p class="section-kicker">Symptoms</p>
+        <h2 class="section-title">気になる症状から、必要なページへ進めます。</h2>
+        <p class="section-lead">
+          今つらい症状がある方は、原因や受診の目安をまとめた症状ページからご覧ください。
+        </p>
+      </div>
+
+      <div class="symptoms-overview__grid">
+        {symptomItems.map((item) => (
+          <a href={item.href} class="symptoms-overview__card">
+            <span class="symptoms-overview__icon">
+              <DentalIcon name={item.icon as any} size={34} />
             </span>
-            <h3 class="symptom-label">歯が痛い</h3>
-            <p class="symptom-desc">噛むと痛い、何もしなくてもズキズキする方</p>
-          </div>
-        </a>
-        <a href="/symptoms/sensitivity/" class="symptom-card">
-          <div class="symptom-img">
-            <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?w=400&q=80" alt="歯がしみる" loading="lazy" />
-          </div>
-          <div class="symptom-body">
-            <span class="symptom-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"><path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/><circle cx="12" cy="12" r="3"/></svg>
+            <strong>{item.title}</strong>
+            <p>{item.description}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding services-overview">
+    <div class="container-narrow">
+      <div class="section-header">
+        <p class="section-kicker">Medical</p>
+        <h2 class="section-title">診療内容を、目的ごとに整理しています。</h2>
+        <p class="section-lead">
+          どの診療が自分に合っているかわからない場合も、症状と合わせてご確認いただけます。
+        </p>
+      </div>
+
+      <div class="services-overview__grid">
+        {serviceItems.map((item) => (
+          <a href={item.href} class="services-overview__item">
+            <span class="services-overview__icon">
+              <DentalIcon name={item.icon as any} size={32} />
             </span>
-            <h3 class="symptom-label">歯がしみる</h3>
-            <p class="symptom-desc">冷たいもの・甘いものでキーンとする方</p>
-          </div>
-        </a>
-        <a href="/symptoms/swollen-gums/" class="symptom-card">
-          <div class="symptom-img">
-            <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=400&q=80" alt="歯茎が腫れた" loading="lazy" />
-          </div>
-          <div class="symptom-body">
-            <span class="symptom-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 000-7.78z"/></svg>
-            </span>
-            <h3 class="symptom-label">歯茎が腫れた</h3>
-            <p class="symptom-desc">歯茎の腫れや出血が気になる方</p>
-          </div>
-        </a>
-        <a href="/symptoms/lost-filling/" class="symptom-card">
-          <div class="symptom-img">
-            <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=400&q=80" alt="詰め物が取れた" loading="lazy" />
-          </div>
-          <div class="symptom-body">
-            <span class="symptom-icon">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
-            </span>
-            <h3 class="symptom-label">詰め物が取れた</h3>
-            <p class="symptom-desc">詰め物・被せ物が外れてしまった方</p>
-          </div>
-        </a>
+            <div>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </div>
+          </a>
+        ))}
       </div>
     </div>
   </section>
 
-  <!-- ========== SERVICES ========== -->
-  <section class="services section-padding bg-section">
-    <div class="container-narrow">
-      <h2 class="section-title">診療案内</h2>
-      <p class="section-lead">幅広い診療に対応しています</p>
-      <div class="services-grid">
-        <a href="/services/cavity/" class="service-card card">
-          <h3>虫歯治療</h3>
-          <p>できるだけ削らない・痛みの少ない治療を心がけています。</p>
-        </a>
-        <a href="/services/periodontal/" class="service-card card">
-          <h3>歯周病治療</h3>
-          <p>歯を支える歯茎と骨の健康を守る、丁寧な治療を行います。</p>
-        </a>
-        <a href="/services/preventive/" class="service-card card">
-          <h3>予防歯科</h3>
-          <p>定期的なケアで虫歯・歯周病を防ぎ、健康な歯を長く保ちます。</p>
-        </a>
-        <a href="/services/pediatric/" class="service-card card">
-          <h3>小児歯科</h3>
-          <p>お子さまのペースに合わせた、やさしい治療を提供します。</p>
-        </a>
-        <a href="/services/whitening/" class="service-card card">
-          <h3>ホワイトニング</h3>
-          <p>自然な白さで、笑顔に自信を持てるようサポートします。</p>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== WHY CHOOSE US ========== -->
-  <section class="reasons section-padding">
-    <div class="container-narrow">
-      <h2 class="section-title">当院が選ばれる理由</h2>
-      <div class="reasons-grid">
-        <div class="reason-item">
-          <span class="reason-num">01</span>
-          <h3>丁寧な説明</h3>
-          <p>治療前に必ず現在の状態と治療方針をご説明します。分からないことは何でもお聞きください。</p>
+  <section class="section-padding doctor-highlight">
+    <div class="container-narrow doctor-highlight__inner">
+      <div class="doctor-highlight__copy">
+        <p class="section-kicker">Doctor message</p>
+        <h2 class="section-title">患者さまのペースを大切にしながら、必要な治療をご提案します。</h2>
+        <p class="section-lead">
+          「どこまで治療するか」「まず何を優先するか」は、生活背景やご希望によって変わります。説明を丁寧に行い、無理なく通える進め方を一緒に考えていきます。
+        </p>
+        <div class="doctor-highlight__quote soft-panel">
+          <p>痛みや不安が強い方にも、まずは落ち着いて話せる診療室でありたいと考えています。小さな違和感でも遠慮なくご相談ください。</p>
         </div>
-        <div class="reason-item">
-          <span class="reason-num">02</span>
-          <h3>痛みへの配慮</h3>
-          <p>表面麻酔や極細の注射針を使用し、治療中の痛みを最小限に抑える工夫をしています。</p>
-        </div>
-        <div class="reason-item">
-          <span class="reason-num">03</span>
-          <h3>駅から近い</h3>
-          <p>{SITE.address.station}。お仕事帰りやお買い物のついでにも通いやすい立地です。</p>
-        </div>
-        <div class="reason-item">
-          <span class="reason-num">04</span>
-          <h3>家族で通える</h3>
-          <p>小さなお子さまからご年配の方まで、ご家族みなさまでご来院いただけます。</p>
-        </div>
+        <a href="/clinic/doctor/" class="btn-secondary">院長紹介を見る</a>
+      </div>
+
+      <div class="doctor-highlight__visual">
+        <figure class="doctor-highlight__portrait">
+          <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=900&q=80&auto=format&fit=crop" alt="歯科医師のポートレート" loading="lazy" />
+        </figure>
+        <figure class="doctor-highlight__support">
+          <img src="https://images.unsplash.com/photo-1588776814546-daab30f310ce?w=900&q=80&auto=format&fit=crop" alt="診療室の設備" loading="lazy" />
+        </figure>
       </div>
     </div>
   </section>
 
-  <!-- ========== DOCTOR MESSAGE ========== -->
-  <section class="doctor section-padding bg-alt">
-    <div class="container-narrow doctor-inner">
-      <div class="doctor-image">
-        <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=500&q=80" alt="院長の写真" loading="lazy" />
-      </div>
-      <div class="doctor-text">
-        <h2 class="section-title" style="text-align:left;">院長メッセージ</h2>
-        <p>はじめまして。{SITE.name}院長の桑田（仮名）です。</p>
-        <p>「歯医者は怖い場所」というイメージを、少しでも変えたいと思っています。患者さんのお話をしっかり聞き、一緒に治療計画を考える。そんな当たり前のことを、丁寧に続けていきたいと思います。</p>
-        <p>久しぶりの歯医者で緊張されている方も、どうぞ安心してお越しください。</p>
-        <a href="/clinic/doctor/" class="btn-secondary" style="margin-top:1rem;">院長紹介を見る</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== CLINIC PHOTOS ========== -->
-  <section class="clinic-photos section-padding">
+  <section class="section-padding clinic-preview blob-section">
     <div class="container-narrow">
-      <h2 class="section-title">院内紹介</h2>
-      <p class="section-lead">明るく清潔な空間でお待ちしています</p>
-      <div class="photos-grid">
-        <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=500&q=80" alt="受付" loading="lazy" />
-        <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=500&q=80" alt="診療室" loading="lazy" />
-        <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=500&q=80" alt="待合室" loading="lazy" />
+      <div class="section-header">
+        <p class="section-kicker">Clinic</p>
+        <h2 class="section-title">受付から診療室まで、落ち着いて過ごせる空間づくりを心がけています。</h2>
       </div>
-      <div style="text-align:center;margin-top:2rem;">
-        <a href="/clinic/facility/" class="btn-secondary">もっと見る</a>
+
+      <div class="clinic-preview__grid">
+        <figure class="clinic-preview__photo clinic-preview__photo--large">
+          <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1200&q=80&auto=format&fit=crop" alt="明るい待合スペース" loading="lazy" />
+        </figure>
+        <figure class="clinic-preview__photo">
+          <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=900&q=80&auto=format&fit=crop" alt="受付カウンター" loading="lazy" />
+        </figure>
+        <figure class="clinic-preview__photo">
+          <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=900&q=80&auto=format&fit=crop" alt="診療チェア" loading="lazy" />
+        </figure>
+      </div>
+
+      <div class="clinic-preview__link">
+        <a href="/clinic/facility/" class="btn-secondary">院内紹介を見る</a>
       </div>
     </div>
   </section>
 
-  <!-- ========== FAQ ========== -->
-  <section class="faq-preview section-padding bg-section">
-    <div class="container-narrow">
-      <h2 class="section-title">よくあるご質問</h2>
-      <div class="faq-list">
-        <details class="faq-item">
-          <summary>初めての来院ですが、何を持っていけばいいですか？</summary>
-          <p>保険証をお持ちください。お薬手帳がある方はそちらもお願いします。問診票は院内でご記入いただけます。</p>
-        </details>
-        <details class="faq-item">
-          <summary>歯医者が怖いのですが、大丈夫ですか？</summary>
-          <p>大丈夫です。当院では無理に治療を始めることはありません。まずはお話を聞かせていただき、患者さんのペースに合わせて進めます。</p>
-        </details>
-        <details class="faq-item">
-          <summary>痛みが少ない治療はできますか？</summary>
-          <p>はい。表面麻酔や極細の注射針を使用し、痛みを最小限に抑える工夫をしています。治療中に痛みがあれば、遠慮なくお伝えください。</p>
-        </details>
+  <section class="section-padding faq-preview">
+    <div class="container-narrow faq-preview__inner">
+      <div class="section-header">
+        <p class="section-kicker">FAQ</p>
+        <h2 class="section-title">初診前によくいただくご質問</h2>
       </div>
-      <div style="text-align:center;margin-top:2rem;">
-        <a href="/faq/" class="btn-secondary">FAQ をもっと見る</a>
+
+      <div class="faq-preview__list">
+        {faqPreview.map((item) => (
+          <details class="faq-preview__item">
+            <summary>{item.q}</summary>
+            <p>{item.a}</p>
+          </details>
+        ))}
+      </div>
+
+      <div class="faq-preview__link">
+        <a href="/faq/" class="btn-secondary">FAQをもっと見る</a>
       </div>
     </div>
   </section>
 
-  <!-- ========== ACCESS ========== -->
-  <section class="access-preview section-padding">
-    <div class="container-narrow access-inner">
-      <div class="access-info">
-        <h2 class="section-title" style="text-align:left;">アクセス</h2>
-        <dl class="access-dl">
-          <dt>住所</dt><dd>{SITE.address.full}</dd>
-          <dt>最寄駅</dt><dd>{SITE.address.station}</dd>
-          <dt>電話</dt><dd><a href={SITE.phoneHref}>{SITE.phone}</a></dd>
-          <dt>診療時間</dt>
-          <dd>
-            月火水金 {SITE.hours.weekday}<br />
-            土 {SITE.hours.saturday}
-          </dd>
-          <dt>休診</dt><dd>{SITE.hours.closed}</dd>
+  <section class="section-padding access-preview">
+    <div class="container-narrow access-preview__inner">
+      <div class="access-preview__copy">
+        <p class="section-kicker">Access</p>
+        <h2 class="section-title">駅からの距離、診療時間、連絡先をまとめてご確認いただけます。</h2>
+        <dl class="access-preview__list">
+          <dt><DentalIcon name="pin" size={18} /> 住所</dt>
+          <dd>{SITE.address.full}</dd>
+          <dt><DentalIcon name="clock" size={18} /> 診療時間</dt>
+          <dd>月火水金 {SITE.hours.weekday}<br />土 {SITE.hours.saturday}</dd>
+          <dt><DentalIcon name="phone" size={18} /> 電話番号</dt>
+          <dd><a href={SITE.phoneHref}>{SITE.phone}</a></dd>
         </dl>
-        <a href="/access/" class="btn-secondary" style="margin-top:1rem;">詳しいアクセス</a>
+        <div class="access-preview__actions">
+          <a href="/access/" class="btn-primary">アクセスを見る</a>
+          <a href="/reserve/" class="btn-secondary">予約方法を見る</a>
+        </div>
       </div>
-      <div class="access-map">
-        <div class="map-placeholder">
-          <p>Google Maps<br />（後で埋め込み）</p>
+
+      <div class="access-preview__map soft-panel">
+        <p class="eyebrow">Location</p>
+        <strong>{SITE.address.station}</strong>
+        <p>地図埋め込みは本番時に差し替え予定です。駅からの道順、駐車場情報、診療時間をアクセスページにまとめています。</p>
+        <div class="access-preview__placeholder">
+          <DentalIcon name="pin" size={28} />
+          <span>Google Maps を後で埋め込み</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ========== FINAL CTA ========== -->
   <SectionCTA />
 </BaseLayout>
 
 <style>
-  /* ---------- HERO ---------- */
-  .hero {
+  .home-hero {
     position: relative;
-    min-height: 520px;
-    display: flex;
-    align-items: center;
+    padding: clamp(2.6rem, 5vw, 4.6rem) 0 5.2rem;
     overflow: hidden;
+    background:
+      radial-gradient(circle at left top, rgba(125, 173, 200, 0.22), transparent 34%),
+      radial-gradient(circle at right 15%, rgba(219, 139, 87, 0.14), transparent 26%),
+      linear-gradient(180deg, #fff9f1 0%, #f4f9fd 100%);
   }
-  .hero-bg {
-    position: absolute;
-    inset: 0;
+
+  .home-hero__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: 2rem;
+    align-items: center;
   }
-  .hero-bg img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    filter: brightness(0.45);
-  }
-  .hero-content {
+
+  .home-hero__copy {
     position: relative;
     z-index: 1;
-    color: #fff;
-    padding: 4rem 1.5rem;
+    max-width: 37rem;
   }
-  .hero-lead {
+
+  .home-hero__clinic {
+    margin-top: 0.8rem;
+    color: var(--color-text-soft);
+    letter-spacing: 0.08em;
+    font-size: 0.9rem;
+  }
+
+  .home-hero__title {
+    margin-top: 0.55rem;
+    font-size: clamp(2.7rem, 5.4vw, 5.1rem);
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+  }
+
+  .home-hero__text {
+    margin-top: 1.2rem;
+    color: var(--color-text);
     font-size: 1rem;
-    opacity: 0.9;
-    margin-bottom: 0.5rem;
+    max-width: 34rem;
   }
-  .hero-title {
-    font-size: 2.5rem;
-    color: #fff;
-    line-height: 1.3;
-    margin-bottom: 1rem;
-  }
-  .hero-sub {
-    font-size: 1.05rem;
-    opacity: 0.9;
-    line-height: 1.8;
-    margin-bottom: 2rem;
-  }
-  .hero-buttons {
+
+  .home-hero__actions {
     display: flex;
-    gap: 1rem;
     flex-wrap: wrap;
-  }
-  .sp-only { display: none; }
-
-  @media (max-width: 640px) {
-    .hero { min-height: 420px; }
-    .hero-title { font-size: 1.75rem; }
-    .sp-only { display: inline; }
+    gap: 0.9rem;
+    margin-top: 1.6rem;
   }
 
-  /* ---------- SECTION TITLES ---------- */
-  .section-title {
-    font-size: 1.75rem;
-    text-align: center;
-    margin-bottom: 0.5rem;
-  }
-  .section-lead {
-    text-align: center;
-    color: var(--color-text-light);
-    margin-bottom: 2.5rem;
-  }
-
-  /* ---------- PROMISES ---------- */
-  .promises-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-  }
-  .promise-card { text-align: center; padding: 2.5rem 1.5rem; }
-  .promise-icon { margin-bottom: 1rem; display: flex; justify-content: center; }
-  .promise-title { font-size: 1.15rem; margin-bottom: 0.75rem; }
-  .promise-desc { font-size: 0.9rem; color: var(--color-text-light); }
-  @media (max-width: 640px) {
-    .promises-grid { grid-template-columns: 1fr; }
-  }
-
-  /* ---------- FIRST VISIT ---------- */
-  .first-visit-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: center;
-  }
-  .first-visit-image img { border-radius: var(--radius-md); }
-  @media (max-width: 768px) {
-    .first-visit-inner { grid-template-columns: 1fr; }
-  }
-
-  /* ---------- SYMPTOMS ---------- */
-  .symptom-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.25rem;
-  }
-  .symptom-card {
+  .home-hero__chips {
     display: flex;
-    flex-direction: column;
-    text-decoration: none;
-    border-radius: var(--radius-md);
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.55rem;
+  }
+
+  .home-hero__visual {
+    position: relative;
+    min-height: 34rem;
+  }
+
+  .hero-orb {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(2px);
+  }
+
+  .hero-orb--one {
+    top: 6%;
+    right: 5%;
+    width: 12rem;
+    height: 12rem;
+    background: rgba(125, 173, 200, 0.12);
+  }
+
+  .hero-orb--two {
+    left: 5%;
+    bottom: 10%;
+    width: 8.5rem;
+    height: 8.5rem;
+    background: rgba(219, 139, 87, 0.12);
+  }
+
+  .hero-photo {
+    position: absolute;
     overflow: hidden;
-    background: var(--color-bg);
-    border: 1px solid var(--color-border);
-    box-shadow: var(--shadow-card);
-    transition: box-shadow 0.2s, transform 0.15s;
+    box-shadow: var(--shadow-float);
   }
-  .symptom-card:hover {
-    box-shadow: var(--shadow-card-hover);
-    transform: translateY(-3px);
-  }
-  .symptom-img {
-    height: 140px;
-    overflow: hidden;
-  }
-  .symptom-img img {
+
+  .hero-photo img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s;
-  }
-  .symptom-card:hover .symptom-img img {
-    transform: scale(1.05);
-  }
-  .symptom-body {
-    padding: 1.25rem;
-    text-align: center;
-  }
-  .symptom-icon {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 0.5rem;
-  }
-  .symptom-label {
-    font-weight: 700;
-    color: var(--color-text-heading);
-    font-size: 1.05rem;
-    margin-bottom: 0.35rem;
-  }
-  .symptom-desc {
-    font-size: 0.8rem;
-    color: var(--color-text-light);
-    line-height: 1.5;
-  }
-  @media (max-width: 768px) {
-    .symptom-grid { grid-template-columns: repeat(2, 1fr); }
-  }
-  @media (max-width: 480px) {
-    .symptom-grid { grid-template-columns: 1fr; max-width: 320px; margin: 0 auto; }
   }
 
-  /* ---------- SERVICES ---------- */
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.25rem;
-  }
-  .service-card { text-decoration: none; color: var(--color-text); }
-  .service-card h3 { font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--color-primary); }
-  .service-card p { font-size: 0.9rem; color: var(--color-text-light); }
-  @media (max-width: 768px) {
-    .services-grid { grid-template-columns: 1fr; }
+  .hero-photo--main {
+    inset: 2% 2% 18% 16%;
+    border-radius: 38% 62% 46% 54% / 52% 42% 58% 48%;
   }
 
-  /* ---------- REASONS ---------- */
-  .reasons-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 2rem;
-  }
-  .reason-item { padding: 1.5rem 0; border-bottom: 1px solid var(--color-border); }
-  .reason-num { font-size: 2rem; font-weight: 700; color: var(--color-primary); opacity: 0.3; line-height: 1; }
-  .reason-item h3 { font-size: 1.1rem; margin: 0.5rem 0; }
-  .reason-item p { font-size: 0.9rem; color: var(--color-text-light); }
-  @media (max-width: 640px) {
-    .reasons-grid { grid-template-columns: 1fr; }
+  .hero-photo--card {
+    inset: auto auto 0 0;
+    width: min(20rem, 58%);
+    border-radius: 1.7rem;
+    background: rgba(255,255,255,0.92);
   }
 
-  /* ---------- DOCTOR ---------- */
-  .doctor-inner {
+  .hero-photo--card img {
+    aspect-ratio: 4 / 3;
+  }
+
+  .hero-photo--card figcaption {
     display: grid;
-    grid-template-columns: 280px 1fr;
-    gap: 3rem;
+    gap: 0.4rem;
+    padding: 1.05rem 1.15rem 1.15rem;
+  }
+
+  .hero-photo--card strong {
+    color: var(--color-ink);
+    font-size: 0.98rem;
+    line-height: 1.55;
+  }
+
+  .reassurance__lead,
+  .section-header {
+    display: grid;
+    justify-items: start;
+    gap: 0.22rem;
+    margin-bottom: 2rem;
+  }
+
+  .reassurance__layout {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 1.5rem;
     align-items: center;
   }
-  .doctor-image img {
-    border-radius: var(--radius-md);
-    aspect-ratio: 3/4;
-    object-fit: cover;
-  }
-  @media (max-width: 768px) {
-    .doctor-inner { grid-template-columns: 1fr; }
-    .doctor-image { max-width: 280px; }
-  }
 
-  /* ---------- CLINIC PHOTOS ---------- */
-  .photos-grid {
+  .reassurance__chips {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
-  }
-  .photos-grid img {
-    border-radius: var(--radius-md);
-    aspect-ratio: 4/3;
-    object-fit: cover;
-  }
-  @media (max-width: 640px) {
-    .photos-grid { grid-template-columns: 1fr; }
+    align-content: start;
   }
 
-  /* ---------- FAQ ---------- */
-  .faq-list { max-width: 700px; margin: 0 auto; }
-  .faq-item { border-bottom: 1px solid var(--color-border); padding: 1.25rem 0; }
-  .faq-item summary {
+  .reassurance__chip {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    padding: 0.9rem 1.2rem;
+    border-radius: 999px;
+    border: 1px solid rgba(125, 173, 200, 0.16);
+    background: rgba(255,255,255,0.92);
+    box-shadow: 0 18px 34px rgba(27, 53, 82, 0.08);
+    color: var(--color-ink);
     font-weight: 600;
-    cursor: pointer;
-    padding: 0.25rem 0;
-    list-style: none;
   }
-  .faq-item summary::before { content: "Q. "; color: var(--color-primary); font-weight: 700; }
-  .faq-item p { margin-top: 0.75rem; padding-left: 1.5rem; font-size: 0.9rem; color: var(--color-text-light); }
 
-  /* ---------- ACCESS ---------- */
-  .access-inner {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: start;
+  .reassurance__chip:nth-child(2n) {
+    margin-left: auto;
+    background: rgba(255, 241, 231, 0.92);
   }
-  .access-dl {
+
+  .reassurance__panel {
+    padding: clamp(1.6rem, 3vw, 2.4rem);
+    border-radius: 2.2rem;
+    background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(249,252,254,0.96));
+    border: 1px solid rgba(125, 173, 200, 0.16);
+    box-shadow: var(--shadow-soft);
+  }
+
+  .reassurance__panel h3 {
+    margin: 0.2rem 0 0.8rem;
+    font-size: clamp(1.7rem, 3vw, 2.6rem);
+    line-height: 1.18;
+  }
+
+  .reassurance__panel p {
+    color: var(--color-text-soft);
+    margin-bottom: 1.2rem;
+  }
+
+  .promise-section {
+    background:
+      linear-gradient(180deg, rgba(255,255,255,0.94), rgba(244,249,253,0.94));
+  }
+
+  .promise-rows {
+    display: grid;
+    gap: 3rem;
+    margin-top: 2rem;
+  }
+
+  .promise-row {
+    display: grid;
+    grid-template-columns: 0.92fr 1.08fr;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .promise-row.reverse {
+    grid-template-columns: 1.08fr 0.92fr;
+  }
+
+  .promise-row.reverse .promise-row__visual {
+    order: 2;
+  }
+
+  .promise-row__copy {
+    position: relative;
+    padding-left: 4rem;
+  }
+
+  .promise-row__number {
+    position: absolute;
+    left: 0;
+    top: -0.1rem;
+    font-family: var(--font-display);
+    font-size: clamp(4rem, 8vw, 7rem);
+    line-height: 0.85;
+    color: rgba(125, 173, 200, 0.18);
+  }
+
+  .promise-row__copy h3 {
+    margin: 0.4rem 0 0.8rem;
+    font-size: clamp(1.55rem, 2.8vw, 2.2rem);
+    line-height: 1.25;
+  }
+
+  .promise-row__copy p:last-child {
+    color: var(--color-text-soft);
+  }
+
+  .promise-summary {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: 2.2rem;
+  }
+
+  .promise-summary__item {
     display: grid;
     grid-template-columns: auto 1fr;
-    gap: 0.5rem 1.5rem;
-    font-size: 0.95rem;
+    gap: 0.9rem;
+    align-items: start;
   }
-  .access-dl dt { font-weight: 600; color: var(--color-text-heading); }
-  .map-placeholder {
-    background: var(--color-bg-alt);
-    border: 2px dashed var(--color-border);
-    border-radius: var(--radius-md);
-    min-height: 300px;
-    display: flex;
+
+  .promise-summary__icon {
+    width: 2.8rem;
+    height: 2.8rem;
+    display: inline-grid;
+    place-items: center;
+    border-radius: 999px;
+    background: rgba(125, 173, 200, 0.12);
+    color: var(--color-primary-dark);
+  }
+
+  .promise-summary__item h3 {
+    margin: 0.1rem 0 0.25rem;
+    font-size: 1.02rem;
+  }
+
+  .promise-summary__item p {
+    color: var(--color-text-soft);
+    font-size: 0.9rem;
+  }
+
+  .first-step__inner,
+  .doctor-highlight__inner,
+  .access-preview__inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    gap: 2rem;
     align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: var(--color-text-light);
   }
-  @media (max-width: 768px) {
-    .access-inner { grid-template-columns: 1fr; }
+
+  .first-step__grid {
+    display: grid;
+    gap: 1rem;
+    margin-top: 1.6rem;
+  }
+
+  .first-step__label {
+    color: var(--color-accent);
+    font-family: var(--font-display);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    font-size: 0.95rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .first-step__grid h3 {
+    margin-bottom: 0.35rem;
+    font-size: 1.1rem;
+  }
+
+  .first-step__grid p {
+    color: var(--color-text-soft);
+    font-size: 0.92rem;
+  }
+
+  .first-step__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    margin-top: 1.5rem;
+  }
+
+  .symptoms-overview {
+    background: linear-gradient(180deg, rgba(255, 244, 226, 0.96), rgba(255, 248, 239, 0.96));
+  }
+
+  .symptoms-overview__grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.1rem;
+  }
+
+  .symptoms-overview__card {
+    display: grid;
+    justify-items: center;
+    gap: 0.55rem;
+    padding: 1.5rem 1.15rem;
+    text-align: center;
+    color: var(--color-ink);
+    border-radius: 42% 58% 45% 55% / 52% 44% 56% 48%;
+    background: rgba(255,255,255,0.9);
+    border: 1px solid rgba(125, 173, 200, 0.15);
+    box-shadow: 0 18px 36px rgba(27, 53, 82, 0.07);
+  }
+
+  .symptoms-overview__icon,
+  .services-overview__icon {
+    width: 3.9rem;
+    height: 3.9rem;
+    display: inline-grid;
+    place-items: center;
+    border-radius: 999px;
+    color: var(--color-primary-dark);
+    background: rgba(125, 173, 200, 0.12);
+  }
+
+  .symptoms-overview__card p {
+    color: var(--color-text-soft);
+    font-size: 0.84rem;
+    line-height: 1.65;
+  }
+
+  .services-overview__grid {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0.9rem;
+  }
+
+  .services-overview__item {
+    display: grid;
+    justify-items: center;
+    gap: 0.8rem;
+    padding: 1.35rem 1rem;
+    text-align: center;
+    border-radius: 1.8rem;
+    border: 1px solid rgba(125, 173, 200, 0.14);
+    background: rgba(255,255,255,0.92);
+    box-shadow: 0 16px 30px rgba(27, 53, 82, 0.06);
+  }
+
+  .services-overview__item h3 {
+    font-size: 1rem;
+    margin-bottom: 0.2rem;
+  }
+
+  .services-overview__item p {
+    color: var(--color-text-soft);
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+
+  .doctor-highlight {
+    background:
+      radial-gradient(circle at right top, rgba(125, 173, 200, 0.14), transparent 34%),
+      linear-gradient(180deg, rgba(244,249,253,0.96), rgba(255,255,255,0.96));
+  }
+
+  .doctor-highlight__quote {
+    margin-top: 1.5rem;
+  }
+
+  .doctor-highlight__quote p {
+    color: var(--color-text);
+  }
+
+  .doctor-highlight__visual {
+    position: relative;
+    min-height: 30rem;
+  }
+
+  .doctor-highlight__portrait,
+  .doctor-highlight__support {
+    position: absolute;
+    overflow: hidden;
+    box-shadow: var(--shadow-float);
+  }
+
+  .doctor-highlight__portrait {
+    inset: 0 0 18% 16%;
+    border-radius: 40% 60% 54% 46% / 46% 52% 48% 54%;
+  }
+
+  .doctor-highlight__support {
+    left: 0;
+    right: 34%;
+    bottom: 0;
+    height: 38%;
+    border-radius: 1.7rem;
+  }
+
+  .doctor-highlight__visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .clinic-preview__grid {
+    display: grid;
+    grid-template-columns: 1.35fr 1fr;
+    gap: 1rem;
+    margin-top: 1.8rem;
+  }
+
+  .clinic-preview__photo {
+    overflow: hidden;
+    border-radius: 2rem;
+    box-shadow: var(--shadow-soft);
+  }
+
+  .clinic-preview__photo--large {
+    grid-row: span 2;
+    min-height: 100%;
+  }
+
+  .clinic-preview__photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .clinic-preview__link,
+  .faq-preview__link {
+    margin-top: 1.4rem;
+  }
+
+  .faq-preview {
+    background: rgba(255,255,255,0.82);
+  }
+
+  .faq-preview__list {
+    display: grid;
+    gap: 0.8rem;
+  }
+
+  .faq-preview__item {
+    padding: 1rem 1.2rem;
+    border-radius: 1.35rem;
+    border: 1px solid rgba(125, 173, 200, 0.16);
+    background: rgba(255,255,255,0.92);
+    box-shadow: 0 16px 30px rgba(27, 53, 82, 0.06);
+  }
+
+  .faq-preview__item summary {
+    cursor: pointer;
+    list-style: none;
+    font-weight: 700;
+    color: var(--color-ink);
+    padding-right: 1.5rem;
+    position: relative;
+  }
+
+  .faq-preview__item summary::after {
+    content: "+";
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: var(--color-accent);
+    font-size: 1.15rem;
+  }
+
+  .faq-preview__item[open] summary::after {
+    content: "−";
+  }
+
+  .faq-preview__item p {
+    margin-top: 0.65rem;
+    color: var(--color-text-soft);
+    font-size: 0.92rem;
+  }
+
+  .access-preview__list {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.8rem 1rem;
+    margin: 1.5rem 0 0;
+  }
+
+  .access-preview__list dt {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    color: var(--color-ink);
+    font-weight: 700;
+  }
+
+  .access-preview__list dd {
+    margin: 0;
+    color: var(--color-text);
+  }
+
+  .access-preview__actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.9rem;
+    margin-top: 1.45rem;
+  }
+
+  .access-preview__map strong {
+    display: block;
+    margin: 0.3rem 0 0.55rem;
+    color: var(--color-ink);
+    font-size: 1.1rem;
+  }
+
+  .access-preview__map p {
+    color: var(--color-text-soft);
+  }
+
+  .access-preview__placeholder {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.65rem;
+    margin-top: 1rem;
+    min-height: 3rem;
+    padding: 0.8rem 1rem;
+    border-radius: 1rem;
+    background: rgba(125, 173, 200, 0.08);
+    color: var(--color-primary-dark);
+    font-weight: 700;
+  }
+
+  @media (max-width: 1080px) {
+    .services-overview__grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .symptoms-overview__grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 900px) {
+    .home-hero__inner,
+    .reassurance__layout,
+    .first-step__inner,
+    .doctor-highlight__inner,
+    .access-preview__inner {
+      grid-template-columns: 1fr;
+    }
+
+    .home-hero__visual,
+    .doctor-highlight__visual {
+      min-height: 23rem;
+      max-width: 34rem;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .promise-row,
+    .promise-row.reverse {
+      grid-template-columns: 1fr;
+    }
+
+    .promise-row.reverse .promise-row__visual {
+      order: 0;
+    }
+
+    .promise-summary {
+      grid-template-columns: 1fr;
+    }
+
+    .clinic-preview__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .clinic-preview__photo--large {
+      grid-row: span 1;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .home-hero__actions,
+    .first-step__links,
+    .access-preview__actions {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .home-hero__actions .btn-primary,
+    .home-hero__actions .btn-secondary,
+    .first-step__links .btn-primary,
+    .first-step__links .btn-secondary,
+    .access-preview__actions .btn-primary,
+    .access-preview__actions .btn-secondary {
+      width: 100%;
+    }
+
+    .home-hero__chips {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    .symptoms-overview__grid,
+    .services-overview__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .promise-row__copy {
+      padding-left: 0;
+      padding-top: 3.5rem;
+    }
+
+    .promise-row__number {
+      left: 0;
+      top: 0;
+      font-size: 4.2rem;
+    }
+
+    .access-preview__list {
+      grid-template-columns: 1fr;
+      gap: 0.3rem;
+    }
   }
 </style>

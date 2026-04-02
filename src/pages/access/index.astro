@@ -6,137 +6,91 @@ import SectionCTA from "../../components/SectionCTA.astro";
 import { SITE } from "../../data/site";
 ---
 
-<BaseLayout title="アクセス" description="湘南桑田歯科へのアクセス。JR藤沢駅南口より徒歩3分。住所・診療時間・地図をご案内します。">
-  <PageHero title="アクセス" subtitle={SITE.address.station} />
+<BaseLayout
+  title="アクセス"
+  description="湘南桑田歯科のアクセス案内。住所、最寄駅からの距離、電話番号、診療時間、地図をご案内します。"
+>
+  <PageHero
+    title="アクセス"
+    subtitle="来院前に、場所と時間だけは先に確認しておきたいものです"
+    image="https://images.unsplash.com/photo-1562774053-701939374585?w=1400&q=80"
+  />
 
   <div class="container-narrow">
     <Breadcrumb items={[{ label: "アクセス" }]} />
   </div>
 
-  <!-- ========== 医院情報 ========== -->
-  <section class="clinic-info section-padding">
-    <div class="container-narrow info-grid">
-      <div class="info-table-wrap">
-        <h2 class="section-title-left">医院情報</h2>
+  <section class="section-padding">
+    <div class="container-narrow access-grid">
+      <div class="access-card card">
+        <p class="eyebrow">CLINIC INFO</p>
+        <h2 class="section-title-left">{SITE.name}</h2>
         <dl class="info-dl">
-          <dt>医院名</dt>
-          <dd>{SITE.name}</dd>
           <dt>住所</dt>
           <dd>{SITE.address.full}</dd>
           <dt>電話番号</dt>
           <dd><a href={SITE.phoneHref}>{SITE.phone}</a></dd>
           <dt>最寄駅</dt>
           <dd>{SITE.address.station}</dd>
+          <dt>診療時間</dt>
+          <dd>
+            月火水金 {SITE.hours.weekday}<br />
+            土 {SITE.hours.saturday}<br />
+            休診 {SITE.hours.closed}
+          </dd>
         </dl>
-
-        <h3 class="hours-heading">診療時間</h3>
-        <div class="hours-table-wrap">
-          <table class="hours-table">
-            <thead>
-              <tr>
-                <th></th>
-                <th>月</th>
-                <th>火</th>
-                <th>水</th>
-                <th>木</th>
-                <th>金</th>
-                <th>土</th>
-                <th>日・祝</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td class="time-label">9:30 - 13:00</td>
-                <td>○</td>
-                <td>○</td>
-                <td>○</td>
-                <td>-</td>
-                <td>○</td>
-                <td>○</td>
-                <td>-</td>
-              </tr>
-              <tr>
-                <td class="time-label">14:30 - 19:00</td>
-                <td>○</td>
-                <td>○</td>
-                <td>○</td>
-                <td>-</td>
-                <td>○</td>
-                <td>△</td>
-                <td>-</td>
-              </tr>
-            </tbody>
-          </table>
+        <div class="access-actions">
+          <a href={SITE.phoneHref} class="btn-secondary">電話する</a>
+          <a href="/reserve/" class="btn-primary">予約する</a>
         </div>
-        <p class="hours-note">△ 土曜午後は 14:30 - 17:00</p>
-        <p class="hours-note">休診日: {SITE.hours.closed}</p>
       </div>
 
-      <!-- Google Maps プレースホルダー -->
-      <div class="map-area">
-        <div class="map-placeholder">
-          <p>Google Maps<br />（後で埋め込み）</p>
+      <div class="map-card">
+        <div class="map-frame">
+          <p>Google Maps 埋め込み予定</p>
+          <span>{SITE.address.short}</span>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ========== 道順案内 ========== -->
-  <section class="directions section-padding bg-alt">
+  <section class="section-padding bg-alt">
     <div class="container-narrow">
-      <h2 class="section-title">道順のご案内</h2>
-      <p class="section-lead">JR藤沢駅南口からの道順をご案内します</p>
-
-      <div class="steps-grid">
-        <div class="step-item">
-          <span class="step-num">1</span>
-          <div>
-            <h3>JR藤沢駅南口を出る</h3>
-            <p>改札を出て南口方面へ進んでください。ロータリーが見えます。</p>
-          </div>
-        </div>
-        <div class="step-item">
-          <span class="step-num">2</span>
-          <div>
-            <h3>右に進む</h3>
-            <p>ロータリーを右手に見ながら、大通り沿いに歩きます。コンビニが目印です。</p>
-          </div>
-        </div>
-        <div class="step-item">
-          <span class="step-num">3</span>
-          <div>
-            <h3>1つ目の信号を直進</h3>
-            <p>横断歩道を渡り、そのまままっすぐ進みます。</p>
-          </div>
-        </div>
-        <div class="step-item">
-          <span class="step-num">4</span>
-          <div>
-            <h3>左手に○○ビルが見えます</h3>
-            <p>○○ビルの2Fが当院です。1Fに看板がございますので、そちらからお入りください。</p>
-          </div>
-        </div>
+      <p class="eyebrow">GUIDE</p>
+      <h2 class="section-title">初めてお越しの方へ</h2>
+      <div class="directions-grid">
+        <article class="direction-card card">
+          <span class="direction-num">01</span>
+          <h3>駅からの道順</h3>
+          <p>{SITE.address.station}。詳しい道順は、後日地図画像や写真付き案内に差し替えやすいよう、ここでは最小限の導線だけを置いています。</p>
+        </article>
+        <article class="direction-card card">
+          <span class="direction-num">02</span>
+          <h3>来院の目安</h3>
+          <p>予約時間の10分前を目安にお越しください。初診時は問診票の記入と受付があります。</p>
+        </article>
+        <article class="direction-card card">
+          <span class="direction-num">03</span>
+          <h3>急いでいる場合</h3>
+          <p>痛みが強い、詰め物が取れた、腫れているといった場合は、まずお電話で状況をお知らせください。</p>
+        </article>
+        <article class="direction-card card">
+          <span class="direction-num">04</span>
+          <h3>お車でお越しの方</h3>
+          <p>周辺駐車場の利用案内を想定しています。実際の駐車場情報は、開院後に具体の場所へ差し替えてください。</p>
+        </article>
       </div>
     </div>
   </section>
 
-  <!-- ========== 駐車場情報 ========== -->
-  <section class="parking section-padding">
-    <div class="container-narrow">
-      <h2 class="section-title">駐車場のご案内</h2>
-      <div class="parking-box card">
-        <p>
-          当院には専用駐車場のご用意がございませんが、近隣に提携コインパーキングがございます。
-          お車でお越しの際は、以下のパーキングをご利用ください。
-        </p>
-        <div class="parking-info">
-          <h3>○○パーキング（提携）</h3>
-          <p>当院ビルより徒歩1分。診療時間に応じてサービス券をお渡ししております。受付にてお申し付けください。</p>
-        </div>
-        <p class="parking-note">
-          ※公共交通機関でのご来院もおすすめしています。JR藤沢駅から徒歩3分と大変便利な立地です。
-        </p>
+  <section class="section-padding">
+    <div class="container-narrow cta-linkbox">
+      <div>
+        <p class="eyebrow">NEXT</p>
+        <h2>予約方法もあわせて確認しておくと安心です。</h2>
+        <p>WEB、LINE、お電話の3つの導線から、ご都合に合わせてお選びいただけます。</p>
       </div>
+      <a href="/reserve/" class="btn-primary">ご予約・ご相談はこちら</a>
     </div>
   </section>
 
@@ -144,165 +98,122 @@ import { SITE } from "../../data/site";
 </BaseLayout>
 
 <style>
-  /* ---------- Section Titles ---------- */
-  .section-title {
-    font-size: 1.75rem;
-    text-align: center;
-    margin-bottom: 0.5rem;
+  .eyebrow {
+    letter-spacing: 0.18em;
+    font-size: 0.8rem;
+    color: var(--color-accent);
+    font-weight: 700;
+    margin-bottom: 0.75rem;
   }
   .section-title-left {
-    font-size: 1.5rem;
-    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    line-height: 1.55;
+    margin-bottom: 1rem;
   }
-  .section-lead {
-    text-align: center;
-    color: var(--color-text-light);
-    margin-bottom: 2.5rem;
-  }
-
-  /* ---------- Info Grid ---------- */
-  .info-grid {
+  .access-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 3rem;
+    gap: 1.5rem;
     align-items: start;
   }
   .info-dl {
     display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 0.6rem 1.5rem;
-    font-size: 0.95rem;
-    margin-bottom: 2rem;
+    grid-template-columns: 92px 1fr;
+    gap: 0.8rem 1rem;
+    margin: 0 0 1.5rem;
   }
   .info-dl dt {
-    font-weight: 600;
-    color: var(--color-text-heading);
-  }
-
-  /* ---------- Hours Table ---------- */
-  .hours-heading {
-    font-size: 1.1rem;
-    margin-bottom: 0.75rem;
-    color: var(--color-text-heading);
-  }
-  .hours-table-wrap {
-    overflow-x: auto;
-  }
-  .hours-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.85rem;
-    text-align: center;
-  }
-  .hours-table th {
-    background: var(--color-primary-light);
-    padding: 0.5rem 0.4rem;
-    font-weight: 600;
-    color: var(--color-text-heading);
-  }
-  .hours-table td {
-    padding: 0.5rem 0.4rem;
-    border-bottom: 1px solid var(--color-border);
-  }
-  .hours-table .time-label {
-    text-align: left;
-    font-weight: 600;
-    font-size: 0.8rem;
-    white-space: nowrap;
-  }
-  .hours-note {
-    font-size: 0.8rem;
-    color: var(--color-text-light);
-    margin-top: 0.4rem;
-  }
-
-  /* ---------- Map ---------- */
-  .map-placeholder {
-    background: var(--color-bg-alt);
-    border: 2px dashed var(--color-border);
-    border-radius: var(--radius-md);
-    min-height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    color: var(--color-text-light);
-    font-size: 1.1rem;
-  }
-
-  @media (max-width: 768px) {
-    .info-grid {
-      grid-template-columns: 1fr;
-    }
-    .map-placeholder {
-      min-height: 300px;
-    }
-  }
-
-  /* ---------- Directions ---------- */
-  .steps-grid {
-    max-width: 700px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  .step-item {
-    display: flex;
-    gap: 1.25rem;
-    align-items: flex-start;
-  }
-  .step-num {
-    flex-shrink: 0;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: var(--color-primary);
-    color: #fff;
     font-weight: 700;
+    color: var(--color-text-heading);
+  }
+  .info-dl dd {
+    margin: 0;
+    color: var(--color-text);
+    line-height: 1.8;
+  }
+  .access-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+  .map-card {
+    padding: 0;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    min-height: 100%;
+    background:
+      linear-gradient(180deg, rgba(43, 107, 138, 0.06), transparent 20%),
+      var(--color-bg-alt);
+  }
+  .map-frame {
+    min-height: 460px;
+    display: grid;
+    place-content: center;
+    text-align: center;
+    gap: 0.5rem;
+    color: var(--color-text-light);
+    padding: 2rem;
+    border: 1px dashed var(--color-border);
+    border-radius: var(--radius-md);
+    margin: 1rem;
+    background: rgba(255, 255, 255, 0.55);
+  }
+  .map-frame p {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--color-text-heading);
+    margin: 0;
+  }
+  .directions-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+  .direction-card {
+    position: relative;
+    padding-top: 3rem;
+  }
+  .direction-num {
+    position: absolute;
+    top: 1rem;
+    right: 1.25rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-primary-light);
+  }
+  .direction-card h3 {
+    font-size: 1.08rem;
+    margin-bottom: 0.65rem;
+  }
+  .direction-card p {
+    color: var(--color-text-light);
+    line-height: 1.85;
+  }
+  .cta-linkbox {
     display: flex;
     align-items: center;
-    justify-content: center;
-    font-size: 1.1rem;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
   }
-  .step-item h3 {
-    font-size: 1.05rem;
-    margin-bottom: 0.25rem;
-  }
-  .step-item p {
-    font-size: 0.9rem;
-    color: var(--color-text-light);
-    line-height: 1.7;
-  }
-
-  /* ---------- Parking ---------- */
-  .parking-box {
-    max-width: 720px;
-    margin: 1rem auto 0;
-  }
-  .parking-box > p {
-    line-height: 1.8;
-    font-size: 0.95rem;
-    margin-bottom: 1.5rem;
-  }
-  .parking-info {
-    background: var(--color-bg-alt);
-    border-radius: var(--radius-sm);
-    padding: 1.25rem;
-    margin-bottom: 1.5rem;
-  }
-  .parking-info h3 {
-    font-size: 1rem;
-    color: var(--color-primary);
+  .cta-linkbox h2 {
+    font-size: 1.35rem;
     margin-bottom: 0.5rem;
   }
-  .parking-info p {
-    font-size: 0.9rem;
+  .cta-linkbox p {
+    margin: 0;
     color: var(--color-text-light);
-    line-height: 1.7;
+    line-height: 1.8;
   }
-  .parking-note {
-    font-size: 0.85rem;
-    color: var(--color-text-light);
+  @media (max-width: 900px) {
+    .access-grid,
+    .directions-grid,
+    .cta-linkbox {
+      grid-template-columns: 1fr;
+      display: grid;
+    }
+    .map-frame {
+      min-height: 320px;
+    }
   }
 </style>

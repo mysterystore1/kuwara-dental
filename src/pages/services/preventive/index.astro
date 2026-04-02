@@ -7,115 +7,73 @@ import SectionCTA from "../../../components/SectionCTA.astro";
 
 <BaseLayout
   title="予防歯科"
-  description="定期検診とクリーニングで虫歯・歯周病を予防。湘南桑田歯科の予防歯科プログラム。"
+  description="虫歯や歯周病を予防したい方へ。定期検診、クリーニング、ブラッシング指導を通してお口の健康を支えます。"
 >
   <PageHero
     title="予防歯科"
-    subtitle="定期的なケアで、健康な歯を長く保ちましょう"
+    subtitle="治療を繰り返さないために、定期管理を大切にします"
     image="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=1400&q=80"
   />
 
   <div class="container-narrow">
-    <Breadcrumb items={[
-      { label: "診療案内", href: "/services/" },
-      { label: "予防歯科" },
-    ]} />
+    <Breadcrumb items={[{ label: "診療案内", href: "/services/" }, { label: "予防歯科" }]} />
   </div>
 
-  <!-- 予防が大切な理由 -->
   <section class="section-padding">
     <div class="container-narrow">
-      <h2 class="section-title">予防が大切な理由</h2>
-      <div class="reason-block">
-        <p>虫歯や歯周病は、一度なってしまうと元の状態に完全に戻すことは難しい病気です。治療を繰り返すほど歯への負担が増え、将来的に歯を失うリスクが高まることもあります。</p>
-        <p>「痛くなってから行く」のではなく、「痛くならないために通う」。それが予防歯科の考え方です。定期的なケアを続けることで、お口のトラブルを早期に発見し、大がかりな治療を避けることにつながります。</p>
-      </div>
-      <div class="merit-grid">
-        <div class="merit-card card">
-          <h3>早期発見</h3>
-          <p>定期検診で虫歯や歯周病を早い段階で見つけることができます。早めの対応で治療も簡単になる傾向があります。</p>
+      <div class="section-kicker">Treatment policy</div>
+      <h2 class="section-title">当院の治療方針</h2>
+      <p class="section-lead">「悪くなってから治す」ではなく、変化が小さいうちに整える考え方です。</p>
+      <div class="copy-grid">
+        <div class="soft-panel">
+          <h3>状態を定期的に見ていきます</h3>
+          <p>虫歯や歯周病は、早い段階なら負担の少ない対応で済むことがあります。定期的に確認することで、見落としを減らします。</p>
         </div>
-        <div class="merit-card card">
-          <h3>治療費の軽減</h3>
-          <p>予防にかかる費用は、進行してからの治療費に比べて少なく済むことが一般的です。</p>
-        </div>
-        <div class="merit-card card">
-          <h3>お口の健康維持</h3>
-          <p>プロフェッショナルケアと毎日のセルフケアを組み合わせることで、健康な状態を長く維持することが期待できます。</p>
+        <div class="soft-panel">
+          <h3>ご自宅でのケアも一緒に整えます</h3>
+          <p>歯科医院でのクリーニングだけでなく、毎日の磨き方や道具の使い方も含めて、続けやすい方法をご提案します。</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 当院の予防プログラム -->
-  <section class="section-padding bg-alt">
+  <section class="section-padding alt">
     <div class="container-narrow">
-      <h2 class="section-title">当院の予防プログラム</h2>
-      <p class="section-lead">患者さんに合わせた予防ケアをご提案します</p>
+      <div class="section-kicker">For you</div>
+      <h2 class="section-title">こういう方へ</h2>
+      <ul class="check-list">
+        <li>虫歯をくり返したくない</li>
+        <li>歯周病を予防したい</li>
+        <li>クリーニングを定期的に受けたい</li>
+        <li>自分に合う磨き方を知りたい</li>
+        <li>詰め物や被せ物の周りをきれいに保ちたい</li>
+      </ul>
+    </div>
+  </section>
 
-      <div class="program-list">
-        <div class="program-item">
-          <div class="program-icon">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-              <rect x="8" y="8" width="32" height="32" rx="6" fill="var(--color-primary-light)" stroke="var(--color-primary)" stroke-width="2"/>
-              <path d="M16 24l5 5 11-11" stroke="var(--color-primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <div class="program-content">
-            <h3>定期検診</h3>
-            <p>お口全体の状態を確認し、虫歯や歯周病の兆候がないかチェックします。レントゲン撮影や歯周ポケットの測定なども行い、変化を見逃さないようにしています。</p>
-          </div>
-        </div>
-
-        <div class="program-item">
-          <div class="program-icon">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-              <circle cx="24" cy="24" r="16" fill="var(--color-primary-light)" stroke="var(--color-primary)" stroke-width="2"/>
-              <path d="M24 16v8l5 5" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="program-content">
-            <h3>プロフェッショナルクリーニング（PMTC）</h3>
-            <p>歯科衛生士が専用の器具を使い、ご自身のブラッシングでは落としきれない歯石やバイオフィルムを除去します。歯の表面がツルツルになり、汚れが付きにくくなる効果も期待できます。</p>
-          </div>
-        </div>
-
-        <div class="program-item">
-          <div class="program-icon">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-              <path d="M14 34V18a2 2 0 012-2h16a2 2 0 012 2v16" stroke="var(--color-primary)" stroke-width="2" fill="var(--color-primary-light)"/>
-              <path d="M10 34h28" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"/>
-              <path d="M20 22h8M24 22v8" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <div class="program-content">
-            <h3>ブラッシング指導</h3>
-            <p>患者さんのお口の状態に合わせた、効果的な歯磨きの方法をお伝えします。歯ブラシの選び方や、フロス・歯間ブラシの使い方もアドバイスいたします。</p>
-          </div>
-        </div>
+  <section class="section-padding">
+    <div class="container-narrow">
+      <div class="section-kicker">Flow</div>
+      <h2 class="section-title">治療の流れ</h2>
+      <div class="step-list">
+        <div class="step-item"><span>01</span><div><h3>お口のチェック</h3><p>虫歯、歯周病、磨き残し、噛み合わせなどを確認し、予防が必要なポイントを整理します。</p></div></div>
+        <div class="step-item"><span>02</span><div><h3>クリーニング</h3><p>歯石や着色、汚れを落とし、普段のケアでは届きにくい部分を整えます。</p></div></div>
+        <div class="step-item"><span>03</span><div><h3>ブラッシング指導</h3><p>歯ブラシや補助清掃具の使い方を確認し、続けやすいセルフケアをご提案します。</p></div></div>
+        <div class="step-item"><span>04</span><div><h3>次回の目安をご案内</h3><p>お口の状態に合わせて、次の来院タイミングや管理方法をお伝えします。</p></div></div>
       </div>
     </div>
   </section>
 
-  <!-- 通う頻度の目安 -->
-  <section class="section-padding">
+  <section class="section-padding alt">
     <div class="container-narrow">
-      <h2 class="section-title">通う頻度の目安</h2>
-      <div class="frequency-block">
-        <div class="frequency-card card">
-          <h3>3〜6か月に1回</h3>
-          <p>一般的な目安として、3〜6か月に1回の定期検診をおすすめしています。お口の状態によって最適な間隔は異なりますので、担当の歯科衛生士がご提案いたします。</p>
-        </div>
-        <div class="frequency-info">
-          <h3>こんな方には短い間隔をおすすめすることがあります</h3>
-          <ul>
-            <li>歯周病の治療を受けたことがある方</li>
-            <li>虫歯になりやすい方</li>
-            <li>喫煙習慣のある方</li>
-            <li>糖尿病などの全身疾患がある方</li>
-          </ul>
-          <p class="frequency-note">※ お口の状態は個人差がありますので、最適な間隔は診察時にご相談ください。</p>
-        </div>
+      <div class="section-kicker">Related symptoms</div>
+      <h2 class="section-title">関連症状</h2>
+      <div class="link-grid">
+        <a class="link-card" href="/symptoms/sensitivity/"><strong>歯がしみる</strong><span>知覚過敏が気になる方はこちら</span></a>
+        <a class="link-card" href="/symptoms/swollen-gums/"><strong>歯茎が腫れた</strong><span>歯周病のサインが気になる方はこちら</span></a>
+      </div>
+      <div class="related-reserve">
+        <a href="/reserve/" class="btn-primary">ご予約・ご相談はこちら</a>
       </div>
     </div>
   </section>
@@ -124,129 +82,24 @@ import SectionCTA from "../../../components/SectionCTA.astro";
 </BaseLayout>
 
 <style>
-  .section-title {
-    font-size: 1.75rem;
-    text-align: center;
-    margin-bottom: 0.5rem;
-  }
-  .section-lead {
-    text-align: center;
-    color: var(--color-text-light);
-    margin-bottom: 2.5rem;
-  }
-
-  /* Reason block */
-  .reason-block {
-    max-width: 700px;
-    margin: 0 auto 2.5rem;
-    text-align: center;
-  }
-  .reason-block p {
-    line-height: 1.8;
-    margin-bottom: 1rem;
-  }
-
-  /* Merit grid */
-  .merit-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-  }
-  .merit-card {
-    text-align: center;
-    padding: 2rem 1.5rem;
-  }
-  .merit-card h3 {
-    font-size: 1.1rem;
-    color: var(--color-primary);
-    margin-bottom: 0.75rem;
-  }
-  .merit-card p {
-    font-size: 0.9rem;
-    color: var(--color-text-light);
-    line-height: 1.8;
-  }
-
-  /* Program list */
-  .program-list {
-    max-width: 750px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 2.5rem;
-  }
-  .program-item {
-    display: flex;
-    gap: 1.5rem;
-    align-items: flex-start;
-  }
-  .program-icon {
-    flex-shrink: 0;
-  }
-  .program-content h3 {
-    font-size: 1.15rem;
-    margin-bottom: 0.5rem;
-  }
-  .program-content p {
-    font-size: 0.9rem;
-    color: var(--color-text-light);
-    line-height: 1.8;
-  }
-
-  /* Frequency */
-  .frequency-block {
-    max-width: 750px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
-    align-items: start;
-  }
-  .frequency-card {
-    text-align: center;
-    padding: 2.5rem 2rem;
-    background: var(--color-primary-light);
-    border-color: var(--color-primary);
-  }
-  .frequency-card h3 {
-    font-size: 1.5rem;
-    color: var(--color-primary);
-    margin-bottom: 1rem;
-  }
-  .frequency-card p {
-    font-size: 0.9rem;
-    color: var(--color-text-light);
-    line-height: 1.8;
-  }
-  .frequency-info h3 {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-  }
-  .frequency-info ul {
-    padding-left: 1.25rem;
-    margin-bottom: 1rem;
-  }
-  .frequency-info li {
-    font-size: 0.9rem;
-    color: var(--color-text-light);
-    padding: 0.25rem 0;
-  }
-  .frequency-note {
-    font-size: 0.85rem;
-    color: var(--color-text-light);
-  }
-
-  @media (max-width: 768px) {
-    .merit-grid {
-      grid-template-columns: 1fr;
-    }
-    .program-item {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-    .frequency-block {
-      grid-template-columns: 1fr;
-    }
-  }
+  .section-kicker { font-size: .78rem; letter-spacing: .18em; text-transform: uppercase; color: var(--color-primary); margin-bottom: .65rem; text-align: center; }
+  .section-title { text-align: center; font-size: 1.9rem; margin-bottom: .75rem; }
+  .section-lead { text-align: center; color: var(--color-text-light); max-width: 42rem; margin: 0 auto 2rem; }
+  .alt { background: linear-gradient(180deg, var(--color-bg-alt), var(--color-bg)); }
+  .copy-grid, .link-grid { display: grid; gap: 1.25rem; }
+  .copy-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .soft-panel { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 1.5rem; box-shadow: var(--shadow-card); }
+  .soft-panel h3, .step-item h3 { font-size: 1.08rem; margin-bottom: .6rem; color: var(--color-text-heading); }
+  .soft-panel p, .step-item p, .link-card span { color: var(--color-text-light); line-height: 1.85; }
+  .check-list { max-width: 44rem; margin: 0 auto; list-style: none; padding: 0; display: grid; gap: .8rem; }
+  .check-list li { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: 999px; padding: .95rem 1.25rem; box-shadow: var(--shadow-card); }
+  .step-list { display: grid; gap: 1rem; max-width: 46rem; margin: 0 auto; }
+  .step-item { display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: start; padding: 1.15rem 0; border-bottom: 1px solid var(--color-border); }
+  .step-item:last-child { border-bottom: 0; }
+  .step-item span { font-size: 2rem; line-height: 1; color: var(--color-primary); opacity: .25; font-weight: 700; }
+  .link-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 42rem; margin: 0 auto; }
+  .link-card { display: flex; flex-direction: column; gap: .4rem; padding: 1.35rem 1.4rem; border-radius: var(--radius-lg); border: 1px solid var(--color-border); background: var(--color-bg); color: var(--color-text); text-decoration: none; box-shadow: var(--shadow-card); }
+  .link-card strong { font-size: 1.02rem; color: var(--color-text-heading); }
+  .related-reserve { display: flex; justify-content: center; margin-top: 1.75rem; }
+  @media (max-width: 768px) { .copy-grid, .link-grid { grid-template-columns: 1fr; } }
 </style>

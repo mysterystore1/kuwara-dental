@@ -1,49 +1,122 @@
 ---
+import { SITE } from "../data/site";
+
 interface Props {
   heading?: string;
   text?: string;
 }
+
 const {
-  heading = "まずはお気軽にご相談ください",
-  text = "歯医者が久しぶりの方も、怖いと感じている方も、まずはお話を聞くところから始めます。ご予約は WEB・LINE・お電話から承っています。",
+  heading = "まずは、今のお悩みをお聞かせください",
+  text = "初診はカウンセリングと必要な検査から進めます。お口の状態を確認し、治療の選択肢をわかりやすくご説明したうえで、無理のない進め方をご提案します。",
 } = Astro.props;
 ---
 
 <section class="cta-section section-padding">
-  <div class="container-narrow cta-inner">
-    <h2 class="cta-heading">{heading}</h2>
-    <p class="cta-text">{text}</p>
-    <div class="cta-buttons">
-      <a href="/reserve/" class="btn-primary">ご予約・ご相談はこちら</a>
+  <div class="container-narrow">
+    <div class="cta-shell">
+      <div class="cta-copy">
+        <p class="section-kicker">Contact</p>
+        <h2 class="cta-heading">{heading}</h2>
+        <p class="cta-text">{text}</p>
+      </div>
+
+      <div class="cta-actions">
+        <a href="/reserve/" class="btn-primary">WEB予約へ進む</a>
+        <a href={SITE.reserve.line} class="btn-secondary" target="_blank" rel="noopener">LINEで相談</a>
+        <a href={SITE.phoneHref} class="cta-phone">{SITE.phone}</a>
+      </div>
     </div>
   </div>
 </section>
 
 <style>
   .cta-section {
-    background: var(--color-primary);
-    color: #fff;
-    text-align: center;
+    position: relative;
+    overflow: hidden;
   }
+
+  .cta-shell {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1.2fr 0.95fr;
+    gap: 2rem;
+    align-items: center;
+    padding: clamp(2rem, 4vw, 3.2rem);
+    border: 1px solid rgba(125, 173, 200, 0.18);
+    border-radius: 2.4rem;
+    background:
+      radial-gradient(circle at top right, rgba(219, 139, 87, 0.16), transparent 28%),
+      linear-gradient(135deg, rgba(255,255,255,0.96), rgba(242, 248, 252, 0.96));
+    box-shadow: var(--shadow-soft);
+  }
+
+  .cta-shell::before,
+  .cta-shell::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(125, 173, 200, 0.08);
+    pointer-events: none;
+  }
+
+  .cta-shell::before {
+    inset: auto auto -3rem -2rem;
+    width: 9rem;
+    height: 9rem;
+  }
+
+  .cta-shell::after {
+    inset: -2rem 8% auto auto;
+    width: 7rem;
+    height: 7rem;
+    background: rgba(219, 139, 87, 0.1);
+  }
+
+  .cta-copy {
+    position: relative;
+    z-index: 1;
+  }
+
   .cta-heading {
-    font-size: 1.75rem;
-    color: #fff;
-    margin-bottom: 1rem;
+    margin: 0.2rem 0 0.8rem;
+    font-size: clamp(1.85rem, 3vw, 2.6rem);
+    line-height: 1.35;
   }
+
   .cta-text {
-    max-width: 600px;
-    margin: 0 auto 2rem;
-    opacity: 0.92;
-    line-height: 1.8;
+    margin: 0;
+    color: var(--color-text-soft);
+    max-width: 40rem;
   }
-  .cta-buttons .btn-primary {
-    background: #fff;
-    color: var(--color-primary);
+
+  .cta-actions {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    gap: 0.85rem;
+    justify-items: start;
+  }
+
+  .cta-phone {
+    color: var(--color-ink);
     font-size: 1.05rem;
-    padding: 1rem 2.5rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
   }
-  .cta-buttons .btn-primary:hover {
-    background: var(--color-primary-light);
-    color: var(--color-primary-dark);
+
+  @media (max-width: 800px) {
+    .cta-shell {
+      grid-template-columns: 1fr;
+    }
+
+    .cta-actions {
+      justify-items: stretch;
+    }
+
+    .cta-actions .btn-primary,
+    .cta-actions .btn-secondary {
+      justify-content: center;
+    }
   }
 </style>

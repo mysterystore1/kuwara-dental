@@ -7,252 +7,99 @@ import SectionCTA from "../../../components/SectionCTA.astro";
 
 <BaseLayout
   title="小児歯科"
-  description="お子さまの歯の健康を守る小児歯科。湘南桑田歯科ではお子さまのペースに合わせた診療を行います。"
+  description="お子さまの歯の健康を守りたい保護者の方へ。年齢に合わせた診療、予防、フッ素塗布をご案内します。"
 >
   <PageHero
     title="小児歯科"
-    subtitle="お子さまのペースに合わせた、やさしい診療を行います"
-    image="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=1400&q=80"
+    subtitle="お子さまの気持ちに合わせて、段階を踏んで診療します"
+    image="https://images.unsplash.com/photo-1544717302-de2939b7ef71?w=1400&q=80"
   />
 
   <div class="container-narrow">
-    <Breadcrumb items={[
-      { label: "診療案内", href: "/services/" },
-      { label: "小児歯科" },
-    ]} />
+    <Breadcrumb items={[{ label: "診療案内", href: "/services/" }, { label: "小児歯科" }]} />
   </div>
 
-  <!-- お子さまの診療方針 -->
   <section class="section-padding">
     <div class="container-narrow">
-      <h2 class="section-title">お子さまの診療方針</h2>
-      <p class="section-lead">「歯医者さんは怖くない」と思ってもらえるように</p>
-      <div class="policy-block">
-        <div class="policy-image">
-          <img src="https://images.unsplash.com/photo-1631815589968-fdb09a223b1e?w=600&q=80" alt="明るい歯科診療室" loading="lazy" />
+      <div class="section-kicker">Treatment policy</div>
+      <h2 class="section-title">当院の治療方針</h2>
+      <p class="section-lead">最初から治療を急がず、まずは慣れることを大切にします。</p>
+      <div class="copy-grid">
+        <div class="soft-panel">
+          <h3>まずは安心して通えることを優先します</h3>
+          <p>診療チェアに座る、器具を見る、口を開ける。そうした小さな一歩から始められるように、お子さまの反応を見ながら進めます。</p>
         </div>
-        <div class="policy-text">
-          <div class="policy-item">
-            <h3>無理に治療を進めません</h3>
-            <p>初めてのお子さまには、いきなり治療を始めることはしません。まずは診療チェアに座ること、器具を見ることなど、段階を踏んで慣れていただくことを大切にしています。</p>
-          </div>
-          <div class="policy-item">
-            <h3>お子さまの気持ちを大切に</h3>
-            <p>泣いてしまっても大丈夫です。無理強いをせず、お子さまが自分から頑張れるようになるまで、ゆっくりサポートいたします。</p>
-          </div>
-          <div class="policy-item">
-            <h3>保護者の方への説明</h3>
-            <p>お子さまのお口の状態や、ご自宅でのケア方法について、保護者の方にも分かりやすくご説明します。一緒にお子さまの歯を守っていきましょう。</p>
-          </div>
+        <div class="soft-panel">
+          <h3>保護者の方にもわかりやすくお伝えします</h3>
+          <p>診療後は、お口の状態やご家庭でのケアのポイントを丁寧にご説明します。気になる習癖や食習慣も含めてご相談ください。</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 年齢別の歯の注意点 -->
-  <section class="section-padding bg-alt">
+  <section class="section-padding alt">
     <div class="container-narrow">
-      <h2 class="section-title">年齢別の歯の注意点</h2>
-      <p class="section-lead">成長に合わせたケアが大切です</p>
-      <div class="age-grid">
-        <div class="age-card card">
-          <div class="age-label">0〜2歳</div>
-          <h3>乳歯が生え始めたら</h3>
-          <ul>
-            <li>最初の歯が生えたら歯磨きスタート</li>
-            <li>哺乳瓶や母乳の後のケアを意識</li>
-            <li>1歳半頃に最初の歯科検診がおすすめ</li>
-          </ul>
-        </div>
-        <div class="age-card card">
-          <div class="age-label">3〜5歳</div>
-          <h3>乳歯が揃う時期</h3>
-          <ul>
-            <li>おやつの回数・種類に注意</li>
-            <li>仕上げ磨きを毎日行いましょう</li>
-            <li>フッ素塗布で虫歯予防</li>
-          </ul>
-        </div>
-        <div class="age-card card">
-          <div class="age-label">6〜12歳</div>
-          <h3>永久歯への生え替わり</h3>
-          <ul>
-            <li>生えたての永久歯は虫歯になりやすい</li>
-            <li>シーラントで奥歯の溝を保護</li>
-            <li>歯並びが気になる場合は早めにご相談を</li>
-          </ul>
-        </div>
-      </div>
+      <div class="section-kicker">For you</div>
+      <h2 class="section-title">こういう方へ</h2>
+      <ul class="check-list">
+        <li>歯医者に慣れていないお子さま</li>
+        <li>仕上げ磨きの方法を知りたい保護者の方</li>
+        <li>フッ素やシーラントを検討したい</li>
+        <li>虫歯になりやすく、定期管理を始めたい</li>
+        <li>歯並びや生え変わりが気になる</li>
+      </ul>
     </div>
   </section>
 
-  <!-- フッ素塗布・シーラント -->
   <section class="section-padding">
     <div class="container-narrow">
-      <h2 class="section-title">フッ素塗布・シーラント</h2>
-      <p class="section-lead">お子さまの虫歯予防に効果が期待できる処置です</p>
-      <div class="treatment-grid">
-        <div class="treatment-card card">
-          <h3>フッ素塗布</h3>
-          <p>フッ素を歯の表面に塗ることで、歯質を強くし、虫歯になりにくくする効果が期待できます。定期的な塗布がおすすめです。</p>
-          <dl class="treatment-info">
-            <dt>対象</dt>
-            <dd>乳歯が生え始めたお子さまから</dd>
-            <dt>頻度の目安</dt>
-            <dd>3〜6か月に1回程度</dd>
-            <dt>痛み</dt>
-            <dd>痛みはありません</dd>
-          </dl>
-        </div>
-        <div class="treatment-card card">
-          <h3>シーラント</h3>
-          <p>奥歯の溝をプラスチック樹脂で埋めることで、汚れが溜まりにくくし、虫歯を予防する処置です。特に生えたての永久歯におすすめです。</p>
-          <dl class="treatment-info">
-            <dt>対象</dt>
-            <dd>6歳臼歯が生えたお子さまから</dd>
-            <dt>所要時間</dt>
-            <dd>1本あたり数分程度</dd>
-            <dt>痛み</dt>
-            <dd>歯を削ることはなく、痛みはありません</dd>
-          </dl>
-        </div>
+      <div class="section-kicker">Flow</div>
+      <h2 class="section-title">治療の流れ</h2>
+      <div class="step-list">
+        <div class="step-item"><span>01</span><div><h3>慣れるところから始めます</h3><p>お子さまの様子を見ながら、診療室や器具に慣れる時間をとります。</p></div></div>
+        <div class="step-item"><span>02</span><div><h3>必要な確認をします</h3><p>歯の生え方、虫歯の有無、磨き残しの傾向を確認して、今の状態を整理します。</p></div></div>
+        <div class="step-item"><span>03</span><div><h3>予防処置をご提案します</h3><p>フッ素塗布、シーラント、磨き方の見直しなど、年齢と状態に合わせてご案内します。</p></div></div>
+        <div class="step-item"><span>04</span><div><h3>次回の目安をお伝えします</h3><p>定期的な管理で、虫歯や歯肉炎を早めに見つけやすくします。</p></div></div>
       </div>
-      <p class="treatment-note">※ 効果には個人差があります。お子さまのお口の状態に応じて、最適な予防法をご提案いたします。</p>
     </div>
   </section>
 
-  <SectionCTA
-    heading="お子さまの歯のことで気になることがあれば"
-    text="小さなことでも構いません。お子さまの歯について気になることがあれば、お気軽にご相談ください。"
-  />
+  <section class="section-padding alt">
+    <div class="container-narrow">
+      <div class="section-kicker">Related symptoms</div>
+      <h2 class="section-title">関連症状</h2>
+      <div class="link-grid">
+        <a class="link-card" href="/symptoms/toothache/"><strong>歯が痛い</strong><span>虫歯の疑いがあるときはこちら</span></a>
+        <a class="link-card" href="/symptoms/swollen-gums/"><strong>歯茎が腫れた</strong><span>炎症や磨き残しが気になるときはこちら</span></a>
+      </div>
+      <div class="related-reserve">
+        <a href="/reserve/" class="btn-primary">ご予約・ご相談はこちら</a>
+      </div>
+    </div>
+  </section>
+
+  <SectionCTA />
 </BaseLayout>
 
 <style>
-  .section-title {
-    font-size: 1.75rem;
-    text-align: center;
-    margin-bottom: 0.5rem;
-  }
-  .section-lead {
-    text-align: center;
-    color: var(--color-text-light);
-    margin-bottom: 2.5rem;
-  }
-
-  /* Policy */
-  .policy-block {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 3rem;
-    align-items: start;
-  }
-  .policy-image img {
-    border-radius: var(--radius-md);
-  }
-  .policy-item {
-    margin-bottom: 2rem;
-  }
-  .policy-item:last-child {
-    margin-bottom: 0;
-  }
-  .policy-item h3 {
-    font-size: 1.1rem;
-    color: var(--color-primary);
-    margin-bottom: 0.5rem;
-  }
-  .policy-item p {
-    font-size: 0.9rem;
-    color: var(--color-text-light);
-    line-height: 1.8;
-  }
-
-  /* Age grid */
-  .age-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-  }
-  .age-card {
-    padding: 2rem;
-  }
-  .age-label {
-    display: inline-block;
-    background: var(--color-primary);
-    color: #fff;
-    padding: 0.25rem 0.75rem;
-    border-radius: var(--radius-sm);
-    font-size: 0.85rem;
-    font-weight: 600;
-    margin-bottom: 0.75rem;
-  }
-  .age-card h3 {
-    font-size: 1.05rem;
-    margin-bottom: 0.75rem;
-  }
-  .age-card ul {
-    padding-left: 1.25rem;
-    margin: 0;
-  }
-  .age-card li {
-    font-size: 0.9rem;
-    color: var(--color-text-light);
-    padding: 0.25rem 0;
-    line-height: 1.6;
-  }
-
-  /* Treatment grid */
-  .treatment-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-  }
-  .treatment-card {
-    padding: 2rem;
-  }
-  .treatment-card h3 {
-    font-size: 1.15rem;
-    color: var(--color-primary);
-    margin-bottom: 0.75rem;
-  }
-  .treatment-card p {
-    font-size: 0.9rem;
-    color: var(--color-text-light);
-    line-height: 1.8;
-    margin-bottom: 1.25rem;
-  }
-  .treatment-info {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 0.5rem 1rem;
-    font-size: 0.85rem;
-    background: var(--color-bg-alt);
-    padding: 1rem;
-    border-radius: var(--radius-sm);
-  }
-  .treatment-info dt {
-    font-weight: 600;
-    color: var(--color-text-heading);
-  }
-  .treatment-info dd {
-    color: var(--color-text-light);
-    margin: 0;
-  }
-  .treatment-note {
-    margin-top: 1.5rem;
-    font-size: 0.85rem;
-    color: var(--color-text-light);
-    text-align: center;
-  }
-
-  @media (max-width: 768px) {
-    .policy-block {
-      grid-template-columns: 1fr;
-    }
-    .age-grid {
-      grid-template-columns: 1fr;
-    }
-    .treatment-grid {
-      grid-template-columns: 1fr;
-    }
-  }
+  .section-kicker { font-size: .78rem; letter-spacing: .18em; text-transform: uppercase; color: var(--color-primary); margin-bottom: .65rem; text-align: center; }
+  .section-title { text-align: center; font-size: 1.9rem; margin-bottom: .75rem; }
+  .section-lead { text-align: center; color: var(--color-text-light); max-width: 42rem; margin: 0 auto 2rem; }
+  .alt { background: linear-gradient(180deg, var(--color-bg-alt), var(--color-bg)); }
+  .copy-grid, .link-grid { display: grid; gap: 1.25rem; }
+  .copy-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .soft-panel { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 1.5rem; box-shadow: var(--shadow-card); }
+  .soft-panel h3, .step-item h3 { font-size: 1.08rem; margin-bottom: .6rem; color: var(--color-text-heading); }
+  .soft-panel p, .step-item p, .link-card span { color: var(--color-text-light); line-height: 1.85; }
+  .check-list { max-width: 44rem; margin: 0 auto; list-style: none; padding: 0; display: grid; gap: .8rem; }
+  .check-list li { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: 999px; padding: .95rem 1.25rem; box-shadow: var(--shadow-card); }
+  .step-list { display: grid; gap: 1rem; max-width: 46rem; margin: 0 auto; }
+  .step-item { display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: start; padding: 1.15rem 0; border-bottom: 1px solid var(--color-border); }
+  .step-item:last-child { border-bottom: 0; }
+  .step-item span { font-size: 2rem; line-height: 1; color: var(--color-primary); opacity: .25; font-weight: 700; }
+  .link-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 42rem; margin: 0 auto; }
+  .link-card { display: flex; flex-direction: column; gap: .4rem; padding: 1.35rem 1.4rem; border-radius: var(--radius-lg); border: 1px solid var(--color-border); background: var(--color-bg); color: var(--color-text); text-decoration: none; box-shadow: var(--shadow-card); }
+  .link-card strong { font-size: 1.02rem; color: var(--color-text-heading); }
+  .related-reserve { display: flex; justify-content: center; margin-top: 1.75rem; }
+  @media (max-width: 768px) { .copy-grid, .link-grid { grid-template-columns: 1fr; } }
 </style>

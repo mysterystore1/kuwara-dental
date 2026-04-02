@@ -8,347 +8,248 @@ import { SITE } from "../../data/site";
 
 <BaseLayout
   title="初めての方へ"
-  description="湘南桑田歯科に初めてお越しの方へ。初診の流れ、持ち物、診療の進め方をご案内します。"
+  description="湘南桑田歯科の初診案内。来院時の流れ、持ち物、所要時間、痛みへの配慮をご案内します。"
 >
-  <PageHero title="初めての方へ" subtitle="はじめてでも安心してお越しください" image="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=1400&q=80" />
+  <PageHero
+    title="初めての方へ"
+    subtitle="初診の流れを先に知っておくと、来院のハードルは少し下がります"
+    image="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=1400&q=80"
+  />
 
-  <div class="container-narrow section-padding">
+  <div class="container-narrow">
     <Breadcrumb items={[{ label: "初めての方へ" }]} />
-
-    <!-- ========== 初診の流れ ========== -->
-    <section class="flow-section">
-      <h2 class="section-heading">初診の流れ</h2>
-      <p class="section-intro">初めてのご来院でも、ゆっくり丁寧にご案内します。いきなり治療を始めることはありません。</p>
-
-      <ol class="flow-steps">
-        <li class="flow-step">
-          <span class="step-number">1</span>
-          <div class="step-content">
-            <h3>ご予約</h3>
-            <p>WEB・LINE・お電話のいずれかでご予約ください。ご希望の日時をお伝えいただければ、空き状況をご案内します。</p>
-          </div>
-        </li>
-        <li class="flow-step">
-          <span class="step-number">2</span>
-          <div class="step-content">
-            <h3>受付・問診票の記入</h3>
-            <p>ご来院いただきましたら受付をお済ませください。問診票にお口の状態やお悩み、ご不安なことなどをご記入いただきます。</p>
-          </div>
-        </li>
-        <li class="flow-step">
-          <span class="step-number">3</span>
-          <div class="step-content">
-            <h3>カウンセリング</h3>
-            <p>問診票をもとに、まずはお話を聞かせていただきます。痛いところ、気になっていること、歯医者に対する不安など、何でもお聞かせください。</p>
-          </div>
-        </li>
-        <li class="flow-step">
-          <span class="step-number">4</span>
-          <div class="step-content">
-            <h3>検査</h3>
-            <p>お口の中の写真やレントゲン撮影など、必要な検査を行います。痛みがある場合は、検査より先に応急処置をすることもあります。</p>
-          </div>
-        </li>
-        <li class="flow-step">
-          <span class="step-number">5</span>
-          <div class="step-content">
-            <h3>治療計画のご説明</h3>
-            <p>検査結果をもとに、現在の状態と治療の選択肢をご説明します。分からないことは遠慮なくご質問ください。治療方法は患者さんと一緒に決めます。</p>
-          </div>
-        </li>
-        <li class="flow-step">
-          <span class="step-number">6</span>
-          <div class="step-content">
-            <h3>治療開始</h3>
-            <p>ご納得いただいてから治療を始めます。急ぎでない場合は、次回のご来院から治療を開始することも可能です。</p>
-          </div>
-        </li>
-      </ol>
-    </section>
-
-    <!-- ========== 持ち物リスト ========== -->
-    <section class="belongings-section bg-alt">
-      <h2 class="section-heading">ご来院時の持ち物</h2>
-      <div class="belongings-grid">
-        <div class="belonging-item card">
-          <span class="belonging-icon">&#x1F4CB;</span>
-          <h3>健康保険証</h3>
-          <p>毎月初回のご来院時にお持ちください。マイナンバーカードにも対応しています。</p>
-        </div>
-        <div class="belonging-item card">
-          <span class="belonging-icon">&#x1F48A;</span>
-          <h3>お薬手帳</h3>
-          <p>現在服用中のお薬がある方はお持ちください。治療内容に影響する場合があります。</p>
-        </div>
-        <div class="belonging-item card">
-          <span class="belonging-icon">&#x1F4E8;</span>
-          <h3>紹介状</h3>
-          <p>他院からの紹介状がある場合はお持ちください。なくても受診いただけます。</p>
-        </div>
-        <div class="belonging-item card">
-          <span class="belonging-icon">&#x1F4DD;</span>
-          <h3>診察券</h3>
-          <p>2回目以降のご来院の際にお持ちください。初診の方は受付で発行します。</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========== よくある不安 ========== -->
-    <section class="concerns-section">
-      <h2 class="section-heading">よくある不安にお答えします</h2>
-      <p class="section-intro">初めての歯医者、久しぶりの歯医者は、誰でも不安になるものです。よくいただくご質問にお答えします。</p>
-
-      <div class="concerns-list">
-        <div class="concern-item">
-          <h3 class="concern-q">久しぶりすぎて怒られませんか？</h3>
-          <p class="concern-a">大丈夫です。当院では患者さんを責めることは一切ありません。「もっと早く来ればよかった」と思わせるのではなく、「今来てくださってよかった」という気持ちでお迎えしています。どんな状態でも、今の状態から一緒に考えましょう。</p>
-        </div>
-        <div class="concern-item">
-          <h3 class="concern-q">痛い治療をされませんか？</h3>
-          <p class="concern-a">痛みが少ない治療を心がけています。表面麻酔や極細の注射針を使用し、痛みを最小限に抑えます。治療中に痛みを感じたら、すぐに手を挙げてお知らせください。中断して対応します。</p>
-        </div>
-        <div class="concern-item">
-          <h3 class="concern-q">いきなり治療されませんか？</h3>
-          <p class="concern-a">いきなり治療を始めることはありません。まずはカウンセリングと検査を行い、現在の状態と治療の選択肢をご説明します。ご納得いただいてから治療を開始しますのでご安心ください。</p>
-        </div>
-        <div class="concern-item">
-          <h3 class="concern-q">治療費がどのくらいかかるか不安です</h3>
-          <p class="concern-a">治療計画をお話しする際に、費用についてもご説明します。保険診療で対応できる治療も多くあります。費用が心配な場合も、遠慮なくご相談ください。</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ========== 歯医者が怖い方へリンクバナー ========== -->
-    <section class="anxiety-banner-section">
-      <a href="/dental-anxiety/" class="anxiety-banner">
-        <div class="anxiety-banner-inner">
-          <div class="anxiety-banner-text">
-            <h2>歯医者が怖いと感じている方へ</h2>
-            <p>怖いと感じるのは自然なことです。当院では、無理に治療を進めません。まずはお話から始めましょう。</p>
-            <span class="anxiety-banner-link">詳しく見る &rarr;</span>
-          </div>
-          <div class="anxiety-banner-image">
-            <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=500&q=80" alt="やさしいカウンセリングの様子" loading="lazy" />
-          </div>
-        </div>
-      </a>
-    </section>
   </div>
+
+  <section class="section-padding intro-section">
+    <div class="container-narrow intro-grid">
+      <div class="intro-copy">
+        <p class="eyebrow">FIRST VISIT</p>
+        <h2 class="section-title-left">まずは、お話をうかがうところから始めます。</h2>
+        <p>
+          初めての方も、歯医者が久しぶりの方も、いきなり治療を始めることはありません。
+          今気になっていることや、過去に嫌だったことがあれば、最初にそのままお伝えください。
+        </p>
+        <p>
+          当院では、症状の確認、必要な検査、治療の選択肢のご説明までを丁寧に行い、
+          ご納得いただいてから次の段階へ進みます。
+        </p>
+        <div class="intro-actions">
+          <a href="/reserve/" class="btn-primary">予約方法を見る</a>
+          <a href="/dental-anxiety/" class="btn-secondary">歯医者が怖い方へ</a>
+        </div>
+      </div>
+      <div class="intro-panel card">
+        <p class="panel-label">来院前に確認しておきたいこと</p>
+        <ul class="check-list">
+          <li>保険証またはマイナンバーカード</li>
+          <li>お薬手帳、紹介状があればご持参ください</li>
+          <li>予約時間の10分前を目安にお越しください</li>
+          <li>痛みが強い場合は、受付時にそのままお伝えください</li>
+        </ul>
+        <div class="panel-note">
+          <strong>初診の所要時間</strong>
+          <p>問診・検査・ご説明を含めて、45分から1時間程度を目安にしています。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-alt">
+    <div class="container-narrow">
+      <p class="eyebrow">FLOW</p>
+      <h2 class="section-title">初診の流れ</h2>
+      <div class="flow-grid">
+        <div class="flow-card card">
+          <span class="flow-num">01</span>
+          <h3>ご予約</h3>
+          <p>WEB、LINE、お電話のいずれかでご予約ください。急な痛みがある場合は、まずお電話で状況をお知らせいただくと対応しやすくなります。</p>
+        </div>
+        <div class="flow-card card">
+          <span class="flow-num">02</span>
+          <h3>受付・問診</h3>
+          <p>来院後に問診票をご記入いただきます。気になる症状、不安なこと、通院に関するご希望も遠慮なく書いてください。</p>
+        </div>
+        <div class="flow-card card">
+          <span class="flow-num">03</span>
+          <h3>検査・カウンセリング</h3>
+          <p>口腔内の状態を確認し、必要に応じてレントゲンや写真撮影を行います。痛みがある場合は、検査より先に応急処置を優先することもあります。</p>
+        </div>
+        <div class="flow-card card">
+          <span class="flow-num">04</span>
+          <h3>ご説明と治療計画</h3>
+          <p>現在の状態、考えられる治療方法、通院の見通しをわかりやすくご説明します。無理に決める必要はなく、相談だけでも問題ありません。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding">
+    <div class="container-narrow">
+      <p class="eyebrow">FAQ</p>
+      <h2 class="section-title">初めての方が気にされること</h2>
+      <div class="faq-grid">
+        <article class="faq-card card">
+          <h3>久しぶりで怒られないか不安です</h3>
+          <p>その心配はいりません。今のお口の状態を責めることはありません。まずは現状を把握し、これからどう整えるかを一緒に考えます。</p>
+        </article>
+        <article class="faq-card card">
+          <h3>痛みに弱いのですが大丈夫ですか</h3>
+          <p>表面麻酔や麻酔時の工夫を含め、痛みへの配慮を行っています。途中で不安になった場合は、遠慮なく合図してください。</p>
+        </article>
+        <article class="faq-card card">
+          <h3>その日に治療まで進みますか</h3>
+          <p>症状やご希望によりますが、まずは検査とご説明を優先します。急を要する痛みがある場合は、応急処置を先に行うことがあります。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-padding bg-section">
+    <div class="container-narrow cta-linkbox">
+      <div>
+        <p class="eyebrow">NEXT</p>
+        <h2>不安が強い方は、こちらもご覧ください。</h2>
+        <p>歯医者が怖い方へ向けた案内ページで、当院の進め方をさらに詳しくご紹介しています。</p>
+      </div>
+      <a href="/dental-anxiety/" class="btn-primary">歯医者が怖い方へ</a>
+    </div>
+  </section>
 
   <SectionCTA />
 </BaseLayout>
 
 <style>
-  /* ---------- SECTION HEADINGS ---------- */
-  .section-heading {
-    font-size: 1.5rem;
-    text-align: center;
-    margin-bottom: 0.75rem;
-    color: var(--color-text-heading);
-  }
-  .section-intro {
-    text-align: center;
-    color: var(--color-text-light);
-    max-width: 600px;
-    margin: 0 auto 2.5rem;
-    line-height: 1.8;
-  }
-
-  /* ---------- FLOW STEPS ---------- */
-  .flow-section {
-    margin-bottom: 4rem;
-  }
-  .flow-steps {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    position: relative;
-  }
-  .flow-steps::before {
-    content: "";
-    position: absolute;
-    left: 24px;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: var(--color-primary-light, #d4e8d8);
-  }
-  .flow-step {
-    display: flex;
-    gap: 1.5rem;
-    align-items: flex-start;
-    padding: 1.5rem 0;
-    position: relative;
-  }
-  .step-number {
-    flex-shrink: 0;
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background: var(--color-primary);
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.2rem;
-    font-weight: 700;
-    position: relative;
-    z-index: 1;
-  }
-  .step-content h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.4rem;
-    color: var(--color-text-heading);
-  }
-  .step-content p {
-    font-size: 0.9rem;
-    color: var(--color-text-light);
-    line-height: 1.8;
-  }
-
-  @media (max-width: 640px) {
-    .flow-steps::before {
-      left: 20px;
-    }
-    .step-number {
-      width: 40px;
-      height: 40px;
-      font-size: 1rem;
-    }
-  }
-
-  /* ---------- BELONGINGS ---------- */
-  .belongings-section {
-    border-radius: var(--radius-md, 8px);
-    padding: 3rem 2rem;
-    margin-bottom: 4rem;
-  }
-  .belongings-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.25rem;
-    margin-top: 2rem;
-  }
-  .belonging-item {
-    text-align: center;
-    padding: 2rem 1.5rem;
-  }
-  .belonging-icon {
-    font-size: 2rem;
-    display: block;
-    margin-bottom: 0.75rem;
-  }
-  .belonging-item h3 {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-    color: var(--color-text-heading);
-  }
-  .belonging-item p {
-    font-size: 0.85rem;
-    color: var(--color-text-light);
-    line-height: 1.7;
-  }
-
-  @media (max-width: 640px) {
-    .belongings-grid {
-      grid-template-columns: 1fr;
-    }
-    .belongings-section {
-      padding: 2rem 1rem;
-    }
-  }
-
-  /* ---------- CONCERNS ---------- */
-  .concerns-section {
-    margin-bottom: 4rem;
-  }
-  .concerns-list {
-    max-width: 700px;
-    margin: 0 auto;
-  }
-  .concern-item {
-    padding: 1.5rem 0;
-    border-bottom: 1px solid var(--color-border);
-  }
-  .concern-q {
-    font-size: 1.05rem;
-    color: var(--color-primary);
-    margin-bottom: 0.5rem;
-  }
-  .concern-q::before {
-    content: "Q. ";
-    font-weight: 700;
-  }
-  .concern-a {
-    font-size: 0.9rem;
-    color: var(--color-text-light);
-    line-height: 1.8;
-    padding-left: 1.5rem;
-  }
-  .concern-a::before {
-    content: "A. ";
-    font-weight: 700;
-    color: var(--color-text-heading);
-  }
-
-  /* ---------- ANXIETY BANNER ---------- */
-  .anxiety-banner-section {
-    margin-bottom: 2rem;
-  }
-  .anxiety-banner {
-    display: block;
-    text-decoration: none;
-    color: inherit;
-    border-radius: var(--radius-md, 8px);
-    overflow: hidden;
-    background: var(--color-bg-alt);
-    transition: box-shadow 0.2s;
-  }
-  .anxiety-banner:hover {
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  }
-  .anxiety-banner-inner {
-    display: grid;
-    grid-template-columns: 1fr 280px;
-    gap: 0;
-    align-items: center;
-  }
-  .anxiety-banner-text {
-    padding: 2.5rem;
-  }
-  .anxiety-banner-text h2 {
-    font-size: 1.25rem;
-    color: var(--color-text-heading);
-    margin-bottom: 0.75rem;
-  }
-  .anxiety-banner-text p {
-    font-size: 0.9rem;
-    color: var(--color-text-light);
-    line-height: 1.7;
+  .section-title-left {
+    font-size: 1.9rem;
+    line-height: 1.5;
     margin-bottom: 1rem;
   }
-  .anxiety-banner-link {
-    font-size: 0.9rem;
-    font-weight: 600;
+  .eyebrow {
+    letter-spacing: 0.18em;
+    font-size: 0.8rem;
+    color: var(--color-accent);
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+  .intro-grid {
+    display: grid;
+    grid-template-columns: 1.3fr 0.9fr;
+    gap: 2rem;
+    align-items: start;
+  }
+  .intro-copy p {
+    line-height: 1.9;
+    color: var(--color-text);
+    margin-bottom: 1rem;
+  }
+  .intro-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-top: 1.5rem;
+  }
+  .intro-panel {
+    position: relative;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at top right, rgba(43, 107, 138, 0.12), transparent 40%),
+      var(--color-bg);
+  }
+  .panel-label {
+    font-size: 0.85rem;
+    font-weight: 700;
     color: var(--color-primary);
+    margin-bottom: 1rem;
   }
-  .anxiety-banner-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    aspect-ratio: 4/3;
+  .check-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1.25rem;
+    display: grid;
+    gap: 0.8rem;
   }
-
-  @media (max-width: 768px) {
-    .anxiety-banner-inner {
+  .check-list li {
+    padding-left: 1.5rem;
+    position: relative;
+    line-height: 1.7;
+  }
+  .check-list li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.55rem;
+    width: 0.75rem;
+    height: 0.75rem;
+    border-radius: 999px;
+    background: var(--color-primary-light);
+    box-shadow: inset 0 0 0 2px var(--color-primary);
+  }
+  .panel-note {
+    padding-top: 1rem;
+    border-top: 1px solid var(--color-border);
+  }
+  .panel-note strong {
+    display: block;
+    margin-bottom: 0.35rem;
+  }
+  .panel-note p {
+    margin: 0;
+    color: var(--color-text-light);
+  }
+  .flow-grid,
+  .faq-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+  .flow-card {
+    position: relative;
+    padding-top: 3rem;
+  }
+  .flow-num {
+    position: absolute;
+    top: 1.25rem;
+    right: 1.25rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--color-primary-light);
+  }
+  .flow-card h3,
+  .faq-card h3 {
+    font-size: 1.08rem;
+    margin-bottom: 0.65rem;
+  }
+  .flow-card p,
+  .faq-card p {
+    color: var(--color-text-light);
+    line-height: 1.85;
+  }
+  .cta-linkbox {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+    padding: 1.5rem 0;
+  }
+  .cta-linkbox h2 {
+    font-size: 1.45rem;
+    margin-bottom: 0.5rem;
+  }
+  .cta-linkbox p {
+    color: var(--color-text-light);
+    margin: 0;
+    line-height: 1.8;
+  }
+  @media (max-width: 900px) {
+    .intro-grid,
+    .flow-grid,
+    .faq-grid,
+    .cta-linkbox {
       grid-template-columns: 1fr;
+      display: grid;
     }
-    .anxiety-banner-image {
-      max-height: 200px;
-      overflow: hidden;
-    }
-    .anxiety-banner-text {
-      padding: 1.5rem;
+    .intro-grid {
+      gap: 1.25rem;
     }
   }
 </style>

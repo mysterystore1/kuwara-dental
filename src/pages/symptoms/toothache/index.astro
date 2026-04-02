@@ -3,215 +3,252 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 import PageHero from "../../../components/PageHero.astro";
 import Breadcrumb from "../../../components/Breadcrumb.astro";
 import SectionCTA from "../../../components/SectionCTA.astro";
-import { SITE } from "../../../data/site";
 ---
 
 <BaseLayout
   title="歯が痛い"
-  description="歯が痛いとお悩みの方へ。湘南桑田歯科では痛みの原因を丁寧に調べ、適切な治療をご提案します。"
+  description="歯が痛いときの原因、受診の目安、応急的な考え方をまとめました。虫歯や歯周病の可能性がある方は早めにご相談ください。"
 >
   <PageHero
     title="歯が痛い"
-    subtitle="痛みの原因を丁寧に調べ、適切な治療をご提案します"
-    image="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=1400&q=80"
+    subtitle="痛みの強さや出方を整理し、必要な対応をご案内します"
+    image="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=1600&q=80&auto=format&fit=crop"
   />
 
   <div class="container-narrow">
     <Breadcrumb items={[{ label: "症状から探す" }, { label: "歯が痛い" }]} />
   </div>
 
-  <!-- こんな痛みはありませんか？ -->
   <section class="section-padding">
     <div class="container-narrow">
-      <h2 class="section-title">こんな痛みはありませんか？</h2>
-      <ul class="symptom-list">
-        <li>噛むと痛い・ズキッとする</li>
-        <li>何もしなくてもズキズキ痛む</li>
-        <li>冷たいものや熱いもので痛みが出る</li>
-        <li>夜になると痛みがひどくなる</li>
-        <li>痛みが顔や頭にまで広がる感じがする</li>
-      </ul>
-      <p class="note">
-        歯の痛みにはさまざまな原因が考えられます。痛みの種類やタイミングによって、適切な対応が異なりますので、まずはお気軽にご相談ください。
+      <div class="section-kicker">Symptoms</div>
+      <h2 class="section-title section-title-left">こんな症状がある方へ</h2>
+      <p class="section-lead">
+        歯の痛みは、軽い違和感から強い痛みまで幅があります。まずは症状の出方を整理しておくと、受診時の説明がしやすくなります。
       </p>
+      <div class="symptom-grid">
+        <div class="info-panel">
+          <ul class="list">
+            <li>噛むと痛い、またはズキッとする</li>
+            <li>何もしていなくてもズキズキ痛む</li>
+            <li>冷たいものや熱いもので痛みが出る</li>
+            <li>夜になると痛みが強くなる</li>
+            <li>痛みが長く続く、広がる感じがある</li>
+          </ul>
+        </div>
+        <div class="note-card">
+          <p class="eyebrow">診察のポイント</p>
+          <p>
+            痛みの原因は一つとは限りません。虫歯だけでなく、歯のひび、歯周病、神経の炎症などが関わることがあります。
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- 考えられる原因 -->
-  <section class="section-padding bg-soft">
+  <section class="section-padding section-alt">
     <div class="container-narrow">
-      <h2 class="section-title">考えられる原因</h2>
-      <div class="cause-grid">
-        <div class="cause-card card">
+      <div class="section-kicker">Causes</div>
+      <h2 class="section-title section-title-left">考えられる原因</h2>
+      <div class="card-grid">
+        <article class="soft-card card">
           <h3>虫歯</h3>
-          <p>虫歯が進行すると、歯の神経に刺激が届き痛みが生じることがあります。初期段階では痛みを感じにくいため、気づいた頃にはある程度進行している場合もあります。</p>
-        </div>
-        <div class="cause-card card">
-          <h3>歯の破折・ひび</h3>
-          <p>強い力で噛んだり、歯ぎしりの習慣などで歯にひびが入ると、噛むたびに痛みが出ることがあります。見た目ではわかりにくい場合もあります。</p>
-        </div>
-        <div class="cause-card card">
-          <h3>歯髄炎（しずいえん）</h3>
-          <p>虫歯が深く進行し、歯の神経（歯髄）にまで細菌が及ぶと、強い痛みやズキズキとした持続的な痛みが出ることがあります。</p>
-        </div>
-        <div class="cause-card card">
+          <p>虫歯が進行すると、神経に刺激が伝わりやすくなり、しみる・痛むといった症状が出やすくなります。</p>
+        </article>
+        <article class="soft-card card">
+          <h3>歯のひびや破折</h3>
+          <p>強い力がかかったり、歯ぎしりの影響で歯にひびが入ると、噛むときに痛みが出ることがあります。</p>
+        </article>
+        <article class="soft-card card">
+          <h3>歯髄炎</h3>
+          <p>虫歯が深く進み、神経に炎症が起きると、ズキズキした強い痛みや持続する痛みにつながります。</p>
+        </article>
+        <article class="soft-card card">
           <h3>歯周病</h3>
-          <p>歯を支える骨や歯茎に炎症が起きると、噛んだときの痛みや違和感につながることがあります。</p>
-        </div>
+          <p>歯を支える歯茎や骨の炎症でも、噛んだときの痛みや違和感が出ることがあります。</p>
+        </article>
       </div>
-      <p class="note">
-        上記は一般的な例です。実際の原因は検査をしてみないとわかりません。自己判断せず、お早めにご相談いただくことをおすすめします。
-      </p>
     </div>
   </section>
 
-  <!-- 当院での対応 -->
   <section class="section-padding">
-    <div class="container-narrow">
-      <h2 class="section-title">当院での対応</h2>
-      <div class="flow-steps">
-        <div class="flow-step">
-          <span class="flow-number">1</span>
-          <div>
-            <h3>まず痛みの状態を丁寧にお伺いします</h3>
-            <p>いつから、どんなときに、どのように痛むかを詳しくお聞きします。痛みがつらい場合は、まず応急的に痛みを和らげる処置を行います。</p>
-          </div>
+    <div class="container-narrow two-col">
+      <div>
+        <div class="section-kicker">When to visit</div>
+        <h2 class="section-title section-title-left">受診の目安</h2>
+        <div class="callout">
+          <ul class="list compact">
+            <li>痛みが続いている、または強くなっている</li>
+            <li>冷たいもの・噛んだときに反応がある</li>
+            <li>夜眠れないほど痛む</li>
+            <li>腫れや発熱を伴う</li>
+            <li>市販薬で一時的にしか楽にならない</li>
+          </ul>
         </div>
-        <div class="flow-step">
-          <span class="flow-number">2</span>
-          <div>
-            <h3>検査で原因を特定します</h3>
-            <p>レントゲンや視診などを用いて、痛みの原因をしっかりと調べます。</p>
-          </div>
-        </div>
-        <div class="flow-step">
-          <span class="flow-number">3</span>
-          <div>
-            <h3>わかりやすくご説明し、ご納得いただいてから治療に入ります</h3>
-            <p>検査結果と治療の選択肢を丁寧にご説明します。不安なことや気になることがあれば、何でもお聞きください。無理に治療を進めることはありません。</p>
-          </div>
+      </div>
+      <div>
+        <div class="section-kicker">At home</div>
+        <h2 class="section-title section-title-left">応急的な考え方</h2>
+        <div class="callout">
+          <ul class="list compact">
+            <li>強く噛む・温めることは避ける</li>
+            <li>痛む側で硬いものを噛まない</li>
+            <li>清掃はやさしく続ける</li>
+            <li>痛み止めは用法を守って使う</li>
+            <li>早めに診察を受け、原因を確認する</li>
+          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 関連ページ -->
-  <section class="section-padding bg-soft">
+  <section class="section-padding section-alt">
     <div class="container-narrow">
-      <h2 class="section-title">関連する診療案内</h2>
+      <div class="section-kicker">Related care</div>
+      <h2 class="section-title section-title-left">関連する診療案内</h2>
       <div class="related-links">
-        <a href="/services/cavity/" class="related-link card">
+        <a href="/services/cavity/" class="related-card card">
           <span class="related-label">虫歯治療</span>
-          <span class="related-arrow">&rarr;</span>
+          <span class="related-copy">痛みの原因として最も多い虫歯を確認したい方へ</span>
+          <span class="related-arrow">→</span>
         </a>
-        <a href="/services/periodontal/" class="related-link card">
+        <a href="/services/periodontal/" class="related-card card">
           <span class="related-label">歯周病治療</span>
-          <span class="related-arrow">&rarr;</span>
+          <span class="related-copy">噛むと痛い、歯茎が気になる方へ</span>
+          <span class="related-arrow">→</span>
         </a>
+      </div>
+      <div class="reserve-link-wrap">
+        <a href="/reserve/" class="btn-primary">ご予約・ご相談はこちら</a>
       </div>
     </div>
   </section>
 
-  <SectionCTA />
+  <SectionCTA
+    heading="痛みが強くなる前にご相談ください"
+    text="痛みの原因は、見た目だけでは判断できないことがあります。まずは状態を確認し、必要な対応をわかりやすくご説明します。"
+  />
 </BaseLayout>
 
 <style>
-  .symptom-list {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    margin-bottom: 1.5rem;
+  .section-kicker {
+    font-size: 0.82rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    font-weight: 700;
+    margin-bottom: 0.75rem;
   }
-  .symptom-list li {
-    padding: 1rem 1.25rem;
-    background: var(--color-bg-soft);
-    border-radius: var(--radius);
-    border-left: 4px solid var(--color-primary);
-    font-weight: 500;
+  .section-title-left {
+    text-align: left;
+    margin-bottom: 1rem;
   }
-  .note {
+  .section-lead {
+    max-width: 720px;
     color: var(--color-text-light);
-    font-size: 0.9rem;
-    line-height: 1.8;
+    margin-bottom: 2rem;
   }
-  .cause-grid {
+  .section-alt {
+    background: linear-gradient(180deg, var(--color-bg-alt) 0%, rgba(255,255,255,0) 100%);
+  }
+  .symptom-grid,
+  .two-col {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1.5rem;
-    margin-bottom: 1.5rem;
   }
-  .cause-card {
+  .info-panel,
+  .note-card,
+  .callout {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 28px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow-card);
+  }
+  .note-card {
+    display: grid;
+    align-content: start;
+    background: linear-gradient(180deg, rgba(43, 107, 138, 0.06), rgba(255,255,255,1));
+  }
+  .eyebrow {
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    color: var(--color-primary);
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+  }
+  .list {
+    margin: 0;
+    padding-left: 1.1rem;
+    display: grid;
+    gap: 0.85rem;
+    color: var(--color-text);
+  }
+  .compact {
+    gap: 0.7rem;
+  }
+  .card-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.25rem;
+  }
+  .soft-card {
     padding: 1.5rem;
   }
-  .cause-card h3 {
-    font-size: 1.1rem;
-    color: var(--color-primary);
-    margin-bottom: 0.5rem;
+  .soft-card h3 {
+    font-size: 1.08rem;
+    margin-bottom: 0.6rem;
+    color: var(--color-text-heading);
   }
-  .cause-card p {
-    font-size: 0.95rem;
+  .soft-card p {
+    color: var(--color-text-light);
     line-height: 1.8;
-    color: var(--color-text);
-  }
-  .flow-steps {
-    display: flex;
-    flex-direction: column;
-    gap: 2rem;
-  }
-  .flow-step {
-    display: flex;
-    gap: 1.25rem;
-    align-items: flex-start;
-  }
-  .flow-number {
-    flex-shrink: 0;
-    width: 2.5rem;
-    height: 2.5rem;
-    border-radius: 50%;
-    background: var(--color-primary);
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: 700;
-    font-size: 1.1rem;
-  }
-  .flow-step h3 {
-    font-size: 1.05rem;
-    margin-bottom: 0.4rem;
-  }
-  .flow-step p {
-    font-size: 0.95rem;
-    line-height: 1.8;
-    color: var(--color-text);
+    margin: 0;
   }
   .related-links {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 1rem;
   }
-  .related-link {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.25rem 1.5rem;
+  .related-card {
+    display: grid;
+    gap: 0.5rem;
     text-decoration: none;
     color: var(--color-text);
-    transition: box-shadow 0.2s ease;
+    position: relative;
+    overflow: hidden;
   }
-  .related-link:hover {
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  .related-card:hover {
+    transform: translateY(-2px);
   }
   .related-label {
-    font-weight: 600;
+    font-weight: 700;
+    color: var(--color-text-heading);
+  }
+  .related-copy {
+    color: var(--color-text-light);
+    line-height: 1.7;
+    padding-right: 2rem;
   }
   .related-arrow {
-    color: var(--color-primary);
+    position: absolute;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    color: var(--color-accent);
     font-size: 1.2rem;
+    font-weight: 700;
   }
-  .bg-soft {
-    background: var(--color-bg-soft);
+  .reserve-link-wrap {
+    margin-top: 1.5rem;
+  }
+  @media (max-width: 900px) {
+    .symptom-grid,
+    .two-col,
+    .card-grid,
+    .related-links {
+      grid-template-columns: 1fr;
+    }
   }
 </style>

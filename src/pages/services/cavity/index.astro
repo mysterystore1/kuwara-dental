@@ -7,167 +7,73 @@ import SectionCTA from "../../../components/SectionCTA.astro";
 
 <BaseLayout
   title="虫歯治療"
-  description="湘南桑田歯科の虫歯治療。できるだけ削らない・痛みの少ない治療を心がけています。"
+  description="虫歯の痛み、しみる症状、違和感がある方へ。状態を丁寧に確認し、必要な治療をわかりやすくご説明します。"
 >
   <PageHero
     title="虫歯治療"
-    subtitle="できるだけ削らない・痛みの少ない治療を心がけています"
-    image="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=1400&q=80"
+    subtitle="できるだけ歯を残す方針で、状態に合った治療を行います"
+    image="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=1400&q=80"
   />
 
   <div class="container-narrow">
-    <Breadcrumb items={[
-      { label: "診療案内", href: "/services/" },
-      { label: "虫歯治療" },
-    ]} />
+    <Breadcrumb items={[{ label: "診療案内", href: "/services/" }, { label: "虫歯治療" }]} />
   </div>
 
-  <!-- 当院の虫歯治療の特徴 -->
   <section class="section-padding">
     <div class="container-narrow">
-      <h2 class="section-title">当院の虫歯治療の特徴</h2>
-      <p class="section-lead">患者さんの歯をできるだけ残すことを大切にしています</p>
-      <div class="features-grid">
-        <div class="feature-card card">
-          <div class="feature-icon">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-              <circle cx="24" cy="24" r="20" fill="var(--color-primary-light)" stroke="var(--color-primary)" stroke-width="2"/>
-              <path d="M16 24h16M24 16v16" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <h3>できるだけ削らない</h3>
-          <p>拡大鏡を使い、虫歯の部分だけを丁寧に取り除くことで、健康な歯質をできるだけ残す治療を心がけています。</p>
+      <div class="section-kicker">Treatment policy</div>
+      <h2 class="section-title">当院の治療方針</h2>
+      <p class="section-lead">虫歯の進行度を見極め、必要な処置を過不足なく進めます。</p>
+      <div class="copy-grid">
+        <div class="soft-panel">
+          <h3>必要な部分だけを丁寧に治療します</h3>
+          <p>虫歯の広がりを確認したうえで、削る量をできるだけ抑えながら治療を進めます。見た目だけでなく、噛み合わせや将来の再発も踏まえて判断します。</p>
         </div>
-        <div class="feature-card card">
-          <div class="feature-icon">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-              <circle cx="24" cy="24" r="20" fill="var(--color-primary-light)" stroke="var(--color-primary)" stroke-width="2"/>
-              <path d="M24 14c-4 0-8 4-8 10s4 10 8 10 8-4 8-10-4-10-8-10z" stroke="var(--color-primary)" stroke-width="2"/>
-            </svg>
-          </div>
-          <h3>痛みへの配慮</h3>
-          <p>表面麻酔や極細の注射針を使用し、麻酔時の痛みを軽減しています。治療中に痛みを感じたら、遠慮なくお伝えください。</p>
-        </div>
-        <div class="feature-card card">
-          <div class="feature-icon">
-            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
-              <circle cx="24" cy="24" r="20" fill="var(--color-primary-light)" stroke="var(--color-primary)" stroke-width="2"/>
-              <path d="M16 20h16M16 24h12M16 28h8" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-          </div>
-          <h3>丁寧な説明</h3>
-          <p>治療を始める前に、現在の状態と治療方針を分かりやすくご説明します。ご不明な点は何でもお聞きください。</p>
+        <div class="soft-panel">
+          <h3>痛みへの配慮を大切にします</h3>
+          <p>麻酔や処置の進め方は、お口の状態に合わせて調整します。治療中にしみる、痛い、怖いと感じたら、その都度お知らせください。</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 虫歯の進行段階 -->
-  <section class="section-padding bg-alt">
+  <section class="section-padding alt">
     <div class="container-narrow">
-      <h2 class="section-title">虫歯の進行段階</h2>
-      <p class="section-lead">早期発見・早期治療が大切です</p>
-      <div class="table-wrapper">
-        <table class="stage-table">
-          <thead>
-            <tr>
-              <th>段階</th>
-              <th>状態</th>
-              <th>主な症状</th>
-              <th>治療の目安</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><span class="stage-badge stage-c0">C0</span></td>
-              <td>ごく初期の虫歯</td>
-              <td>自覚症状はほとんどありません</td>
-              <td>フッ素塗布や経過観察で改善が期待できる場合があります</td>
-            </tr>
-            <tr>
-              <td><span class="stage-badge stage-c1">C1</span></td>
-              <td>エナメル質の虫歯</td>
-              <td>痛みはほとんどありません</td>
-              <td>小さな詰め物で対応できることが多いです</td>
-            </tr>
-            <tr>
-              <td><span class="stage-badge stage-c2">C2</span></td>
-              <td>象牙質まで進行</td>
-              <td>冷たいもの・甘いものがしみることがあります</td>
-              <td>詰め物や被せ物による治療を行います</td>
-            </tr>
-            <tr>
-              <td><span class="stage-badge stage-c3">C3</span></td>
-              <td>神経まで到達</td>
-              <td>強い痛みを感じることがあります</td>
-              <td>神経の治療（根管治療）が必要になる場合があります</td>
-            </tr>
-            <tr>
-              <td><span class="stage-badge stage-c4">C4</span></td>
-              <td>歯の大部分が崩壊</td>
-              <td>神経が死んで痛みが一時的に消えることも</td>
-              <td>状態によっては抜歯を検討する場合もあります</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <p class="table-note">※ 症状や治療法は個人差があります。詳しくは診察時にご説明いたします。</p>
+      <div class="section-kicker">For you</div>
+      <h2 class="section-title">こういう方へ</h2>
+      <ul class="check-list">
+        <li>噛むと痛い、何もしなくてもズキズキする</li>
+        <li>冷たいものや甘いものでしみる</li>
+        <li>穴があいている、黒く見える部分がある</li>
+        <li>以前治療した歯がまた気になる</li>
+        <li>詰め物の下がどうなっているか確認したい</li>
+      </ul>
     </div>
   </section>
 
-  <!-- 治療の流れ -->
   <section class="section-padding">
     <div class="container-narrow">
+      <div class="section-kicker">Flow</div>
       <h2 class="section-title">治療の流れ</h2>
-      <p class="section-lead">初診からアフターケアまで丁寧にサポートします</p>
-      <div class="flow-list">
-        <div class="flow-item">
-          <span class="flow-num">01</span>
-          <div class="flow-content">
-            <h3>カウンセリング・検査</h3>
-            <p>まずはお困りの症状をお聞きし、レントゲン撮影や口腔内の検査を行います。現在の状態を一緒に確認しましょう。</p>
-          </div>
-        </div>
-        <div class="flow-item">
-          <span class="flow-num">02</span>
-          <div class="flow-content">
-            <h3>治療計画のご説明</h3>
-            <p>検査結果をもとに、治療の選択肢と進め方をご説明します。ご納得いただいてから治療を開始します。</p>
-          </div>
-        </div>
-        <div class="flow-item">
-          <span class="flow-num">03</span>
-          <div class="flow-content">
-            <h3>虫歯の治療</h3>
-            <p>痛みに配慮しながら、虫歯の部分を丁寧に除去し、詰め物や被せ物で歯を修復します。</p>
-          </div>
-        </div>
-        <div class="flow-item">
-          <span class="flow-num">04</span>
-          <div class="flow-content">
-            <h3>経過観察・予防</h3>
-            <p>治療後は経過を確認し、再発を防ぐためのケア方法をお伝えします。定期的な検診もおすすめしています。</p>
-          </div>
-        </div>
+      <div class="step-list">
+        <div class="step-item"><span>01</span><div><h3>お困りごとの確認</h3><p>痛み方、しみ方、いつから気になっているかを伺います。急いでいる場合は応急処置を優先します。</p></div></div>
+        <div class="step-item"><span>02</span><div><h3>検査と状態の説明</h3><p>視診やレントゲンで虫歯の深さを確認し、今の状態をわかりやすくご説明します。</p></div></div>
+        <div class="step-item"><span>03</span><div><h3>治療方法の提案</h3><p>詰め物、被せ物、神経の治療など、必要な選択肢を整理してお伝えします。</p></div></div>
+        <div class="step-item"><span>04</span><div><h3>治療後の管理</h3><p>再発を防ぐため、磨き方や定期検診の目安をお伝えし、経過を見守ります。</p></div></div>
       </div>
     </div>
   </section>
 
-  <!-- 関連症状リンク -->
-  <section class="section-padding bg-section">
+  <section class="section-padding alt">
     <div class="container-narrow">
-      <h2 class="section-title">こんな症状はありませんか？</h2>
-      <div class="related-grid">
-        <a href="/symptoms/toothache/" class="related-card card">
-          <span class="related-emoji">🦷</span>
-          <span class="related-label">歯が痛い</span>
-          <p>虫歯が原因のこともあります</p>
-        </a>
-        <a href="/symptoms/sensitivity/" class="related-card card">
-          <span class="related-emoji">❄️</span>
-          <span class="related-label">歯がしみる</span>
-          <p>冷たいもので痛む方はご相談ください</p>
-        </a>
+      <div class="section-kicker">Related symptoms</div>
+      <h2 class="section-title">関連症状</h2>
+      <div class="link-grid">
+        <a class="link-card" href="/symptoms/toothache/"><strong>歯が痛い</strong><span>虫歯の進行が疑われるときはこちら</span></a>
+        <a class="link-card" href="/symptoms/sensitivity/"><strong>歯がしみる</strong><span>冷たいものがしみる症状の方はこちら</span></a>
+      </div>
+      <div class="related-reserve">
+        <a href="/reserve/" class="btn-primary">ご予約・ご相談はこちら</a>
       </div>
     </div>
   </section>
@@ -176,164 +82,26 @@ import SectionCTA from "../../../components/SectionCTA.astro";
 </BaseLayout>
 
 <style>
-  /* Section titles */
-  .section-title {
-    font-size: 1.75rem;
-    text-align: center;
-    margin-bottom: 0.5rem;
-  }
-  .section-lead {
-    text-align: center;
-    color: var(--color-text-light);
-    margin-bottom: 2.5rem;
-  }
-
-  /* Features */
-  .features-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1.5rem;
-  }
-  .feature-card {
-    text-align: center;
-    padding: 2.5rem 1.5rem;
-  }
-  .feature-icon {
-    margin-bottom: 1rem;
-    display: flex;
-    justify-content: center;
-  }
-  .feature-card h3 {
-    font-size: 1.15rem;
-    margin-bottom: 0.75rem;
-    color: var(--color-primary);
-  }
-  .feature-card p {
-    font-size: 0.9rem;
-    color: var(--color-text-light);
-    line-height: 1.8;
-  }
-
-  /* Stage table */
-  .table-wrapper {
-    overflow-x: auto;
-  }
-  .stage-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 0.9rem;
-    background: var(--color-bg);
-    border-radius: var(--radius-md);
-    overflow: hidden;
-    border: 1px solid var(--color-border);
-  }
-  .stage-table thead {
-    background: var(--color-primary);
-    color: #fff;
-  }
-  .stage-table th {
-    padding: 1rem;
-    text-align: left;
-    font-weight: 600;
-  }
-  .stage-table td {
-    padding: 1rem;
-    border-bottom: 1px solid var(--color-border);
-    vertical-align: top;
-  }
-  .stage-table tbody tr:last-child td {
-    border-bottom: none;
-  }
-  .stage-badge {
-    display: inline-block;
-    padding: 0.25rem 0.75rem;
-    border-radius: var(--radius-sm);
-    font-weight: 700;
-    font-size: 0.85rem;
-  }
-  .stage-c0 { background: #e8f5e9; color: #2e7d32; }
-  .stage-c1 { background: #fff8e1; color: #f57f17; }
-  .stage-c2 { background: #fff3e0; color: #e65100; }
-  .stage-c3 { background: #fce4ec; color: #c62828; }
-  .stage-c4 { background: #efebe9; color: #4e342e; }
-  .table-note {
-    margin-top: 1rem;
-    font-size: 0.85rem;
-    color: var(--color-text-light);
-    text-align: center;
-  }
-
-  /* Flow */
-  .flow-list {
-    max-width: 700px;
-    margin: 0 auto;
-  }
-  .flow-item {
-    display: flex;
-    gap: 1.5rem;
-    padding: 1.5rem 0;
-    border-bottom: 1px solid var(--color-border);
-  }
-  .flow-item:last-child {
-    border-bottom: none;
-  }
-  .flow-num {
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--color-primary);
-    opacity: 0.3;
-    line-height: 1;
-    flex-shrink: 0;
-    width: 3rem;
-  }
-  .flow-content h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
-  }
-  .flow-content p {
-    font-size: 0.9rem;
-    color: var(--color-text-light);
-    line-height: 1.8;
-  }
-
-  /* Related symptoms */
-  .related-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
-    max-width: 600px;
-    margin: 0 auto;
-  }
-  .related-card {
-    text-decoration: none;
-    text-align: center;
-    padding: 2rem 1.5rem;
-    color: var(--color-text);
-  }
-  .related-emoji {
-    font-size: 2rem;
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-  .related-label {
-    font-weight: 600;
-    font-size: 1.05rem;
-    display: block;
-    margin-bottom: 0.5rem;
-  }
-  .related-card p {
-    font-size: 0.85rem;
-    color: var(--color-text-light);
-  }
-
+  .section-kicker { font-size: .78rem; letter-spacing: .18em; text-transform: uppercase; color: var(--color-primary); margin-bottom: .65rem; text-align: center; }
+  .section-title { text-align: center; font-size: 1.9rem; margin-bottom: .75rem; }
+  .section-lead { text-align: center; color: var(--color-text-light); max-width: 42rem; margin: 0 auto 2rem; }
+  .alt { background: linear-gradient(180deg, var(--color-bg-alt), var(--color-bg)); }
+  .copy-grid, .link-grid { display: grid; gap: 1.25rem; }
+  .copy-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .soft-panel { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: var(--radius-lg); padding: 1.5rem; box-shadow: var(--shadow-card); }
+  .soft-panel h3, .step-item h3 { font-size: 1.08rem; margin-bottom: .6rem; color: var(--color-text-heading); }
+  .soft-panel p, .step-item p, .link-card span { color: var(--color-text-light); line-height: 1.85; }
+  .check-list { max-width: 44rem; margin: 0 auto; list-style: none; padding: 0; display: grid; gap: .8rem; }
+  .check-list li { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: 999px; padding: .95rem 1.25rem; box-shadow: var(--shadow-card); }
+  .step-list { display: grid; gap: 1rem; max-width: 46rem; margin: 0 auto; }
+  .step-item { display: grid; grid-template-columns: auto 1fr; gap: 1rem; align-items: start; padding: 1.15rem 0; border-bottom: 1px solid var(--color-border); }
+  .step-item:last-child { border-bottom: 0; }
+  .step-item span { font-size: 2rem; line-height: 1; color: var(--color-primary); opacity: .25; font-weight: 700; }
+  .link-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); max-width: 42rem; margin: 0 auto; }
+  .link-card { display: flex; flex-direction: column; gap: .4rem; padding: 1.35rem 1.4rem; border-radius: var(--radius-lg); border: 1px solid var(--color-border); background: var(--color-bg); color: var(--color-text); text-decoration: none; box-shadow: var(--shadow-card); }
+  .link-card strong { font-size: 1.02rem; color: var(--color-text-heading); }
+  .related-reserve { display: flex; justify-content: center; margin-top: 1.75rem; }
   @media (max-width: 768px) {
-    .features-grid {
-      grid-template-columns: 1fr;
-    }
-  }
-  @media (max-width: 640px) {
-    .related-grid {
-      grid-template-columns: 1fr;
-    }
+    .copy-grid, .link-grid { grid-template-columns: 1fr; }
   }
 </style>

@@ -2,9 +2,9 @@
 export const SITE = {
   name: "湘南桑田歯科",
   nameShort: "桑田歯科",
-  tagline: "「怖い」を我慢しなくていい歯科医院",
+  tagline: "相談しやすさを大切にする歯科医院",
   description:
-    "湘南エリアで安心して通える歯医者。歯医者が怖い方、久しぶりの方も安心してご相談ください。必要以上に削らない・患者さんを責めない・無理に治療を進めない、3つの約束でお待ちしています。",
+    "歯医者が久しぶりの方、治療に不安がある方も安心して相談できる歯科医院です。必要以上に削らない、患者さんを責めない、無理に治療を進めない姿勢を大切にし、丁寧な説明と痛みに配慮した診療を行っています。",
   url: "https://kuwara-dental.example.com",
   phone: "0466-XX-XXXX",
   phoneHref: "tel:0466XXXXXX",
@@ -73,17 +73,17 @@ export const NAV_ITEMS = [
 export const THREE_PROMISES = [
   {
     title: "必要以上に削らない",
-    description: "歯はできるだけ残す方針で、最小限の治療を心がけています。",
+    description: "状態を丁寧に見極め、歯をできるだけ残す治療を大切にしています。",
     icon: "shield",
   },
   {
     title: "患者さんを責めない",
-    description: "久しぶりの来院でも大丈夫。今の状態から一緒に考えましょう。",
+    description: "久しぶりの受診でも大丈夫です。今の状態からできることを一緒に考えます。",
     icon: "heart",
   },
   {
     title: "無理に治療を進めない",
-    description: "まずはお話を聞くところから。納得いただいてから治療を始めます。",
+    description: "ご希望を伺い、内容をご理解いただいてから治療を進めます。",
     icon: "hand",
   },
 ] as const;

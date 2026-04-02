@@ -5,121 +5,211 @@ import { SITE, NAV_ITEMS } from "../data/site";
 <footer class="site-footer">
   <div class="container-narrow">
     <div class="footer-grid">
-      <!-- Clinic info -->
-      <div class="footer-info">
-        <p class="footer-logo">{SITE.name}</p>
-        <p class="footer-tagline">{SITE.tagline}</p>
-        <address class="footer-address">
+      <div class="footer-brand">
+        <p class="footer-brand__name">{SITE.name}</p>
+        <p class="footer-brand__tagline">{SITE.tagline}</p>
+        <address class="footer-brand__address">
           <p>{SITE.address.full}</p>
           <p>{SITE.address.station}</p>
           <p><a href={SITE.phoneHref}>{SITE.phone}</a></p>
         </address>
       </div>
 
-      <!-- Hours -->
-      <div class="footer-hours">
+      <div class="footer-card">
         <p class="footer-heading">診療時間</p>
-        <table class="hours-table">
+        <table class="footer-hours">
           <tbody>
-            <tr><td>月・火・水・金</td><td>{SITE.hours.weekday}</td></tr>
-            <tr><td>土</td><td>{SITE.hours.saturday}</td></tr>
-            <tr><td>休診</td><td>{SITE.hours.closed}</td></tr>
+            <tr><th>月・火・水・金</th><td>{SITE.hours.weekday}</td></tr>
+            <tr><th>土</th><td>{SITE.hours.saturday}</td></tr>
+            <tr><th>休診</th><td>{SITE.hours.closed}</td></tr>
           </tbody>
         </table>
       </div>
 
-      <!-- Links -->
-      <div class="footer-links">
-        <p class="footer-heading">サイトマップ</p>
-        <ul>
+      <div class="footer-card">
+        <p class="footer-heading">ご案内</p>
+        <ul class="footer-links">
           <li><a href="/">トップページ</a></li>
           <li><a href="/first-visit/">初めての方へ</a></li>
-          <li><a href="/dental-anxiety/">歯医者が怖い方へ</a></li>
-          {NAV_ITEMS.filter((i) => i.children).flatMap((group) =>
+          <li><a href="/philosophy/">私たちの考え</a></li>
+          <li><a href="/clinic/doctor/">院長紹介</a></li>
+          <li><a href="/clinic/facility/">院内紹介</a></li>
+          <li><a href="/faq/">FAQ</a></li>
+          <li><a href="/access/">アクセス</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-card footer-card--wide">
+        <p class="footer-heading">診療メニュー</p>
+        <ul class="footer-links footer-links--columns">
+          {NAV_ITEMS.filter((item) => item.children).flatMap((group) =>
             group.children!.map((child) => (
               <li><a href={child.href}>{child.label}</a></li>
             ))
           )}
-          <li><a href="/faq/">FAQ</a></li>
         </ul>
       </div>
     </div>
 
     <div class="footer-bottom">
-      <p>&copy; {new Date().getFullYear()} {SITE.name} All rights reserved.</p>
+      <p>ご予約は WEB・LINE・お電話から承っています。急な痛みがある場合も、まずはご連絡ください。</p>
+      <small>&copy; {new Date().getFullYear()} {SITE.name}</small>
     </div>
   </div>
 </footer>
 
 <style>
   .site-footer {
-    background: var(--color-text-heading);
-    color: #ccc;
-    padding: 3.5rem 1.5rem 1.5rem;
-    font-size: 0.85rem;
-    line-height: 1.7;
+    position: relative;
+    padding: 4.8rem 0 7.5rem;
+    color: rgba(255, 255, 255, 0.78);
+    background:
+      radial-gradient(circle at top left, rgba(125, 173, 200, 0.22), transparent 32%),
+      linear-gradient(180deg, #1e4363 0%, #16344c 100%);
+    overflow: hidden;
   }
+
+  .site-footer::before {
+    content: "";
+    position: absolute;
+    inset: -3rem auto auto -6rem;
+    width: 18rem;
+    height: 18rem;
+    background: rgba(255,255,255,0.05);
+    border-radius: 56% 44% 55% 45%;
+    filter: blur(4px);
+  }
+
   .footer-grid {
+    position: relative;
     display: grid;
-    grid-template-columns: 1.2fr 1fr 1fr;
-    gap: 2.5rem;
+    grid-template-columns: 1.1fr 0.9fr 0.9fr 1.1fr;
+    gap: 1.4rem;
   }
-  .footer-logo {
-    font-size: 1.2rem;
-    font-weight: 700;
+
+  .footer-brand,
+  .footer-card {
+    border: 1px solid rgba(255,255,255,0.14);
+    background: rgba(255,255,255,0.06);
+    border-radius: 2rem;
+    padding: 1.6rem;
+    backdrop-filter: blur(10px);
+  }
+
+  .footer-card--wide {
+    padding-right: 1.25rem;
+  }
+
+  .footer-brand__name {
+    margin: 0 0 0.35rem;
     color: #fff;
-    margin-bottom: 0.25rem;
+    font-size: 1.18rem;
+    font-weight: 700;
   }
-  .footer-tagline {
-    color: var(--color-primary-light);
-    font-size: 0.8rem;
-    margin-bottom: 1rem;
+
+  .footer-brand__tagline {
+    margin: 0 0 1rem;
+    color: rgba(255,255,255,0.7);
+    font-size: 0.85rem;
   }
-  .footer-address { font-style: normal; }
-  .footer-address a { color: #ccc; }
-  .footer-address a:hover { color: #fff; }
+
+  .footer-brand__address {
+    margin: 0;
+    font-style: normal;
+    display: grid;
+    gap: 0.3rem;
+  }
+
+  .footer-brand__address a {
+    color: #fff;
+  }
 
   .footer-heading {
+    margin: 0 0 0.95rem;
     color: #fff;
-    font-weight: 600;
-    margin-bottom: 0.75rem;
-    font-size: 0.95rem;
-  }
-  .hours-table td {
-    padding: 0.2rem 0;
-  }
-  .hours-table td:first-child {
-    padding-right: 1rem;
-    white-space: nowrap;
+    font-size: 0.92rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
   }
 
-  .footer-links ul {
+  .footer-hours {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.86rem;
+  }
+
+  .footer-hours th,
+  .footer-hours td {
+    padding: 0.28rem 0;
+    text-align: left;
+    vertical-align: top;
+  }
+
+  .footer-hours th {
+    width: 6.8rem;
+    color: rgba(255,255,255,0.95);
+    font-weight: 600;
+  }
+
+  .footer-links {
     list-style: none;
+    margin: 0;
     padding: 0;
-    columns: 2;
+    display: grid;
+    gap: 0.4rem;
+  }
+
+  .footer-links--columns {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     column-gap: 1rem;
   }
+
   .footer-links a {
-    color: #ccc;
-    display: inline-block;
-    padding: 0.15rem 0;
+    color: rgba(255,255,255,0.8);
   }
-  .footer-links a:hover { color: #fff; }
+
+  .footer-links a:hover {
+    color: #fff;
+  }
 
   .footer-bottom {
-    margin-top: 2.5rem;
+    position: relative;
+    margin-top: 1.5rem;
     padding-top: 1.5rem;
-    border-top: 1px solid rgba(255,255,255,0.15);
-    text-align: center;
-    font-size: 0.75rem;
-    color: #999;
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.14);
+    color: rgba(255,255,255,0.68);
+    font-size: 0.82rem;
   }
 
-  @media (max-width: 768px) {
+  .footer-bottom p,
+  .footer-bottom small {
+    margin: 0;
+  }
+
+  @media (max-width: 1100px) {
+    .footer-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 720px) {
+    .site-footer {
+      padding-bottom: 8.5rem;
+    }
+
     .footer-grid {
       grid-template-columns: 1fr;
-      gap: 2rem;
     }
-    .footer-links ul { columns: 1; }
+
+    .footer-links--columns {
+      grid-template-columns: 1fr;
+    }
+
+    .footer-bottom {
+      flex-direction: column;
+    }
   }
 </style>
