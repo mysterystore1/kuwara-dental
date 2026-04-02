@@ -3,6 +3,7 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 import PageHero from "../../../components/PageHero.astro";
 import Breadcrumb from "../../../components/Breadcrumb.astro";
 import SectionCTA from "../../../components/SectionCTA.astro";
+import { VISUALS } from "../../../data/visualAssets";
 ---
 
 <BaseLayout
@@ -12,7 +13,8 @@ import SectionCTA from "../../../components/SectionCTA.astro";
   <PageHero
     title="虫歯治療"
     subtitle="削るのは、最後の手段です。"
-    image="/images/stock/asian-checkup.jpg"
+    image={VISUALS.treatment.defaultSrc}
+    imageWarm={VISUALS.treatment.warmSrc}
   />
 
   <div class="container-narrow">

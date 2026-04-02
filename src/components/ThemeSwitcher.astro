@@ -1,31 +1,108 @@
 ---
 ---
 
-<div class="theme-switcher">
-  <button data-theme-btn="default" class="active">A: モダン</button>
-  <button data-theme-btn="warm">B: ナチュラル</button>
+<div class="theme-switcher" aria-label="見た目の切り替え">
+  <button type="button" data-theme-btn="default" class="active">A: やわらか上品</button>
+  <button type="button" data-theme-btn="warm">B: 親子ウェルカム</button>
 </div>
 
 <script>
-  const buttons = document.querySelectorAll("[data-theme-btn]");
-  const saved = localStorage.getItem("dental-theme");
-  if (saved === "warm") {
-    document.documentElement.setAttribute("data-theme", "warm");
-    buttons.forEach((b) =>
-      b.classList.toggle("active", (b as HTMLElement).dataset.themeBtn === "warm")
-    );
+  const buttons = Array.from(document.querySelectorAll("[data-theme-btn]"));
+
+  function swapThemeAssets(theme) {
+    document.querySelectorAll("img[data-theme-default]").forEach((img) => {
+      const nextSrc =
+        theme === "warm"
+          ? img.getAttribute("data-theme-warm")
+          : img.getAttribute("data-theme-default");
+
+      if (nextSrc && img.getAttribute("src") !== nextSrc) {
+        img.setAttribute("src", nextSrc);
+      }
+    });
   }
 
-  buttons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const theme = (btn as HTMLElement).dataset.themeBtn!;
-      if (theme === "warm") {
-        document.documentElement.setAttribute("data-theme", "warm");
-      } else {
-        document.documentElement.removeAttribute("data-theme");
-      }
+  function applyTheme(theme) {
+    if (theme === "warm") {
+      document.documentElement.setAttribute("data-theme", "warm");
+    } else {
+      document.documentElement.removeAttribute("data-theme");
+    }
+
+    try {
       localStorage.setItem("dental-theme", theme);
-      buttons.forEach((b) => b.classList.toggle("active", b === btn));
+    } catch {}
+
+    swapThemeAssets(theme);
+
+    buttons.forEach((button) => {
+      button.classList.toggle("active", button.dataset.themeBtn === theme);
+    });
+  }
+
+  const initialTheme = (() => {
+    try {
+      return localStorage.getItem("dental-theme") === "warm" ? "warm" : "default";
+    } catch {
+      return "default";
+    }
+  })();
+
+  applyTheme(initialTheme);
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      applyTheme(button.dataset.themeBtn || "default");
     });
   });
 </script>
+
+<style>
+  .theme-switcher {
+    position: fixed;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 140;
+    display: inline-flex;
+    gap: 0.35rem;
+    padding: 0.4rem;
+    border-radius: 999px;
+    border: 1px solid rgba(125, 173, 200, 0.18);
+    background: rgba(255, 255, 255, 0.88);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 18px 34px rgba(27, 53, 82, 0.1);
+  }
+
+  .theme-switcher button {
+    border: 0;
+    border-radius: 999px;
+    padding: 0.72rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--color-ink);
+    background: transparent;
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  .theme-switcher button.active {
+    color: #fff;
+    background: linear-gradient(135deg, var(--color-accent), var(--color-primary-dark));
+    box-shadow: 0 14px 24px rgba(27, 53, 82, 0.18);
+  }
+
+  @media (max-width: 768px) {
+    .theme-switcher {
+      right: 0.75rem;
+      left: 0.75rem;
+      bottom: 5.25rem;
+      justify-content: center;
+    }
+
+    .theme-switcher button {
+      flex: 1 1 0;
+      font-size: 0.76rem;
+      padding-inline: 0.75rem;
+    }
+  }
+</style>

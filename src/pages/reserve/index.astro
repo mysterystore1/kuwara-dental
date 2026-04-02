@@ -4,10 +4,11 @@ import PageHero from "../../components/PageHero.astro";
 import Breadcrumb from "../../components/Breadcrumb.astro";
 import SectionCTA from "../../components/SectionCTA.astro";
 import { SITE } from "../../data/site";
+import { VISUALS } from "../../data/visualAssets";
 ---
 
 <BaseLayout title="ご予約・ご相談" description="湘南桑田歯科のご予約はEPARK・LINE・お電話から。お気軽にご連絡ください。">
-  <PageHero title="ご予約・ご相談" subtitle="お気軽にお問い合わせください" />
+  <PageHero title="ご予約・ご相談" subtitle="お気軽にお問い合わせください" image={VISUALS.reception.defaultSrc} imageWarm={VISUALS.reception.warmSrc} />
 
   <div class="container-narrow">
     <Breadcrumb items={[{ label: "ご予約・ご相談" }]} />

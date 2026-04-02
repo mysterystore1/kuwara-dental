@@ -4,13 +4,14 @@ import PageHero from "../../components/PageHero.astro";
 import Breadcrumb from "../../components/Breadcrumb.astro";
 import SectionCTA from "../../components/SectionCTA.astro";
 import { SITE } from "../../data/site";
+import { VISUALS } from "../../data/visualAssets";
 ---
 
 <BaseLayout
   title="歯医者が怖い方へ"
   description="歯医者が怖い・久しぶりで不安な方へ。湘南桑田歯科では無理に治療を進めません。まずはお話から始めます。"
 >
-<PageHero title="歯医者が怖い方へ" subtitle="歯医者が怖い。その気持ちは自然なことです。" image="/images/stock/asian-consultation.jpg" />
+<PageHero title="歯医者が怖い方へ" subtitle="歯医者が怖い。その気持ちは自然なことです。" image={VISUALS.consultation.defaultSrc} imageWarm={VISUALS.consultation.warmSrc} />
 
   <div class="container-narrow section-padding">
     <Breadcrumb items={[{ label: "初めての方へ", href: "/first-visit/" }, { label: "歯医者が怖い方へ" }]} />

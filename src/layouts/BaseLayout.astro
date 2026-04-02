@@ -3,6 +3,7 @@ import "../styles/global.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import MobileBar from "../components/MobileBar.astro";
+import ThemeSwitcher from "../components/ThemeSwitcher.astro";
 import { SITE } from "../data/site";
 
 interface Props {
@@ -74,10 +75,19 @@ const schemaOrg = {
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Noto+Sans+JP:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <script is:inline>
+      try {
+        const savedTheme = localStorage.getItem("dental-theme");
+        if (savedTheme === "warm") {
+          document.documentElement.setAttribute("data-theme", "warm");
+        }
+      } catch {}
+    </script>
     <script type="application/ld+json" set:html={JSON.stringify(schemaOrg)} />
   </head>
   <body>
     <Header />
+    <ThemeSwitcher />
     <main>
       <slot />
     </main>

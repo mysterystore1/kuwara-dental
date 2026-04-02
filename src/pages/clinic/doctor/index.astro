@@ -4,10 +4,17 @@ import PageHero from "../../../components/PageHero.astro";
 import Breadcrumb from "../../../components/Breadcrumb.astro";
 import SectionCTA from "../../../components/SectionCTA.astro";
 import { SITE } from "../../../data/site";
+import ThemedImage from "../../../components/ThemedImage.astro";
+import { VISUALS } from "../../../data/visualAssets";
 ---
 
 <BaseLayout title="院長紹介" description="湘南桑田歯科の院長紹介。どんな歯科医師が診るのか、経歴や診療への考え方をまとめています。">
-  <PageHero title="院長紹介" subtitle="どんな歯科医師が診るのか、先にお伝えします" />
+  <PageHero
+    title="院長紹介"
+    subtitle="どんな歯科医師が診るのか、先にお伝えします"
+    image={VISUALS.doctorPortrait.defaultSrc}
+    imageWarm={VISUALS.doctorPortrait.warmSrc}
+  />
 
   <div class="container-narrow">
     <Breadcrumb items={[{ label: "医院案内" }, { label: "院長紹介" }]} />
@@ -17,8 +24,9 @@ import { SITE } from "../../../data/site";
   <section class="doctor-profile section-padding">
     <div class="container-narrow profile-grid">
       <div class="profile-image">
-        <img
-          src="/images/stock/asian-doctor-warm.jpg"
+        <ThemedImage
+          defaultSrc={VISUALS.doctorPortrait.defaultSrc}
+          warmSrc={VISUALS.doctorPortrait.warmSrc}
           alt="院長の写真"
           loading="lazy"
         />

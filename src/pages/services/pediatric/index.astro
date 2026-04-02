@@ -3,6 +3,7 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 import PageHero from "../../../components/PageHero.astro";
 import Breadcrumb from "../../../components/Breadcrumb.astro";
 import SectionCTA from "../../../components/SectionCTA.astro";
+import { VISUALS } from "../../../data/visualAssets";
 ---
 
 <BaseLayout
@@ -12,7 +13,8 @@ import SectionCTA from "../../../components/SectionCTA.astro";
   <PageHero
     title="小児歯科"
     subtitle="嫌がったら、やめます。それで大丈夫です。"
-    image="/images/stock/pediatric-checkup.jpg"
+    image={VISUALS.pediatric.defaultSrc}
+    imageWarm={VISUALS.pediatric.warmSrc}
   />
 
   <div class="container-narrow">

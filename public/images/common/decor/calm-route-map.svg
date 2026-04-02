@@ -1,0 +1,26 @@
+<svg width="720" height="420" viewBox="0 0 720 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="720" height="420" rx="32" fill="#F8FBFD"/>
+  <path d="M92 116H284" stroke="#C8DCE8" stroke-width="22" stroke-linecap="round"/>
+  <path d="M438 116H618" stroke="#C8DCE8" stroke-width="22" stroke-linecap="round"/>
+  <path d="M352 60V324" stroke="#C8DCE8" stroke-width="22" stroke-linecap="round"/>
+  <rect x="306" y="268" width="92" height="42" rx="21" fill="#17344C"/>
+  <text x="352" y="295" fill="white" font-size="18" text-anchor="middle" font-family="Noto Sans JP, sans-serif">徒歩3分</text>
+  <rect x="70" y="78" width="126" height="76" rx="18" fill="white" stroke="#D7E7F0" stroke-width="3"/>
+  <text x="133" y="118" fill="#17344C" font-size="28" text-anchor="middle" font-family="Noto Sans JP, sans-serif">藤沢駅</text>
+  <text x="133" y="140" fill="#62798C" font-size="16" text-anchor="middle" font-family="Noto Sans JP, sans-serif">南口</text>
+  <path d="M196 116H300" stroke="#DB8B57" stroke-width="6" stroke-linecap="round" stroke-dasharray="12 10"/>
+  <path d="M352 166V222" stroke="#DB8B57" stroke-width="6" stroke-linecap="round" stroke-dasharray="12 10"/>
+  <path d="M300 116C325 116 352 138 352 166" stroke="#DB8B57" stroke-width="6" stroke-linecap="round"/>
+  <g transform="translate(430 166)">
+    <path d="M0 18C0 8.059 8.059 0 18 0H164C173.941 0 182 8.059 182 18V92C182 101.941 173.941 110 164 110H18C8.059 110 0 101.941 0 92V18Z" fill="white" stroke="#D7E7F0" stroke-width="3"/>
+    <text x="91" y="38" fill="#17344C" font-size="24" text-anchor="middle" font-family="Noto Sans JP, sans-serif">湘南桑田歯科</text>
+    <text x="91" y="66" fill="#62798C" font-size="16" text-anchor="middle" font-family="Noto Sans JP, sans-serif">駅からまっすぐ来れます</text>
+    <rect x="42" y="78" width="98" height="18" rx="9" fill="#EEF6FB"/>
+    <text x="91" y="92" fill="#2C5D7B" font-size="12" text-anchor="middle" font-family="Noto Sans JP, sans-serif">WEB予約 / 電話 / LINE</text>
+  </g>
+  <path d="M430 220H388" stroke="#DB8B57" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="430" cy="220" r="14" fill="#DB8B57"/>
+  <circle cx="430" cy="220" r="5" fill="white"/>
+  <circle cx="618" cy="82" r="9" fill="#EEF6FB"/>
+  <circle cx="580" cy="330" r="14" fill="#FFF1E7"/>
+</svg>

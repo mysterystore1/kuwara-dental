@@ -1,0 +1,17 @@
+---
+interface Props extends astroHTML.JSX.ImgHTMLAttributes {
+  defaultSrc: string;
+  warmSrc?: string;
+  alt: string;
+}
+
+const { defaultSrc, warmSrc = defaultSrc, alt, ...props } = Astro.props;
+---
+
+<img
+  src={defaultSrc}
+  alt={alt}
+  data-theme-default={defaultSrc}
+  data-theme-warm={warmSrc}
+  {...props}
+/>

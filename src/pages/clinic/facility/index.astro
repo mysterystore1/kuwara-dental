@@ -4,10 +4,17 @@ import PageHero from "../../../components/PageHero.astro";
 import Breadcrumb from "../../../components/Breadcrumb.astro";
 import SectionCTA from "../../../components/SectionCTA.astro";
 import { SITE } from "../../../data/site";
+import ThemedImage from "../../../components/ThemedImage.astro";
+import { VISUALS } from "../../../data/visualAssets";
 ---
 
 <BaseLayout title="院内紹介" description="湘南桑田歯科の院内紹介。受付から診療室まで、緊張が少しでも和らぐように整えている空間をご紹介します。">
-  <PageHero title="院内紹介" subtitle="受付から診療室まで、緊張が少しでも和らぐ空間を目指しています。" />
+  <PageHero
+    title="院内紹介"
+    subtitle="受付から診療室まで、緊張が少しでも和らぐ空間を目指しています。"
+    image={VISUALS.reception.defaultSrc}
+    imageWarm={VISUALS.reception.warmSrc}
+  />
 
   <div class="container-narrow">
     <Breadcrumb items={[{ label: "医院案内" }, { label: "院内紹介" }]} />
@@ -21,8 +28,9 @@ import { SITE } from "../../../data/site";
 
       <div class="gallery-grid">
         <div class="gallery-item">
-          <img
-            src="/images/stock/asian-consultation.jpg"
+          <ThemedImage
+            defaultSrc={VISUALS.consultation.defaultSrc}
+            warmSrc={VISUALS.consultation.warmSrc}
             alt="ご相談スペース"
             loading="lazy"
           />
@@ -30,8 +38,9 @@ import { SITE } from "../../../data/site";
           <p class="gallery-desc">治療の前後に落ち着いて話せるように、診療チェアとは別の場所をご用意しています。</p>
         </div>
         <div class="gallery-item">
-          <img
-            src="/images/stock/warm-green-clinic.jpg"
+          <ThemedImage
+            defaultSrc={VISUALS.room.defaultSrc}
+            warmSrc={VISUALS.room.warmSrc}
             alt="診療室"
             loading="lazy"
           />
@@ -39,8 +48,9 @@ import { SITE } from "../../../data/site";
           <p class="gallery-desc">明るさと圧迫感の少なさを意識した空間です。入った瞬間の緊張が和らぐように整えています。</p>
         </div>
         <div class="gallery-item">
-          <img
-            src="/images/stock/dental-chair.jpg"
+          <ThemedImage
+            defaultSrc={VISUALS.treatment.defaultSrc}
+            warmSrc={VISUALS.treatment.warmSrc}
             alt="診療チェア"
             loading="lazy"
           />
@@ -48,8 +58,9 @@ import { SITE } from "../../../data/site";
           <p class="gallery-desc">隣の治療音や視線が気になりにくいように、少し落ち着ける距離感をつくっています。</p>
         </div>
         <div class="gallery-item">
-          <img
-            src="/images/stock/asian-doctor-warm.jpg"
+          <ThemedImage
+            defaultSrc={VISUALS.reception.defaultSrc}
+            warmSrc={VISUALS.reception.warmSrc}
             alt="スタッフ"
             loading="lazy"
           />
@@ -117,7 +128,6 @@ import { SITE } from "../../../data/site";
     aspect-ratio: 4 / 3;
     object-fit: cover;
     width: 100%;
-    filter: saturate(0.94) brightness(1.08) sepia(0.12) hue-rotate(-8deg);
   }
   .gallery-caption {
     font-weight: 600;

@@ -4,6 +4,8 @@ import PageHero from "../../components/PageHero.astro";
 import Breadcrumb from "../../components/Breadcrumb.astro";
 import SectionCTA from "../../components/SectionCTA.astro";
 import { SITE } from "../../data/site";
+import ThemedImage from "../../components/ThemedImage.astro";
+import { VISUALS } from "../../data/visualAssets";
 
 const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(SITE.address.full)}`;
 ---
@@ -15,6 +17,8 @@ const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComp
   <PageHero
     title="アクセス"
     subtitle="JR藤沢駅南口から徒歩3分です。"
+    image={VISUALS.reception.defaultSrc}
+    imageWarm={VISUALS.reception.warmSrc}
   />
 
   <div class="container-narrow">
@@ -48,6 +52,12 @@ const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComp
 
       <div class="map-card">
         <div class="map-frame">
+          <ThemedImage
+            defaultSrc={VISUALS.routeMap.defaultSrc}
+            warmSrc={VISUALS.routeMap.warmSrc}
+            alt={VISUALS.routeMap.alt}
+            loading="lazy"
+          />
           <p>Google マップで場所を確認</p>
           <span>{SITE.address.short}</span>
           <a href={mapsUrl} class="btn-secondary" target="_blank" rel="noopener">Google マップを開く</a>
@@ -153,15 +163,21 @@ const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComp
   .map-frame {
     min-height: 460px;
     display: grid;
-    place-content: center;
+    align-content: start;
     text-align: center;
-    gap: 0.5rem;
+    gap: 0.9rem;
     color: var(--color-text-light);
     padding: 2rem;
     border: 1px dashed var(--color-border);
     border-radius: var(--radius-md);
     margin: 1rem;
     background: rgba(255, 255, 255, 0.55);
+  }
+  .map-frame img {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    box-shadow: var(--shadow-soft);
   }
   .map-frame p {
     font-size: 1.05rem;

@@ -2,7 +2,9 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import SectionCTA from "../components/SectionCTA.astro";
 import DentalIcon from "../components/DentalIcon.astro";
+import ThemedImage from "../components/ThemedImage.astro";
 import { SITE, THREE_PROMISES } from "../data/site";
+import { VISUALS } from "../data/visualAssets";
 
 const symptomItems = [
   {
@@ -44,21 +46,24 @@ const reasonItems = [
     number: "01",
     title: "まず、お話を聞かせてください。",
     text: "初回はカウンセリングが中心です。いきなり治療は始めません。相談だけで終わっても大丈夫です。",
-    image: "/images/stock/asian-consultation.jpg",
+    imageDefault: VISUALS.consultation.defaultSrc,
+    imageWarm: VISUALS.consultation.warmSrc,
     alt: "カウンセリングの様子",
   },
   {
     number: "02",
     title: "怖くなったら、手を挙げてください。",
     text: "痛かったり怖くなったりしたら、その場で止めます。我慢したまま進めることはしません。",
-    image: "/images/stock/asian-checkup.jpg",
+    imageDefault: VISUALS.treatment.defaultSrc,
+    imageWarm: VISUALS.treatment.warmSrc,
     alt: "歯科治療の風景",
   },
   {
     number: "03",
     title: "何をするか、先にきちんとお伝えします。",
     text: "今の状態、必要な治療、通院の目安まで、先にお話しします。わからないまま口の中を触ることはありません。",
-    image: "/images/stock/asian-doctor-warm.jpg",
+    imageDefault: VISUALS.doctorPortrait.defaultSrc,
+    imageWarm: VISUALS.doctorPortrait.warmSrc,
     alt: "やわらかな表情で迎える歯科医師",
   },
 ] as const;
@@ -108,11 +113,35 @@ const faqPreview = [
       <div class="home-hero__visual">
         <div class="hero-orb hero-orb--one"></div>
         <div class="hero-orb hero-orb--two"></div>
+        <ThemedImage
+          defaultSrc={VISUALS.decorSpark.defaultSrc}
+          warmSrc={VISUALS.decorSpark.warmSrc}
+          alt=""
+          class="decor-float decor-float--spark home-hero__spark"
+          loading="eager"
+        />
+        <ThemedImage
+          defaultSrc={VISUALS.decorLoop.defaultSrc}
+          warmSrc={VISUALS.decorLoop.warmSrc}
+          alt=""
+          class="decor-float decor-float--loop home-hero__loop"
+          loading="eager"
+        />
         <figure class="hero-photo hero-photo--main">
-          <img src="/images/stock/asian-doctor-warm.jpg" alt="やわらかな表情で迎える歯科医師" loading="eager" />
+          <ThemedImage
+            defaultSrc={VISUALS.heroWelcome.defaultSrc}
+            warmSrc={VISUALS.heroWelcome.warmSrc}
+            alt={VISUALS.heroWelcome.alt}
+            loading="eager"
+          />
         </figure>
         <figure class="hero-photo hero-photo--card">
-          <img src="/images/stock/asian-consultation.jpg" alt="落ち着いて相談する様子" loading="eager" />
+          <ThemedImage
+            defaultSrc={VISUALS.consultation.defaultSrc}
+            warmSrc={VISUALS.consultation.warmSrc}
+            alt={VISUALS.consultation.alt}
+            loading="eager"
+          />
           <figcaption>
             <span class="eyebrow">初診について</span>
             <strong>初回は、お話と確認が中心です。</strong>
@@ -161,7 +190,12 @@ const faqPreview = [
         {reasonItems.map((item, index) => (
           <article class:list={["promise-row", index % 2 === 1 && "reverse"]}>
             <div class="promise-row__visual shape-wrap">
-              <img src={item.image} alt={item.alt} loading="lazy" />
+              <ThemedImage
+                defaultSrc={item.imageDefault}
+                warmSrc={item.imageWarm}
+                alt={item.alt}
+                loading="lazy"
+              />
             </div>
             <div class="promise-row__copy">
               <span class="promise-row__number">{item.number}</span>
@@ -220,7 +254,12 @@ const faqPreview = [
       </div>
 
       <div class="first-step__visual shape-wrap">
-        <img src="/images/stock/asian-consultation.jpg" alt="診療前に相談している様子" loading="lazy" />
+        <ThemedImage
+          defaultSrc={VISUALS.consultation.defaultSrc}
+          warmSrc={VISUALS.consultation.warmSrc}
+          alt={VISUALS.consultation.alt}
+          loading="lazy"
+        />
       </div>
     </div>
   </section>
@@ -291,10 +330,20 @@ const faqPreview = [
 
       <div class="doctor-highlight__visual">
         <figure class="doctor-highlight__portrait">
-          <img src="/images/stock/asian-doctor-warm.jpg" alt="やわらかな表情で迎える歯科医師" loading="lazy" />
+          <ThemedImage
+            defaultSrc={VISUALS.doctorPortrait.defaultSrc}
+            warmSrc={VISUALS.doctorPortrait.warmSrc}
+            alt={VISUALS.doctorPortrait.alt}
+            loading="lazy"
+          />
         </figure>
         <figure class="doctor-highlight__support">
-          <img src="/images/stock/warm-green-clinic.jpg" alt="明るくやわらかい雰囲気の診療室" loading="lazy" />
+          <ThemedImage
+            defaultSrc={VISUALS.room.defaultSrc}
+            warmSrc={VISUALS.room.warmSrc}
+            alt={VISUALS.room.alt}
+            loading="lazy"
+          />
         </figure>
       </div>
     </div>
@@ -309,13 +358,28 @@ const faqPreview = [
 
       <div class="clinic-preview__grid">
         <figure class="clinic-preview__photo clinic-preview__photo--large">
-          <img src="/images/stock/warm-green-clinic.jpg" alt="やわらかい色合いの院内空間" loading="lazy" />
+          <ThemedImage
+            defaultSrc={VISUALS.reception.defaultSrc}
+            warmSrc={VISUALS.reception.warmSrc}
+            alt={VISUALS.reception.alt}
+            loading="lazy"
+          />
         </figure>
         <figure class="clinic-preview__photo">
-          <img src="/images/stock/asian-consultation.jpg" alt="治療前の相談の様子" loading="lazy" />
+          <ThemedImage
+            defaultSrc={VISUALS.consultation.defaultSrc}
+            warmSrc={VISUALS.consultation.warmSrc}
+            alt={VISUALS.consultation.alt}
+            loading="lazy"
+          />
         </figure>
         <figure class="clinic-preview__photo">
-          <img src="/images/stock/asian-doctor-warm.jpg" alt="相談しやすい雰囲気のスタッフ" loading="lazy" />
+          <ThemedImage
+            defaultSrc={VISUALS.room.defaultSrc}
+            warmSrc={VISUALS.room.warmSrc}
+            alt={VISUALS.room.alt}
+            loading="lazy"
+          />
         </figure>
       </div>
 
@@ -369,10 +433,14 @@ const faqPreview = [
       <div class="access-preview__map soft-panel">
         <p class="eyebrow">所在地</p>
         <strong>{SITE.address.station}</strong>
-        <p>住所や診療時間、駅からの道順は、アクセスページでご確認いただけます。</p>
+        <p>駅からのルートと医院の位置を、ひと目で確認できるようにまとめています。</p>
         <div class="access-preview__placeholder">
-          <DentalIcon name="pin" size={28} />
-          <span>Google Maps を後で埋め込み</span>
+          <ThemedImage
+            defaultSrc={VISUALS.routeMap.defaultSrc}
+            warmSrc={VISUALS.routeMap.warmSrc}
+            alt={VISUALS.routeMap.alt}
+            loading="lazy"
+          />
         </div>
       </div>
     </div>
@@ -480,7 +548,16 @@ const faqPreview = [
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: saturate(0.94) brightness(1.08) sepia(0.12) hue-rotate(-8deg);
+  }
+
+  .home-hero__spark {
+    top: 1.5rem;
+    right: 2rem;
+  }
+
+  .home-hero__loop {
+    right: 0;
+    bottom: -0.6rem;
   }
 
   .hero-photo--main {
@@ -790,6 +867,13 @@ const faqPreview = [
     box-shadow: var(--shadow-float);
   }
 
+  .doctor-highlight__portrait img,
+  .doctor-highlight__support img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
   .doctor-highlight__portrait {
     inset: 0 0 18% 16%;
     border-radius: 40% 60% 54% 46% / 46% 52% 48% 54%;
@@ -832,7 +916,6 @@ const faqPreview = [
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: saturate(0.94) brightness(1.08) sepia(0.12) hue-rotate(-8deg);
   }
 
   .clinic-preview__link,
@@ -924,16 +1007,17 @@ const faqPreview = [
   }
 
   .access-preview__placeholder {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.65rem;
+    display: block;
     margin-top: 1rem;
-    min-height: 3rem;
-    padding: 0.8rem 1rem;
-    border-radius: 1rem;
+    overflow: hidden;
+    border-radius: 1.4rem;
     background: rgba(125, 173, 200, 0.08);
-    color: var(--color-primary-dark);
-    font-weight: 700;
+    box-shadow: inset 0 0 0 1px rgba(125, 173, 200, 0.12);
+  }
+
+  .access-preview__placeholder img {
+    width: 100%;
+    height: auto;
   }
 
   @media (max-width: 1080px) {

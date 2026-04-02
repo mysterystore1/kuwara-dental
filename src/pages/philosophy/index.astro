@@ -4,6 +4,7 @@ import PageHero from "../../components/PageHero.astro";
 import Breadcrumb from "../../components/Breadcrumb.astro";
 import SectionCTA from "../../components/SectionCTA.astro";
 import { SITE, THREE_PROMISES } from "../../data/site";
+import { VISUALS } from "../../data/visualAssets";
 ---
 
 <BaseLayout
@@ -13,7 +14,8 @@ import { SITE, THREE_PROMISES } from "../../data/site";
   <PageHero
     title="私たちの考え"
     subtitle="なぜこの医院をつくったのか、お話しします"
-    image="/images/stock/asian-consultation.jpg"
+    image={VISUALS.consultation.defaultSrc}
+    imageWarm={VISUALS.consultation.warmSrc}
   />
 
   <div class="container-narrow">

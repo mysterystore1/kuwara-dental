@@ -1,8 +1,11 @@
 ---
+import ThemedImage from "./ThemedImage.astro";
+
 interface Props {
   title: string;
   subtitle?: string;
   image?: string;
+  imageWarm?: string;
   label?: string;
 }
 
@@ -10,6 +13,7 @@ const {
   title,
   subtitle,
   image,
+  imageWarm,
   label = "ご案内",
 } = Astro.props;
 ---
@@ -25,7 +29,7 @@ const {
     {image && (
       <div class="page-hero__visual">
         <div class="page-hero__shape"></div>
-        <img src={image} alt={title} loading="eager" />
+        <ThemedImage defaultSrc={image} warmSrc={imageWarm} alt={title} loading="eager" />
       </div>
     )}
   </div>
@@ -102,7 +106,6 @@ const {
     object-fit: cover;
     border-radius: 38% 62% 42% 58% / 48% 44% 56% 52%;
     box-shadow: var(--shadow-float);
-        filter: saturate(0.94) brightness(1.08) sepia(0.12) hue-rotate(-8deg);
   }
 
   @media (max-width: 860px) {

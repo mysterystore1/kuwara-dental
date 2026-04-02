@@ -4,10 +4,11 @@ import PageHero from "../../../components/PageHero.astro";
 import Breadcrumb from "../../../components/Breadcrumb.astro";
 import SectionCTA from "../../../components/SectionCTA.astro";
 import { SITE } from "../../../data/site";
+import { VISUALS } from "../../../data/visualAssets";
 ---
 
 <BaseLayout title="料金表" description="湘南桑田歯科の料金表。まずは保険診療で対応できるかを確認し、自費診療は内容と費用を先にご説明します。">
-  <PageHero title="料金表" subtitle="まずは保険診療で対応できるかを確認します。" />
+  <PageHero title="料金表" subtitle="まずは保険診療で対応できるかを確認します。" image={VISUALS.room.defaultSrc} imageWarm={VISUALS.room.warmSrc} />
 
   <div class="container-narrow">
     <Breadcrumb items={[{ label: "医院案内" }, { label: "料金表" }]} />

@@ -4,6 +4,7 @@ import PageHero from "../../components/PageHero.astro";
 import Breadcrumb from "../../components/Breadcrumb.astro";
 import SectionCTA from "../../components/SectionCTA.astro";
 import { SITE } from "../../data/site";
+import { VISUALS } from "../../data/visualAssets";
 
 const faqCategories = [
   {
@@ -88,7 +89,8 @@ const faqCategories = [
   <PageHero
     title="よくあるご質問"
     subtitle="気になることを、先に確認できるようにまとめました"
-    image="/images/stock/asian-consultation.jpg"
+    image={VISUALS.consultation.defaultSrc}
+    imageWarm={VISUALS.consultation.warmSrc}
   />
 
   <div class="container-narrow">

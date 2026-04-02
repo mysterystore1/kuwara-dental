@@ -3,6 +3,7 @@ import BaseLayout from "../../../layouts/BaseLayout.astro";
 import PageHero from "../../../components/PageHero.astro";
 import Breadcrumb from "../../../components/Breadcrumb.astro";
 import SectionCTA from "../../../components/SectionCTA.astro";
+import { VISUALS } from "../../../data/visualAssets";
 ---
 
 <BaseLayout
@@ -12,7 +13,8 @@ import SectionCTA from "../../../components/SectionCTA.astro";
   <PageHero
     title="予防歯科"
     subtitle="痛くなる前に来る。それがいちばんの治療です。"
-  image="/images/stock/warm-green-clinic.jpg"
+    image={VISUALS.room.defaultSrc}
+    imageWarm={VISUALS.room.warmSrc}
   />
 
   <div class="container-narrow">
