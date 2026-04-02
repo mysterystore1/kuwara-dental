@@ -32,7 +32,7 @@ const symptomItems = [
 ] as const;
 
 const serviceItems = [
-  { href: "/services/cavity/", title: "虫歯治療", description: "できるだけ歯を残しながら治療します", icon: "tooth" },
+  { href: "/services/cavity/", title: "虫歯治療", description: "削る量を抑えながら治療します", icon: "tooth" },
   { href: "/services/periodontal/", title: "歯周病治療", description: "歯ぐきと歯を支える骨の健康を守ります", icon: "gum" },
   { href: "/services/preventive/", title: "予防歯科", description: "定期管理で再発しにくい口内環境を目指します", icon: "shield" },
   { href: "/services/pediatric/", title: "小児歯科", description: "お子さまのペースに合わせて進めます", icon: "child" },
@@ -42,31 +42,31 @@ const serviceItems = [
 const reasonItems = [
   {
     number: "01",
-    title: "初診は、いきなり治療から始めません",
-    text: "まずは困っていることや不安に思っていることをうかがい、必要な検査とご説明から進めます。相談だけで終わっても構いません。",
-    image: "https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=900&q=80&auto=format&fit=crop",
+    title: "まず、お話を聞かせてください。",
+    text: "いきなり治療はしません。今困っていること、不安なこと、前の歯医者で嫌だったことを先にうかがいます。",
+    image: "/images/stock/asian-consultation.jpg",
     alt: "カウンセリングの様子",
   },
   {
     number: "02",
-    title: "痛みや怖さに配慮しながら進めます",
-    text: "麻酔の方法や治療の進め方は、お口の状態と患者さまのご不安に合わせて調整します。つらいときは、その場で止めながら進めます。",
-    image: "https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=900&q=80&auto=format&fit=crop",
+    title: "「怖い」は、手を挙げたら止まります。",
+    text: "痛かったり、怖くなったりしたら、すぐ止めます。我慢したまま進めることはしません。",
+    image: "/images/stock/asian-checkup.jpg",
     alt: "歯科治療の風景",
   },
   {
     number: "03",
-    title: "治療内容を、できるだけわかりやすく説明します",
-    text: "今どんな状態なのか、どの治療が必要なのか、通院回数の目安まで、診療チェアの上で置いていかない説明を心がけています。",
-    image: "https://images.unsplash.com/photo-1629909615184-74f495363b67?w=900&q=80&auto=format&fit=crop",
-    alt: "明るい受付と待合スペース",
+    title: "何をするか、必ず先にお伝えします。",
+    text: "何も言わずに口の中を触ることはしません。今の状態とこれからの進め方を、先にお話しします。",
+    image: "/images/stock/asian-doctor-warm.jpg",
+    alt: "やわらかな表情で迎える歯科医師",
   },
 ] as const;
 
 const faqPreview = [
   {
     q: "初診の所要時間はどれくらいですか？",
-    a: "問診、必要な検査、カウンセリングを含めて45分から1時間ほどを目安にしています。痛みが強い場合は応急処置を優先します。",
+    a: "問診やお口の確認を含めて、45分から1時間ほどを目安にしています。痛みが強い場合は、先に応急処置を行うこともあります。",
   },
   {
     q: "久しぶりの歯医者でも大丈夫ですか？",
@@ -81,21 +81,20 @@ const faqPreview = [
 
 <BaseLayout
   title="歯医者が久しぶりの方も、安心して相談できる歯科医院"
-  description="初診はカウンセリングと必要な検査から。歯医者が怖い方、久しぶりの方も相談しやすいよう、丁寧な説明と痛みに配慮した診療を大切にしています。"
+  description="歯医者が怖い方や久しぶりの方も、安心して相談しやすい歯科医院です。いきなり治療を始めず、まずはお話をうかがうところから始めます。"
 >
   <section class="home-hero wave-divider">
     <div class="container-narrow home-hero__inner">
       <div class="home-hero__copy">
         <p class="section-kicker">初診のご案内</p>
         <p class="home-hero__clinic">{SITE.name}</p>
-        <h1 class="home-hero__title">歯医者が久しぶりの方も、<br />安心してご相談ください。</h1>
+        <h1 class="home-hero__title">「怖い」を、<br />我慢しなくていい。</h1>
         <p class="home-hero__text">
-          {SITE.name}では、まず困っていることをうかがい、お口の状態を確認したうえで、
-          必要な検査とご説明から進めます。治療を急がせず、相談しやすい距離感を大切にしています。
+          何年ぶりでも大丈夫。まずは、話を聞くところから始めます。
         </p>
 
         <div class="home-hero__actions">
-          <a href="/reserve/" class="btn-primary">WEB予約へ進む</a>
+          <a href="/reserve/" class="btn-primary">WEB予約する</a>
           <a href="/first-visit/" class="btn-secondary">初めての方へ</a>
         </div>
 
@@ -110,13 +109,13 @@ const faqPreview = [
         <div class="hero-orb hero-orb--one"></div>
         <div class="hero-orb hero-orb--two"></div>
         <figure class="hero-photo hero-photo--main">
-          <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1100&q=80&auto=format&fit=crop" alt="明るい歯科医院の待合室" loading="eager" />
+          <img src="/images/stock/asian-doctor-warm.jpg" alt="やわらかな表情で迎える歯科医師" loading="eager" />
         </figure>
         <figure class="hero-photo hero-photo--card">
-          <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=700&q=80&auto=format&fit=crop" alt="カウンセリングの様子" loading="eager" />
+          <img src="/images/stock/asian-consultation.jpg" alt="落ち着いて相談する様子" loading="eager" />
           <figcaption>
             <span class="eyebrow">ご相談について</span>
-            <strong>まずはお口の状態を確認し、進め方をわかりやすくご説明します。</strong>
+            <strong>初回は、今のお困りごとをうかがう時間です。</strong>
           </figcaption>
         </figure>
       </div>
@@ -127,10 +126,9 @@ const faqPreview = [
     <div class="container-narrow reassurance">
       <div class="reassurance__lead">
         <p class="section-kicker">ご来院前に</p>
-        <h2 class="section-title">来院前の不安を、少しでも軽くできるように。</h2>
+        <h2 class="section-title">こんな不安、ありませんか？</h2>
         <p class="section-lead">
-          歯科医院を探すときは、治療の内容だけでなく、どんなふうに話を聞いてもらえるかも気になるものです。
-          まずは来院前の不安をやわらげることを大切にしています。
+          歯医者に行こうと思ったとき、治療そのものよりも「怒られないかな」「痛くないかな」と不安になる方は少なくありません。
         </p>
       </div>
 
@@ -144,10 +142,10 @@ const faqPreview = [
 
         <div class="reassurance__panel">
           <p class="eyebrow">当院の考え方</p>
-          <h3>今のお困りごとをうかがい、できることから整理します。</h3>
+          <h3>状態を責めず、まずは今のお困りごとをうかがいます。</h3>
           <p>
-            すぐに治療を始めるのではなく、痛みの有無やご不安、ご希望をうかがったうえで、
-            必要な検査や応急対応をご案内します。説明を聞いてから考えたい方にも、無理のない形で進めます。
+            すぐに治療を始めるのではなく、何が気になっているのか、どこが怖いのかを先に整理します。
+            説明を聞いてから考えたい方も、その場で決めなくて大丈夫です。
           </p>
           <a href="/dental-anxiety/" class="btn-secondary">歯医者が怖い方へ</a>
         </div>
@@ -195,9 +193,9 @@ const faqPreview = [
     <div class="container-narrow first-step__inner">
       <div class="first-step__copy">
         <p class="section-kicker">初診の流れ</p>
-        <h2 class="section-title">初診では、今のお困りごとを整理することから始めます。</h2>
+        <h2 class="section-title">いきなり治療はしません。</h2>
         <p class="section-lead">
-          初回は問診、必要な検査、カウンセリング、ご説明が中心です。強い痛みがある場合は、応急的な処置を優先します。
+          初回は、今のお困りごとをうかがって、必要なら検査をして、状況を整理するところまでが中心です。
         </p>
         <div class="first-step__grid">
           <div class="soft-panel">
@@ -223,7 +221,7 @@ const faqPreview = [
       </div>
 
       <div class="first-step__visual shape-wrap">
-        <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=1000&q=80&auto=format&fit=crop" alt="診療の説明を受ける患者さま" loading="lazy" />
+        <img src="/images/stock/asian-consultation.jpg" alt="診療前に相談している様子" loading="lazy" />
       </div>
     </div>
   </section>
@@ -256,7 +254,7 @@ const faqPreview = [
     <div class="container-narrow">
       <div class="section-header">
         <p class="section-kicker">診療内容</p>
-        <h2 class="section-title">お悩みに合わせた診療内容をご案内します。</h2>
+        <h2 class="section-title">お悩みに合わせて、必要な診療をご案内します。</h2>
         <p class="section-lead">
           どの診療が自分に合っているかわからない場合も、症状と合わせてご確認いただけます。
         </p>
@@ -282,22 +280,22 @@ const faqPreview = [
     <div class="container-narrow doctor-highlight__inner">
       <div class="doctor-highlight__copy">
         <p class="section-kicker">院長より</p>
-        <h2 class="section-title">患者さまのペースを大切にしながら、必要な治療をご提案します。</h2>
+        <h2 class="section-title">来てくれただけで、もう一歩踏み出せています。</h2>
         <p class="section-lead">
-          「どこまで治療するか」「まず何を優先するか」は、生活背景やご希望によって変わります。説明を丁寧に行い、無理なく通える進め方を一緒に考えていきます。
+          歯医者が苦手な方にとって、予約をして来院するだけでも大きな一歩です。その一歩を無駄にしないよう、急かさず、置いていかない診療を大切にしています。
         </p>
         <div class="doctor-highlight__quote soft-panel">
-          <p>痛みや不安が強い方にも、まずは落ち着いて話せる診療室でありたいと考えています。小さな違和感でも遠慮なくご相談ください。</p>
+          <p>「もっと早く来ればよかった」と思ってもらえるような歯科医院でありたいと考えています。</p>
         </div>
         <a href="/clinic/doctor/" class="btn-secondary">院長紹介を見る</a>
       </div>
 
       <div class="doctor-highlight__visual">
         <figure class="doctor-highlight__portrait">
-          <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=900&q=80&auto=format&fit=crop" alt="歯科医師のポートレート" loading="lazy" />
+          <img src="/images/stock/asian-doctor-warm.jpg" alt="やわらかな表情で迎える歯科医師" loading="lazy" />
         </figure>
         <figure class="doctor-highlight__support">
-          <img src="https://images.unsplash.com/photo-1588776814546-daab30f310ce?w=900&q=80&auto=format&fit=crop" alt="診療室の設備" loading="lazy" />
+          <img src="/images/stock/warm-green-clinic.jpg" alt="明るくやわらかい雰囲気の診療室" loading="lazy" />
         </figure>
       </div>
     </div>
@@ -307,18 +305,18 @@ const faqPreview = [
     <div class="container-narrow">
       <div class="section-header">
         <p class="section-kicker">院内紹介</p>
-        <h2 class="section-title">受付から診療室まで、落ち着いて過ごせる空間づくりを心がけています。</h2>
+        <h2 class="section-title">受付から診療室まで、緊張が少しでも和らぐ空間を目指しています。</h2>
       </div>
 
       <div class="clinic-preview__grid">
         <figure class="clinic-preview__photo clinic-preview__photo--large">
-          <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=1200&q=80&auto=format&fit=crop" alt="明るい待合スペース" loading="lazy" />
+          <img src="/images/stock/warm-green-clinic.jpg" alt="やわらかい色合いの院内空間" loading="lazy" />
         </figure>
         <figure class="clinic-preview__photo">
-          <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=900&q=80&auto=format&fit=crop" alt="受付カウンター" loading="lazy" />
+          <img src="/images/stock/asian-consultation.jpg" alt="治療前の相談の様子" loading="lazy" />
         </figure>
         <figure class="clinic-preview__photo">
-          <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=900&q=80&auto=format&fit=crop" alt="診療チェア" loading="lazy" />
+          <img src="/images/stock/asian-doctor-warm.jpg" alt="相談しやすい雰囲気のスタッフ" loading="lazy" />
         </figure>
       </div>
 
@@ -354,7 +352,7 @@ const faqPreview = [
     <div class="container-narrow access-preview__inner">
       <div class="access-preview__copy">
         <p class="section-kicker">アクセス</p>
-        <h2 class="section-title">駅からの距離、診療時間、連絡先をまとめてご確認いただけます。</h2>
+        <h2 class="section-title">藤沢駅から歩いて3分。場所と時間をまとめています。</h2>
         <dl class="access-preview__list">
           <dt><DentalIcon name="pin" size={18} /> 住所</dt>
           <dd>{SITE.address.full}</dd>
@@ -372,7 +370,7 @@ const faqPreview = [
       <div class="access-preview__map soft-panel">
         <p class="eyebrow">所在地</p>
         <strong>{SITE.address.station}</strong>
-        <p>地図埋め込みは本番時に差し替え予定です。駅からの道順、駐車場情報、診療時間をアクセスページにまとめています。</p>
+        <p>住所、駅からの距離、診療時間、ご連絡先をアクセスページでご確認いただけます。</p>
         <div class="access-preview__placeholder">
           <DentalIcon name="pin" size={28} />
           <span>Google Maps を後で埋め込み</span>
@@ -480,6 +478,7 @@ const faqPreview = [
     width: 100%;
     height: 100%;
     object-fit: cover;
+    filter: saturate(0.94) brightness(1.08) sepia(0.12) hue-rotate(-8deg);
   }
 
   .hero-photo--main {
@@ -806,6 +805,7 @@ const faqPreview = [
     width: 100%;
     height: 100%;
     object-fit: cover;
+    filter: saturate(0.94) brightness(1.08) sepia(0.12) hue-rotate(-8deg);
   }
 
   .clinic-preview__grid {
@@ -830,6 +830,7 @@ const faqPreview = [
     width: 100%;
     height: 100%;
     object-fit: cover;
+    filter: saturate(0.94) brightness(1.08) sepia(0.12) hue-rotate(-8deg);
   }
 
   .clinic-preview__link,

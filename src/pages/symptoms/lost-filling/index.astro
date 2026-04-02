@@ -7,12 +7,12 @@ import SectionCTA from "../../../components/SectionCTA.astro";
 
 <BaseLayout
   title="詰め物が取れた"
-  description="詰め物や被せ物が取れたときの応急的な考え方、受診の目安、原因をまとめました。できるだけ早めにご相談ください。"
+  description="詰め物や被せ物が取れたときの応急的な考え方、受診の目安、原因をまとめました。取れたままにせず、早めにご相談ください。"
 >
   <PageHero
     title="詰め物が取れた"
-    subtitle="取れてしまったときの対応と受診の目安をご案内します"
-    image="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?w=1600&q=80&auto=format&fit=crop"
+    subtitle="焦らないで。でも、早めに来てください。"
+    image="/images/stock/asian-checkup.jpg"
   />
 
   <div class="container-narrow">
@@ -21,10 +21,11 @@ import SectionCTA from "../../../components/SectionCTA.astro";
 
   <section class="section-padding">
     <div class="container-narrow">
-      <div class="section-kicker">Symptoms</div>
-      <h2 class="section-title section-title-left">まずは落ち着いて対応しましょう</h2>
+      <div class="section-kicker">症状について</div>
+      <h2 class="section-title section-title-left">取れたままでも大丈夫。でも、早めに見せてください。</h2>
       <p class="section-lead">
-        詰め物や被せ物が取れたときは、焦って戻そうとせず、状態を保ったまま来院いただくのが基本です。
+        詰め物が取れた直後は痛みがなくても、内側で虫歯が進んでいることがあります。
+        慌てなくて大丈夫ですが、放置はおすすめしません。
       </p>
       <div class="advice-box">
         <ul class="advice-list">
@@ -41,7 +42,7 @@ import SectionCTA from "../../../components/SectionCTA.astro";
             <p>歯が欠けやすくなっている場合があります。反対側でやさしく噛むようにしましょう。</p>
           </li>
           <li>
-            <strong>できるだけ早めにご来院ください</strong>
+          <strong>早めのご来院をおすすめします</strong>
             <p>放置すると、内部で虫歯が進行することがあります。</p>
           </li>
         </ul>
@@ -51,7 +52,7 @@ import SectionCTA from "../../../components/SectionCTA.astro";
 
   <section class="section-padding section-alt">
     <div class="container-narrow">
-      <div class="section-kicker">Causes</div>
+      <div class="section-kicker">考えられる原因</div>
       <h2 class="section-title section-title-left">詰め物が取れる原因</h2>
       <div class="card-grid">
         <article class="soft-card card">
@@ -77,28 +78,28 @@ import SectionCTA from "../../../components/SectionCTA.astro";
   <section class="section-padding">
     <div class="container-narrow two-col">
       <div>
-        <div class="section-kicker">When to visit</div>
+      <div class="section-kicker">受診の目安</div>
         <h2 class="section-title section-title-left">受診の目安</h2>
         <div class="callout">
           <ul class="list compact">
-            <li>取れたまま数日以上過ごしている</li>
-            <li>しみる、痛む、噛みにくい</li>
-            <li>取れた歯の周辺に穴や黒い部分がある</li>
-            <li>同じ場所を何度も修理している</li>
-            <li>取れた詰め物が手元にある</li>
+            <li>取れたまま数日たってしまった</li>
+            <li>しみる、噛むと痛いなどの症状がある</li>
+            <li>食べ物が詰まりやすくなった</li>
+            <li>欠けた感じやザラつきがある</li>
+            <li>歯ぐきまで違和感が出てきた</li>
           </ul>
         </div>
       </div>
       <div>
-        <div class="section-kicker">At home</div>
+        <div class="section-kicker">ご自宅での対応</div>
         <h2 class="section-title section-title-left">応急的な考え方</h2>
         <div class="callout">
           <ul class="list compact">
-            <li>取れたものは持参する</li>
-            <li>食べ物が詰まりやすい場合はやさしく清掃する</li>
-            <li>痛みやしみが強い場合は早めに予約する</li>
-            <li>自己流で接着しない</li>
-            <li>必要に応じて虫歯治療や再装着を検討する</li>
+            <li>取れたものは捨てずに保管してください</li>
+            <li>硬いもの、くっつくものは避けます</li>
+            <li>外れた部分を舌や指で触りすぎないようにします</li>
+            <li>歯みがきはやさしく続けます</li>
+          <li>取れたままにせず、早めに受診してください</li>
           </ul>
         </div>
       </div>
@@ -107,8 +108,8 @@ import SectionCTA from "../../../components/SectionCTA.astro";
 
   <section class="section-padding section-alt">
     <div class="container-narrow">
-      <div class="section-kicker">Related care</div>
-      <h2 class="section-title section-title-left">関連する診療案内</h2>
+      <div class="section-kicker">関連する診療</div>
+      <h2 class="section-title section-title-left">関連する診療ページ</h2>
       <div class="related-links">
         <a href="/services/cavity/" class="related-card card">
           <span class="related-label">虫歯治療</span>
@@ -122,14 +123,14 @@ import SectionCTA from "../../../components/SectionCTA.astro";
         </a>
       </div>
       <div class="reserve-link-wrap">
-        <a href="/reserve/" class="btn-primary">ご予約・ご相談はこちら</a>
+        <a href="/reserve/" class="btn-primary">早めに受診する</a>
       </div>
     </div>
   </section>
 
   <SectionCTA
-    heading="取れたら早めの相談が安心です"
-    text="再装着で済む場合もあれば、虫歯の治療や作り直しが必要な場合もあります。まずは状態を確認します。"
+    heading="取れたままにせず、早めにご相談ください。"
+    text="今は痛くなくても、内側で虫歯が進んでいることがあります。取れたものがあれば、そのままお持ちください。"
   />
 </BaseLayout>
 
@@ -137,7 +138,6 @@ import SectionCTA from "../../../components/SectionCTA.astro";
   .section-kicker {
     font-size: 0.82rem;
     letter-spacing: 0.18em;
-    text-transform: uppercase;
     color: var(--color-accent);
     font-weight: 700;
     margin-bottom: 0.75rem;

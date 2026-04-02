@@ -10,7 +10,7 @@ import { SITE } from "../../data/site";
   title="歯医者が怖い方へ"
   description="歯医者が怖い・久しぶりで不安な方へ。湘南桑田歯科では無理に治療を進めません。まずはお話から始めます。"
 >
-  <PageHero title="歯医者が怖い方へ" subtitle="怖いと感じるのは、あなただけではありません" image="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=1400&q=80" />
+<PageHero title="歯医者が怖い方へ" subtitle="歯医者が怖い。その気持ち、当然です。" image="/images/stock/asian-consultation.jpg" />
 
   <div class="container-narrow section-padding">
     <Breadcrumb items={[{ label: "初めての方へ", href: "/first-visit/" }, { label: "歯医者が怖い方へ" }]} />
@@ -19,24 +19,21 @@ import { SITE } from "../../data/site";
     <section class="empathy-section">
       <h2 class="section-heading">こんなお気持ちはありませんか？</h2>
       <ul class="empathy-list">
-        <li>歯医者が怖い。子どもの頃から苦手</li>
-        <li>痛いことをされそうで不安</li>
-        <li>怒られたり、責められたりしないか心配</li>
-        <li>久しぶりすぎて、今さら行きづらい</li>
-        <li>口の中を見せるのが恥ずかしい</li>
-        <li>治療の音やにおいが苦手</li>
-        <li>以前、嫌な経験をして足が遠のいてしまった</li>
+        <li>何年も行っていなくて、今さら見せるのが恥ずかしい</li>
+        <li>痛いことをされそうで、予約の画面を閉じてしまう</li>
+        <li>前の歯医者で嫌な思いをして、足が遠のいてしまった</li>
+        <li>怒られそうで行きづらい</li>
       </ul>
       <p class="empathy-message">
-        どれかひとつでも当てはまる方へ。<br />
-        そのお気持ちは、とても自然なことです。歯医者が怖いと感じる方は、想像以上に多くいらっしゃいます。
+        わかります。怖いものは怖い。<br />
+        その気持ちを否定せずに来ていただけるように、このページを用意しました。
       </p>
     </section>
 
     <!-- ========== 当院の対応 ========== -->
     <section class="approach-section">
       <h2 class="section-heading">当院でお約束していること</h2>
-      <p class="section-intro">怖い気持ちを持ったまま来てくださって構いません。当院では、患者さんが安心できるまで治療を急ぎません。</p>
+      <p class="section-intro">怖い気持ちを持ったまま来てくださって大丈夫です。安心できるまで、こちらから急かすことはしません。</p>
 
       <div class="approach-grid">
         <div class="approach-card card">
@@ -46,8 +43,8 @@ import { SITE } from "../../data/site";
               <path d="M16 24l6 6 10-10" stroke="var(--color-primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
-          <h3>痛みへの配慮</h3>
-          <p>表面麻酔でチクッとする感覚を軽減し、極細の注射針を使用しています。治療中に痛みを感じたら、すぐに中断します。我慢しなくて大丈夫です。</p>
+          <h3>痛かったら、すぐ止めます</h3>
+          <p>我慢したまま進めることはしません。麻酔や治療の進め方も、その日の不安や状態に合わせて調整します。</p>
         </div>
         <div class="approach-card card">
           <div class="approach-icon">
@@ -58,8 +55,8 @@ import { SITE } from "../../data/site";
               <circle cx="27" cy="22" r="1" fill="var(--color-primary)"/>
             </svg>
           </div>
-          <h3>カウンセリング重視</h3>
-          <p>まずはお話を聞くことから始めます。今の不安、過去の経験、苦手なこと。何でも教えてください。治療の前に、信頼関係を築くことを大切にしています。</p>
+          <h3>初回は、お話だけでも大丈夫です</h3>
+          <p>今の不安、過去の経験、苦手なこと。何でも教えてください。初回は治療せずに終わっても問題ありません。</p>
         </div>
         <div class="approach-card card">
           <div class="approach-icon">
@@ -69,8 +66,8 @@ import { SITE } from "../../data/site";
               <path d="M20 28v4M28 28v4" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"/>
             </svg>
           </div>
-          <h3>説明してから治療</h3>
-          <p>何をするか分からないまま治療を始めることはしません。これからどんな治療をするのか、なぜ必要なのかを丁寧にご説明し、ご納得いただいてから進めます。</p>
+          <h3>何をするか言わずに進めません</h3>
+          <p>何をするのか、なぜ必要なのかを先にお伝えします。説明を聞いてから考えたい方も、その場で決めなくて大丈夫です。</p>
         </div>
         <div class="approach-card card">
           <div class="approach-icon">
@@ -82,8 +79,8 @@ import { SITE } from "../../data/site";
               <path d="M26 20V18a2 2 0 014 0v6" stroke="var(--color-primary)" stroke-width="2" stroke-linecap="round"/>
             </svg>
           </div>
-          <h3>いつでも中断OK</h3>
-          <p>治療中でも、怖くなったり辛くなったりしたら手を挙げてください。すぐに止めます。無理をさせることは絶対にしません。患者さんのペースで進めます。</p>
+          <h3>いつでも中断できます</h3>
+          <p>治療中でも、怖くなったら手を挙げてください。すぐ止めます。無理をさせることはしません。</p>
         </div>
       </div>
     </section>
@@ -94,7 +91,7 @@ import { SITE } from "../../data/site";
       <div class="promises-row">
         <div class="promise-mini">
           <strong>必要以上に削らない</strong>
-          <p>歯はできるだけ残す方針です</p>
+            <p>必要以上に削らない方針です</p>
         </div>
         <div class="promise-mini">
           <strong>患者さんを責めない</strong>
@@ -113,14 +110,14 @@ import { SITE } from "../../data/site";
     <!-- ========== まず何をすればいいですか？ ========== -->
     <section class="first-step-section">
       <h2 class="section-heading">まず何をすればいいですか？</h2>
-      <p class="section-intro">怖い気持ちがあっても大丈夫。一歩ずつ、ゆっくり進めましょう。</p>
+      <p class="section-intro">怖くても大丈夫です。一歩ずつ、ゆっくり進めましょう。</p>
 
       <div class="first-steps">
         <div class="first-step">
           <span class="first-step-num">1</span>
           <div>
             <h3>ご予約ください</h3>
-            <p>WEB・LINE・お電話のどれでも構いません。「歯医者が怖い」「久しぶりで不安」と伝えていただければ、配慮してお迎えする準備をします。</p>
+            <p>WEB・LINE・お電話のどれでも構いません。「怖い」「久しぶりで不安」と伝えてくれるだけで大丈夫です。こちらで準備します。</p>
           </div>
         </div>
         <div class="first-step">
@@ -141,7 +138,7 @@ import { SITE } from "../../data/site";
           <span class="first-step-num">4</span>
           <div>
             <h3>治療は急ぎません</h3>
-            <p>すぐに治療を始める必要はありません。心の準備ができてからで大丈夫です。何回かお話だけで通っていただいても構いません。</p>
+            <p>すぐに治療を始める必要はありません。何回でもお話だけで来てください。それも立派な通院です。</p>
           </div>
         </div>
       </div>
@@ -149,8 +146,8 @@ import { SITE } from "../../data/site";
   </div>
 
   <SectionCTA
-    heading="まずはお話しするだけでも大丈夫です"
-    text="治療するかどうかは、来てから一緒に考えましょう。ご予約は WEB・LINE・お電話から承っています。"
+    heading="治療するかどうかは、来てから一緒に決めましょう。"
+    text="怖いままでも大丈夫です。まずは、お話だけでも聞かせてください。"
   />
 </BaseLayout>
 

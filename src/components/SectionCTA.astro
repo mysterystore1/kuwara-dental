@@ -7,8 +7,8 @@ interface Props {
 }
 
 const {
-  heading = "まずは、今のお悩みをお聞かせください",
-  text = "初診はカウンセリングと必要な検査から進めます。お口の状態を確認し、治療の選択肢をわかりやすくご説明したうえで、無理のない進め方をご提案します。",
+  heading = "まずは、お気軽にご相談ください。",
+  text = "ご予約は WEB・LINE・お電話からお選びいただけます。",
 } = Astro.props;
 ---
 
@@ -16,13 +16,13 @@ const {
   <div class="container-narrow">
     <div class="cta-shell">
       <div class="cta-copy">
-        <p class="section-kicker">Contact</p>
+        <p class="section-kicker">ご予約・ご相談</p>
         <h2 class="cta-heading">{heading}</h2>
         <p class="cta-text">{text}</p>
       </div>
 
       <div class="cta-actions">
-        <a href="/reserve/" class="btn-primary">WEB予約へ進む</a>
+        <a href="/reserve/" class="btn-primary">WEB予約する</a>
         <a href={SITE.reserve.line} class="btn-secondary" target="_blank" rel="noopener">LINEで相談</a>
         <a href={SITE.phoneHref} class="cta-phone">{SITE.phone}</a>
       </div>

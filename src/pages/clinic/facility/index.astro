@@ -6,8 +6,8 @@ import SectionCTA from "../../../components/SectionCTA.astro";
 import { SITE } from "../../../data/site";
 ---
 
-<BaseLayout title="院内紹介" description="湘南桑田歯科の院内をご紹介。明るく清潔な空間で安心して治療を受けていただけます。">
-  <PageHero title="院内紹介" subtitle="明るく清潔な空間でお待ちしています" />
+<BaseLayout title="院内紹介" description="湘南桑田歯科の院内紹介。受付、診療室、カウンセリングルームなど、安心して過ごせる空間づくりの考え方をご紹介します。">
+  <PageHero title="院内紹介" subtitle="なぜこの空間にしているのかも、あわせてご紹介します" />
 
   <div class="container-narrow">
     <Breadcrumb items={[{ label: "医院案内" }, { label: "院内紹介" }]} />
@@ -17,44 +17,44 @@ import { SITE } from "../../../data/site";
   <section class="gallery section-padding">
     <div class="container-narrow">
       <h2 class="section-title">院内のご紹介</h2>
-      <p class="section-lead">患者さまに安心して過ごしていただけるよう、明るく清潔な空間づくりを心がけています。</p>
+      <p class="section-lead">設備を並べるだけではなく、どうしてこういう空間にしたのかもお伝えします。</p>
 
       <div class="gallery-grid">
         <div class="gallery-item">
           <img
-            src="https://images.unsplash.com/photo-1629909615184-74f495363b67?w=600&q=80"
-            alt="受付"
+            src="/images/stock/asian-consultation.jpg"
+            alt="ご相談スペース"
             loading="lazy"
           />
-          <p class="gallery-caption">受付</p>
-          <p class="gallery-desc">笑顔のスタッフがお迎えします。初めての方もお気軽にお声がけください。</p>
+          <p class="gallery-caption">ご相談スペース</p>
+          <p class="gallery-desc">治療台に座る前に、今の困りごとや気になっていることを落ち着いて話せるようにしています。</p>
         </div>
         <div class="gallery-item">
           <img
-            src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&q=80"
-            alt="待合室"
-            loading="lazy"
-          />
-          <p class="gallery-caption">待合室</p>
-          <p class="gallery-desc">リラックスしてお待ちいただけるよう、ゆったりとした空間をご用意しています。</p>
-        </div>
-        <div class="gallery-item">
-          <img
-            src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=600&q=80"
+            src="/images/stock/warm-green-clinic.jpg"
             alt="診療室"
             loading="lazy"
           />
           <p class="gallery-caption">診療室</p>
-          <p class="gallery-desc">プライバシーに配慮した半個室の診療スペースで、落ち着いて治療を受けていただけます。</p>
+          <p class="gallery-desc">光が入りやすく、色味もやわらかい空間にして、入った瞬間の緊張を少しでも和らげられるようにしています。</p>
         </div>
         <div class="gallery-item">
           <img
-            src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=600&q=80"
-            alt="カウンセリングルーム"
+            src="/images/stock/dental-chair.jpg"
+            alt="診療チェア"
             loading="lazy"
           />
-          <p class="gallery-caption">カウンセリングルーム</p>
-          <p class="gallery-desc">治療の前後に、個室でゆっくりとお話をうかがいます。ご不安なことは何でもご相談ください。</p>
+          <p class="gallery-caption">診療チェア</p>
+          <p class="gallery-desc">長く座る場所だからこそ、圧迫感が強くなりすぎないように配置や視線の抜け方にも配慮しています。</p>
+        </div>
+        <div class="gallery-item">
+          <img
+            src="/images/stock/asian-doctor-warm.jpg"
+            alt="スタッフ"
+            loading="lazy"
+          />
+          <p class="gallery-caption">スタッフ</p>
+          <p class="gallery-desc">どの場面でも話しかけやすい雰囲気を大切にして、初めての方でも入りやすい空気づくりを意識しています。</p>
         </div>
       </div>
     </div>
@@ -64,24 +64,24 @@ import { SITE } from "../../../data/site";
   <section class="equipment section-padding bg-alt">
     <div class="container-narrow">
       <h2 class="section-title">設備紹介</h2>
-      <p class="section-lead">より精密で安全な治療のために、最新の設備を導入しています。</p>
+      <p class="section-lead">機械の名前よりも、患者さんにとってどう役立つかを大事にしています。</p>
 
       <div class="equipment-grid">
         <div class="equipment-card card">
           <h3>デジタルレントゲン</h3>
-          <p>従来のレントゲンに比べて被ばく量が少なく、すぐにモニターで確認できます。患者さまにもわかりやすくご説明いたします。</p>
+          <p>被ばく量を抑えながら、撮った画像をその場で確認できます。今どこがどうなっているかを一緒に見ながらお話しします。</p>
         </div>
         <div class="equipment-card card">
           <h3>口腔内カメラ</h3>
-          <p>お口の中を拡大して撮影し、モニターでご覧いただけます。ご自身の歯の状態を一緒に確認しながら、治療を進めていきます。</p>
+          <p>見えにくい部分を大きく映し出せるので、「今どこが悪いのか」がわかりやすくなります。説明を受けるときの不安も減らせます。</p>
         </div>
         <div class="equipment-card card">
           <h3>高圧蒸気滅菌器</h3>
-          <p>治療に使用する器具は、高圧蒸気滅菌器で徹底的に滅菌処理を行っています。院内感染対策に万全を期しています。</p>
+          <p>使う器具はきちんと滅菌し、使い捨てにできるものは使い捨てにしています。見えない部分こそ、手を抜きません。</p>
         </div>
         <div class="equipment-card card">
           <h3>口腔外バキューム</h3>
-          <p>治療中に飛散する粉塵や飛沫を素早く吸引し、クリーンな診療環境を保っています。</p>
+          <p>治療中に飛ぶ細かな粉じんや飛沫を吸い取ることで、院内を清潔に保ちやすくしています。</p>
         </div>
       </div>
     </div>
@@ -114,6 +114,7 @@ import { SITE } from "../../../data/site";
     aspect-ratio: 4 / 3;
     object-fit: cover;
     width: 100%;
+    filter: saturate(0.94) brightness(1.08) sepia(0.12) hue-rotate(-8deg);
   }
   .gallery-caption {
     font-weight: 600;

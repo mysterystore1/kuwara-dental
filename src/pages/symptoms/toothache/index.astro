@@ -11,8 +11,8 @@ import SectionCTA from "../../../components/SectionCTA.astro";
 >
   <PageHero
     title="歯が痛い"
-    subtitle="痛みの強さや出方を整理し、必要な対応をご案内します"
-    image="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?w=1600&q=80&auto=format&fit=crop"
+    subtitle="ズキズキ、ジンジン、ガマンしていませんか？"
+    image="/images/stock/asian-checkup.jpg"
   />
 
   <div class="container-narrow">
@@ -21,10 +21,11 @@ import SectionCTA from "../../../components/SectionCTA.astro";
 
   <section class="section-padding">
     <div class="container-narrow">
-      <div class="section-kicker">Symptoms</div>
-      <h2 class="section-title section-title-left">こんな症状がある方へ</h2>
+      <div class="section-kicker">症状について</div>
+      <h2 class="section-title section-title-left">こんな痛みがあるなら、我慢しないでください。</h2>
       <p class="section-lead">
-        歯の痛みは、軽い違和感から強い痛みまで幅があります。まずは症状の出方を整理しておくと、受診時の説明がしやすくなります。
+        歯の痛みは、原因によって急に強くなることがあります。
+        「少し様子を見よう」で長引く前に、まずは今の状態を確認しましょう。
       </p>
       <div class="symptom-grid">
         <div class="info-panel">
@@ -37,9 +38,10 @@ import SectionCTA from "../../../components/SectionCTA.astro";
           </ul>
         </div>
         <div class="note-card">
-          <p class="eyebrow">診察のポイント</p>
+          <p class="eyebrow">まずお伝えしたいこと</p>
           <p>
-            痛みの原因は一つとは限りません。虫歯だけでなく、歯のひび、歯周病、神経の炎症などが関わることがあります。
+            痛みの原因は虫歯だけとは限りません。神経まで進んでいるのか、歯にひびがあるのか、
+            歯ぐきの炎症なのかで対応が変わります。
           </p>
         </div>
       </div>
@@ -48,7 +50,7 @@ import SectionCTA from "../../../components/SectionCTA.astro";
 
   <section class="section-padding section-alt">
     <div class="container-narrow">
-      <div class="section-kicker">Causes</div>
+      <div class="section-kicker">考えられる原因</div>
       <h2 class="section-title section-title-left">考えられる原因</h2>
       <div class="card-grid">
         <article class="soft-card card">
@@ -74,28 +76,28 @@ import SectionCTA from "../../../components/SectionCTA.astro";
   <section class="section-padding">
     <div class="container-narrow two-col">
       <div>
-        <div class="section-kicker">When to visit</div>
+      <div class="section-kicker">受診の目安</div>
         <h2 class="section-title section-title-left">受診の目安</h2>
         <div class="callout">
           <ul class="list compact">
-            <li>痛みが続いている、または強くなっている</li>
-            <li>冷たいもの・噛んだときに反応がある</li>
-            <li>夜眠れないほど痛む</li>
-            <li>腫れや発熱を伴う</li>
-            <li>市販薬で一時的にしか楽にならない</li>
+            <li>痛みで仕事や家事に集中できない</li>
+            <li>夜になるとズキズキして眠れない</li>
+            <li>噛んだ瞬間に響くような痛みがある</li>
+            <li>頬や歯ぐきが腫れてきた</li>
+            <li>市販薬を飲んでもすぐ痛みが戻る</li>
           </ul>
         </div>
       </div>
       <div>
-        <div class="section-kicker">At home</div>
+        <div class="section-kicker">ご自宅での対応</div>
         <h2 class="section-title section-title-left">応急的な考え方</h2>
         <div class="callout">
           <ul class="list compact">
-            <li>強く噛む・温めることは避ける</li>
-            <li>痛む側で硬いものを噛まない</li>
-            <li>清掃はやさしく続ける</li>
-            <li>痛み止めは用法を守って使う</li>
-            <li>早めに診察を受け、原因を確認する</li>
+            <li>歯みがきはやさしく、でもやめないでください</li>
+            <li>痛む側で硬いものを噛まないようにします</li>
+            <li>熱すぎるもの、冷たすぎるものは避けます</li>
+            <li>痛み止めは用法を守って使ってください</li>
+            <li>我慢比べはせず、早めに受診してください</li>
           </ul>
         </div>
       </div>
@@ -104,8 +106,8 @@ import SectionCTA from "../../../components/SectionCTA.astro";
 
   <section class="section-padding section-alt">
     <div class="container-narrow">
-      <div class="section-kicker">Related care</div>
-      <h2 class="section-title section-title-left">関連する診療案内</h2>
+      <div class="section-kicker">関連する診療</div>
+      <h2 class="section-title section-title-left">関連する診療ページ</h2>
       <div class="related-links">
         <a href="/services/cavity/" class="related-card card">
           <span class="related-label">虫歯治療</span>
@@ -114,19 +116,19 @@ import SectionCTA from "../../../components/SectionCTA.astro";
         </a>
         <a href="/services/periodontal/" class="related-card card">
           <span class="related-label">歯周病治療</span>
-          <span class="related-copy">噛むと痛い、歯茎が気になる方へ</span>
+          <span class="related-copy">歯ぐきの痛みや腫れも気になる方へ</span>
           <span class="related-arrow">→</span>
         </a>
       </div>
       <div class="reserve-link-wrap">
-        <a href="/reserve/" class="btn-primary">ご予約・ご相談はこちら</a>
+        <a href="/reserve/" class="btn-primary">我慢しないで予約する</a>
       </div>
     </div>
   </section>
 
   <SectionCTA
-    heading="痛みが強くなる前にご相談ください"
-    text="痛みの原因は、見た目だけでは判断できないことがあります。まずは状態を確認し、必要な対応をわかりやすくご説明します。"
+    heading="歯の痛みは、我慢しないでください。"
+    text="今つらい痛みがあるなら、それが来院のタイミングです。まずは状態を確認して、必要な対応を一緒に考えます。"
   />
 </BaseLayout>
 
@@ -134,7 +136,6 @@ import SectionCTA from "../../../components/SectionCTA.astro";
   .section-kicker {
     font-size: 0.82rem;
     letter-spacing: 0.18em;
-    text-transform: uppercase;
     color: var(--color-accent);
     font-weight: 700;
     margin-bottom: 0.75rem;
@@ -177,7 +178,6 @@ import SectionCTA from "../../../components/SectionCTA.astro";
     color: var(--color-primary);
     font-weight: 700;
     margin-bottom: 0.75rem;
-    text-transform: uppercase;
   }
   .list {
     margin: 0;

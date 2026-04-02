@@ -11,8 +11,8 @@ import SectionCTA from "../../../components/SectionCTA.astro";
 >
   <PageHero
     title="歯がしみる"
-    subtitle="原因を見極め、刺激に合わせた対応をご提案します"
-    image="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?w=1600&q=80&auto=format&fit=crop"
+    subtitle="キーンとしみる、あの感じ。放っておかないでください。"
+    image="/images/stock/asian-consultation.jpg"
   />
 
   <div class="container-narrow">
@@ -21,10 +21,11 @@ import SectionCTA from "../../../components/SectionCTA.astro";
 
   <section class="section-padding">
     <div class="container-narrow">
-      <div class="section-kicker">Symptoms</div>
-      <h2 class="section-title section-title-left">こんな症状がある方へ</h2>
+      <div class="section-kicker">症状について</div>
+      <h2 class="section-title section-title-left">「まだ痛いほどじゃない」と思う段階で、相談できます。</h2>
       <p class="section-lead">
-        歯がしみる症状は、毎回同じように出るとは限りません。何に反応するかを把握しておくと、原因の絞り込みに役立ちます。
+        しみる症状は、虫歯や知覚過敏、歯ぐきの変化など、いくつかの原因で起こります。
+        軽いうちに確認しておくと、治療も大きくなりにくくなります。
       </p>
       <div class="symptom-grid">
         <div class="info-panel">
@@ -37,9 +38,10 @@ import SectionCTA from "../../../components/SectionCTA.astro";
           </ul>
         </div>
         <div class="note-card">
-          <p class="eyebrow">確認したいこと</p>
+          <p class="eyebrow">気になったら、その時点でご相談ください</p>
           <p>
-            知覚過敏のほか、虫歯や歯周病、歯ぎしりの影響でも似た症状が出ます。見た目だけで判断せず、早めの確認が安心です。
+            しみる原因はひとつではありません。知覚過敏なのか、虫歯なのか、
+            詰め物のすき間なのかで対応が変わるため、まずは原因を見分けることが大切です。
           </p>
         </div>
       </div>
@@ -48,7 +50,7 @@ import SectionCTA from "../../../components/SectionCTA.astro";
 
   <section class="section-padding section-alt">
     <div class="container-narrow">
-      <div class="section-kicker">Causes</div>
+      <div class="section-kicker">考えられる原因</div>
       <h2 class="section-title section-title-left">考えられる原因</h2>
       <div class="card-grid">
         <article class="soft-card card">
@@ -74,28 +76,28 @@ import SectionCTA from "../../../components/SectionCTA.astro";
   <section class="section-padding">
     <div class="container-narrow two-col">
       <div>
-        <div class="section-kicker">When to visit</div>
+      <div class="section-kicker">受診の目安</div>
         <h2 class="section-title section-title-left">受診の目安</h2>
         <div class="callout">
           <ul class="list compact">
-            <li>しみる頻度が増えてきた</li>
-            <li>特定の歯だけ毎回強く反応する</li>
-            <li>出血や痛みもあわせてある</li>
-            <li>以前より症状が長引いている</li>
-            <li>歯みがきや食事に支障が出ている</li>
+            <li>しみる日が何日も続いている</li>
+            <li>冷たいものだけでなく、甘いものでもしみる</li>
+            <li>しみたあとにジンと残る感じがある</li>
+            <li>歯ぐきが下がってきた気がする</li>
+            <li>しみる場所が増えてきた</li>
           </ul>
         </div>
       </div>
       <div>
-        <div class="section-kicker">At home</div>
+        <div class="section-kicker">ご自宅での対応</div>
         <h2 class="section-title section-title-left">応急的な考え方</h2>
         <div class="callout">
           <ul class="list compact">
-            <li>強くこすらず、やわらかめのブラシを使う</li>
-            <li>刺激の強い歯みがき剤は控える</li>
-            <li>冷たい・熱いものを続けてとらない</li>
-            <li>原因を自己判断せず、検査で確認する</li>
-            <li>必要に応じて予防的な処置を検討する</li>
+            <li>歯ブラシはやわらかめのものを使います</li>
+            <li>しみる時期は、熱すぎるものや冷たすぎるものを控えます</li>
+            <li>力を入れて磨きすぎないようにします</li>
+            <li>どんなときにしみるかを覚えておいてください</li>
+            <li>気になる段階で受診して、原因を確かめましょう</li>
           </ul>
         </div>
       </div>
@@ -104,8 +106,8 @@ import SectionCTA from "../../../components/SectionCTA.astro";
 
   <section class="section-padding section-alt">
     <div class="container-narrow">
-      <div class="section-kicker">Related care</div>
-      <h2 class="section-title section-title-left">関連する診療案内</h2>
+      <div class="section-kicker">関連する診療</div>
+      <h2 class="section-title section-title-left">関連する診療ページ</h2>
       <div class="related-links">
         <a href="/services/cavity/" class="related-card card">
           <span class="related-label">虫歯治療</span>
@@ -124,14 +126,14 @@ import SectionCTA from "../../../components/SectionCTA.astro";
         </a>
       </div>
       <div class="reserve-link-wrap">
-        <a href="/reserve/" class="btn-primary">ご予約・ご相談はこちら</a>
+        <a href="/reserve/" class="btn-primary">気になった今、相談する</a>
       </div>
     </div>
   </section>
 
   <SectionCTA
-    heading="しみる原因は一度確認しておくと安心です"
-    text="知覚過敏で済む場合もあれば、虫歯や歯周病が隠れていることもあります。症状が軽いうちにご相談ください。"
+    heading="しみるなら、今が相談のタイミングです。"
+    text="軽い違和感でも、原因を見分けると安心できます。大きな治療になる前に、状態を見せてください。"
   />
 </BaseLayout>
 
@@ -139,7 +141,6 @@ import SectionCTA from "../../../components/SectionCTA.astro";
   .section-kicker {
     font-size: 0.82rem;
     letter-spacing: 0.18em;
-    text-transform: uppercase;
     color: var(--color-accent);
     font-weight: 700;
     margin-bottom: 0.75rem;
@@ -182,7 +183,6 @@ import SectionCTA from "../../../components/SectionCTA.astro";
     color: var(--color-primary);
     font-weight: 700;
     margin-bottom: 0.75rem;
-    text-transform: uppercase;
   }
   .list {
     margin: 0;
