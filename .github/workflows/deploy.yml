@@ -29,7 +29,11 @@ jobs:
         run: |
           BASE="/kuwara-dental"
           find dist -name "*.html" -exec sed -i "s|href=\"/|href=\"${BASE}/|g" {} \;
+          find dist -name "*.html" -exec sed -i "s|src=\"/images/|src=\"${BASE}/images/|g" {} \;
+          find dist -name "*.html" -exec sed -i "s|content=\"/images/|content=\"${BASE}/images/|g" {} \;
           find dist -name "*.html" -exec sed -i "s|href=\"${BASE}${BASE}/|href=\"${BASE}/|g" {} \;
+          find dist -name "*.html" -exec sed -i "s|src=\"${BASE}${BASE}/images/|src=\"${BASE}/images/|g" {} \;
+          find dist -name "*.html" -exec sed -i "s|content=\"${BASE}${BASE}/images/|content=\"${BASE}/images/|g" {} \;
           find dist -name "*.html" -exec sed -i "s|href=\"${BASE}/http|href=\"http|g" {} \;
           find dist -name "*.html" -exec sed -i "s|href=\"${BASE}/tel:|href=\"tel:|g" {} \;
           find dist -name "*.html" -exec sed -i "s|href=\"${BASE}/#|href=\"#|g" {} \;

@@ -5,7 +5,7 @@ import { SITE, NAV_ITEMS } from "../data/site";
 <header class="site-header">
   <div class="header-utility">
     <div class="container-narrow header-utility__inner">
-      <p class="header-utility__copy">怖い方も安心。まずはお話から始めます。</p>
+      <p class="header-utility__copy">歯医者がこわい方も、まずはご相談ください。</p>
       <div class="header-utility__meta">
         <span>{SITE.address.station}</span>
         <a href={SITE.phoneHref}>{SITE.phone}</a>
@@ -176,6 +176,17 @@ import { SITE, NAV_ITEMS } from "../data/site";
     position: relative;
   }
 
+  @media (min-width: 1025px) {
+    .nav-item::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: max(100%, 14rem);
+      height: 1rem;
+    }
+  }
+
   .nav-link {
     display: inline-flex;
     align-items: center;
@@ -195,7 +206,7 @@ import { SITE, NAV_ITEMS } from "../data/site";
   .dropdown {
     display: none;
     position: absolute;
-    inset: calc(100% + 0.8rem) auto auto 0;
+    inset: calc(100% + 0.2rem) auto auto 0;
     min-width: 13.5rem;
     list-style: none;
     margin: 0;
