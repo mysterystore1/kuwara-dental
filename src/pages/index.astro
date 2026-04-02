@@ -42,22 +42,22 @@ const serviceItems = [
 const reasonItems = [
   {
     number: "01",
-    title: "最初は、治療ではなくお話から。",
-    text: "何が気になっているのか、どんなことが不安なのかを先にうかがいます。相談だけで終わっても大丈夫です。",
+    title: "まず、お話を聞かせてください。",
+    text: "初回はカウンセリングが中心です。いきなり治療は始めません。相談だけで終わっても大丈夫です。",
     image: "/images/stock/asian-consultation.jpg",
     alt: "カウンセリングの様子",
   },
   {
     number: "02",
-    title: "こわくなったら、すぐ止めます。",
-    text: "痛みや不安を我慢したまま進めることはしません。合図の仕方も最初に確認してから始めます。",
+    title: "怖くなったら、手を挙げてください。",
+    text: "痛かったり怖くなったりしたら、その場で止めます。我慢したまま進めることはしません。",
     image: "/images/stock/asian-checkup.jpg",
     alt: "歯科治療の風景",
   },
   {
     number: "03",
     title: "何をするか、先にきちんとお伝えします。",
-    text: "今どんな状態で、これから何をするのかを治療の前にお話しします。わからないまま進めることはありません。",
+    text: "今の状態、必要な治療、通院の目安まで、先にお話しします。わからないまま口の中を触ることはありません。",
     image: "/images/stock/asian-doctor-warm.jpg",
     alt: "やわらかな表情で迎える歯科医師",
   },
@@ -66,11 +66,11 @@ const reasonItems = [
 const faqPreview = [
   {
     q: "初診の所要時間はどれくらいですか？",
-    a: "問診やお口の確認を含めて、45分から1時間ほどを目安にしています。痛みが強い場合は、先に応急処置を行うこともあります。",
+    a: "初回は1時間ほどいただいています。急かさずお話を聞く時間も含んでいます。痛みが強い場合は、先に応急処置を行うこともあります。",
   },
   {
     q: "久しぶりの歯医者でも大丈夫ですか？",
-    a: "大丈夫です。お口の状態を責めることはありません。今の状態からどう整えていくかを、一緒に考えていきます。",
+    a: "大丈夫です。何年ぶりでも歓迎です。今の状態を確認して、ここからどう整えるかを一緒に考えます。",
   },
   {
     q: "予約なしでも診てもらえますか？",
@@ -80,13 +80,13 @@ const faqPreview = [
 ---
 
 <BaseLayout
-  title="歯医者が久しぶりの方も、安心して相談できる歯科医院"
-  description="歯医者が怖い方や久しぶりの方も、安心して相談しやすい歯科医院です。いきなり治療を始めず、まずはお話をうかがうところから始めます。"
+  title="「怖い」を我慢しなくていい歯科医院"
+  description="歯医者がこわくて、なかなか行けていない方へ。何年ぶりでも大丈夫です。まずは話を聞くところから始めます。"
 >
   <section class="home-hero wave-divider">
     <div class="container-narrow home-hero__inner">
       <div class="home-hero__copy">
-        <p class="section-kicker">初診のご案内</p>
+        <p class="section-kicker">ご来院をご検討の方へ</p>
         <p class="home-hero__clinic">{SITE.name}</p>
         <h1 class="home-hero__title">歯医者がこわくて、<br />なかなか行けていない方へ。</h1>
         <p class="home-hero__text">
@@ -115,7 +115,7 @@ const faqPreview = [
           <img src="/images/stock/asian-consultation.jpg" alt="落ち着いて相談する様子" loading="eager" />
           <figcaption>
             <span class="eyebrow">初診について</span>
-            <strong>初回は治療より、相談が中心です。</strong>
+            <strong>初回は、お話と確認が中心です。</strong>
           </figcaption>
         </figure>
       </div>
@@ -126,9 +126,9 @@ const faqPreview = [
     <div class="container-narrow reassurance">
       <div class="reassurance__lead">
         <p class="section-kicker">ご来院前に</p>
-        <h2 class="section-title">こんな気持ちのまま、後回しにしていませんか？</h2>
+        <h2 class="section-title">こんな不安、ありませんか？</h2>
         <p class="section-lead">
-          行かなきゃと思っていても、こわさや気まずさで足が向かない。そんな方のために、入りやすい空気を大切にしています。
+          「何をされるか」より、「どう扱われるか」が気になって、足が向かない方も多くいらっしゃいます。
         </p>
       </div>
 
@@ -142,9 +142,9 @@ const faqPreview = [
 
         <div class="reassurance__panel">
           <p class="eyebrow">当院の考え方</p>
-          <h3>怒りません。急かしません。まずは話から始めます。</h3>
+          <h3>何年ぶりでも大丈夫です。今の状態から一緒に考えます。</h3>
           <p>
-            「もっと早く来ればよかった」と思ってもらえるように、今の状態よりも、これからどうしていくかを一緒に考えます。
+            すぐに治療を始めるのではなく、今困っていることや、不安に思っていることを先に整理します。
             説明を聞いてから考えたい方も、その場で決めなくて大丈夫です。
           </p>
           <a href="/dental-anxiety/" class="btn-secondary">歯医者が怖い方へ</a>
@@ -156,7 +156,7 @@ const faqPreview = [
   <section class="section-padding promise-section">
     <div class="container-narrow">
       <p class="section-kicker">3つの約束</p>
-      <h2 class="section-title">この医院が大切にしている3つの約束</h2>
+      <h2 class="section-title">この医院の強みとしてお伝えしたい、3つの約束</h2>
       <div class="promise-rows">
         {reasonItems.map((item, index) => (
           <article class:list={["promise-row", index % 2 === 1 && "reverse"]}>
@@ -192,9 +192,9 @@ const faqPreview = [
     <div class="container-narrow first-step__inner">
       <div class="first-step__copy">
         <p class="section-kicker">初診の流れ</p>
-        <h2 class="section-title">いきなり治療はしません。</h2>
+        <h2 class="section-title">初回は、あなたの話を聞く時間です。</h2>
         <p class="section-lead">
-          初回は、今のお困りごとをうかがって、お口の状態を確認し、これからの進め方を一緒に整理するところまでが中心です。
+          何が気になっているのか、過去にどんなことが嫌だったのか。そこを聞いたうえで、必要な確認とご説明に進みます。
         </p>
         <div class="first-step__grid">
           <div class="soft-panel">
@@ -210,7 +210,7 @@ const faqPreview = [
           <div class="soft-panel">
             <p class="first-step__label">Step 03</p>
             <h3>ご説明と今後のご提案</h3>
-            <p>現在の状態、必要な治療、通院の目安をご説明し、ご希望に合わせた進め方をご案内します。</p>
+            <p>今の状態、必要な治療、通院の目安をお伝えします。どう進めるかは、そのうえで一緒に考えましょう。</p>
           </div>
         </div>
         <div class="first-step__links">
@@ -229,9 +229,9 @@ const faqPreview = [
     <div class="container-narrow">
       <div class="section-header">
         <p class="section-kicker">症状から探す</p>
-        <h2 class="section-title">気になる症状から、今の状態を確認できます。</h2>
+        <h2 class="section-title">今つらい症状がある方はこちら</h2>
         <p class="section-lead">
-          痛みや違和感がある方は、当てはまる症状のページからご覧ください。受診の目安もまとめています。
+          今つらい症状がある方は、原因や受診の目安をまとめた症状ページからご覧ください。
         </p>
       </div>
 
@@ -279,12 +279,12 @@ const faqPreview = [
     <div class="container-narrow doctor-highlight__inner">
       <div class="doctor-highlight__copy">
         <p class="section-kicker">院長より</p>
-        <h2 class="section-title">「ここなら行けそう」と思ってもらえる歯科医院を目指しています。</h2>
+        <h2 class="section-title">歯医者は怖い場所だと知っているからこそ、急かさない診療を大切にしています。</h2>
         <p class="section-lead">
           歯医者が苦手な方にとって、予約をして来院するだけでも大きな一歩です。その一歩を無駄にしないよう、急かさず、置いていかない診療を大切にしています。
         </p>
         <div class="doctor-highlight__quote soft-panel">
-          <p>「もっと早く相談すればよかった」と思っていただけるような歯科医院でありたいと考えています。</p>
+          <p>来てくれたこと自体が一歩目です。その一歩を、ちゃんと受け止める歯科医院でありたいと思っています。</p>
         </div>
         <a href="/clinic/doctor/" class="btn-secondary">院長紹介を見る</a>
       </div>
@@ -304,7 +304,7 @@ const faqPreview = [
     <div class="container-narrow">
       <div class="section-header">
         <p class="section-kicker">院内紹介</p>
-        <h2 class="section-title">院内の雰囲気も、安心して通えるかどうかの大事なポイントです。</h2>
+        <h2 class="section-title">院内の空気感も、安心して通えるかどうかの大事なポイントです。</h2>
       </div>
 
       <div class="clinic-preview__grid">
@@ -351,7 +351,7 @@ const faqPreview = [
     <div class="container-narrow access-preview__inner">
       <div class="access-preview__copy">
         <p class="section-kicker">アクセス</p>
-        <h2 class="section-title">藤沢駅南口から徒歩3分。通いやすい場所にあります。</h2>
+        <h2 class="section-title">藤沢駅南口から徒歩3分。通院しやすい場所にあります。</h2>
         <dl class="access-preview__list">
           <dt><DentalIcon name="pin" size={18} /> 住所</dt>
           <dd>{SITE.address.full}</dd>
@@ -369,7 +369,7 @@ const faqPreview = [
       <div class="access-preview__map soft-panel">
         <p class="eyebrow">所在地</p>
         <strong>{SITE.address.station}</strong>
-        <p>住所、駅からの距離、診療時間、ご連絡先をアクセスページでご確認いただけます。</p>
+        <p>住所や診療時間、駅からの道順は、アクセスページでご確認いただけます。</p>
         <div class="access-preview__placeholder">
           <DentalIcon name="pin" size={28} />
           <span>Google Maps を後で埋め込み</span>
@@ -378,7 +378,10 @@ const faqPreview = [
     </div>
   </section>
 
-  <SectionCTA />
+  <SectionCTA
+    heading="まずは、お気軽にご相談ください。"
+    text="相談だけでも大丈夫です。今の状態を確認して、どうするかは来てから一緒に考えましょう。"
+  />
 </BaseLayout>
 
 <style>

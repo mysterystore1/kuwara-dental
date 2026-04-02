@@ -6,8 +6,8 @@ import SectionCTA from "../../../components/SectionCTA.astro";
 import { SITE } from "../../../data/site";
 ---
 
-<BaseLayout title="料金表" description="湘南桑田歯科の料金表。まずは保険診療での対応を基本にしながら、自費診療の費用目安もご案内します。">
-  <PageHero title="料金表" />
+<BaseLayout title="料金表" description="湘南桑田歯科の料金表。まずは保険診療で対応できるかを確認し、自費診療は内容と費用を先にご説明します。">
+  <PageHero title="料金表" subtitle="まずは保険診療で対応できるかを確認します。" />
 
   <div class="container-narrow">
     <Breadcrumb items={[{ label: "医院案内" }, { label: "料金表" }]} />
@@ -24,7 +24,7 @@ import { SITE } from "../../../data/site";
         </p>
         <p>
           まずは保険診療で対応できるかを確認し、そのうえで必要な場合のみ自費診療の選択肢もご説明します。
-          ご不明な点はお気軽にスタッフまでお尋ねください。
+          気になる費用は、治療の前にお伝えします。
         </p>
       </div>
     </div>
@@ -163,7 +163,10 @@ import { SITE } from "../../../data/site";
     </div>
   </section>
 
-  <SectionCTA />
+  <SectionCTA
+    heading="費用のことも、治療の前にお伝えします。"
+    text="保険診療でどこまで対応できるかも含めて、先にご説明します。気になることがあれば、そのままご相談ください。"
+  />
 </BaseLayout>
 
 <style>

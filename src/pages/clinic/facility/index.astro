@@ -6,8 +6,8 @@ import SectionCTA from "../../../components/SectionCTA.astro";
 import { SITE } from "../../../data/site";
 ---
 
-<BaseLayout title="院内紹介" description="湘南桑田歯科の院内紹介。受付、診療室、カウンセリングルームなど、安心して過ごせる空間づくりの考え方をご紹介します。">
-  <PageHero title="院内紹介" subtitle="なぜこの空間にしているのかも、あわせてご紹介します" />
+<BaseLayout title="院内紹介" description="湘南桑田歯科の院内紹介。受付から診療室まで、緊張が少しでも和らぐように整えている空間をご紹介します。">
+  <PageHero title="院内紹介" subtitle="受付から診療室まで、緊張が少しでも和らぐ空間を目指しています。" />
 
   <div class="container-narrow">
     <Breadcrumb items={[{ label: "医院案内" }, { label: "院内紹介" }]} />
@@ -17,7 +17,7 @@ import { SITE } from "../../../data/site";
   <section class="gallery section-padding">
     <div class="container-narrow">
       <h2 class="section-title">院内のご紹介</h2>
-      <p class="section-lead">設備を並べるだけではなく、どうしてこういう空間にしたのかもお伝えします。</p>
+      <p class="section-lead">見た目のきれいさだけでなく、なぜこの空間にしているのかもお伝えします。</p>
 
       <div class="gallery-grid">
         <div class="gallery-item">
@@ -27,7 +27,7 @@ import { SITE } from "../../../data/site";
             loading="lazy"
           />
           <p class="gallery-caption">ご相談スペース</p>
-          <p class="gallery-desc">治療台に座る前に、今の困りごとや気になっていることを落ち着いて話せるようにしています。</p>
+          <p class="gallery-desc">治療の前後に落ち着いて話せるように、診療チェアとは別の場所をご用意しています。</p>
         </div>
         <div class="gallery-item">
           <img
@@ -36,7 +36,7 @@ import { SITE } from "../../../data/site";
             loading="lazy"
           />
           <p class="gallery-caption">診療室</p>
-          <p class="gallery-desc">光が入りやすく、色味もやわらかい空間にして、入った瞬間の緊張を少しでも和らげられるようにしています。</p>
+          <p class="gallery-desc">明るさと圧迫感の少なさを意識した空間です。入った瞬間の緊張が和らぐように整えています。</p>
         </div>
         <div class="gallery-item">
           <img
@@ -44,8 +44,8 @@ import { SITE } from "../../../data/site";
             alt="診療チェア"
             loading="lazy"
           />
-          <p class="gallery-caption">診療チェア</p>
-          <p class="gallery-desc">長く座る場所だからこそ、圧迫感が強くなりすぎないように配置や視線の抜け方にも配慮しています。</p>
+          <p class="gallery-caption">半個室の診療スペース</p>
+          <p class="gallery-desc">隣の治療音や視線が気になりにくいように、少し落ち着ける距離感をつくっています。</p>
         </div>
         <div class="gallery-item">
           <img
@@ -53,8 +53,8 @@ import { SITE } from "../../../data/site";
             alt="スタッフ"
             loading="lazy"
           />
-          <p class="gallery-caption">スタッフ</p>
-          <p class="gallery-desc">どの場面でも話しかけやすい雰囲気を大切にして、初めての方でも入りやすい空気づくりを意識しています。</p>
+          <p class="gallery-caption">受付・ご案内</p>
+          <p class="gallery-desc">困ったことがあればその場で声をかけていただけるように、話しかけやすい雰囲気を大切にしています。</p>
         </div>
       </div>
     </div>
@@ -64,30 +64,33 @@ import { SITE } from "../../../data/site";
   <section class="equipment section-padding bg-alt">
     <div class="container-narrow">
       <h2 class="section-title">設備紹介</h2>
-      <p class="section-lead">機械の名前よりも、患者さんにとってどう役立つかを大事にしています。</p>
+      <p class="section-lead">機械の名前より、患者さんにとって何が安心につながるかでお伝えします。</p>
 
       <div class="equipment-grid">
         <div class="equipment-card card">
-          <h3>デジタルレントゲン</h3>
+          <h3>被ばく量を抑えたレントゲン</h3>
           <p>被ばく量を抑えながら、撮った画像をその場で確認できます。今どこがどうなっているかを一緒に見ながらお話しします。</p>
         </div>
         <div class="equipment-card card">
-          <h3>口腔内カメラ</h3>
+          <h3>今の状態が見やすい口腔内カメラ</h3>
           <p>見えにくい部分を大きく映し出せるので、「今どこが悪いのか」がわかりやすくなります。説明を受けるときの不安も減らせます。</p>
         </div>
         <div class="equipment-card card">
-          <h3>高圧蒸気滅菌器</h3>
+          <h3>使う器具はすべて滅菌しています</h3>
           <p>使う器具はきちんと滅菌し、使い捨てにできるものは使い捨てにしています。見えない部分こそ、手を抜きません。</p>
         </div>
         <div class="equipment-card card">
-          <h3>口腔外バキューム</h3>
+          <h3>飛沫や粉じんを吸い取る設備</h3>
           <p>治療中に飛ぶ細かな粉じんや飛沫を吸い取ることで、院内を清潔に保ちやすくしています。</p>
         </div>
       </div>
     </div>
   </section>
 
-  <SectionCTA />
+  <SectionCTA
+    heading="院内の雰囲気も、来院前に知っておけます。"
+    text="どんな空間かを先に見ておきたい方も、お気軽にご相談ください。相談だけでも大丈夫です。"
+  />
 </BaseLayout>
 
 <style>

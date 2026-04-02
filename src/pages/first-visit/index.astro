@@ -7,13 +7,13 @@ import { SITE } from "../../data/site";
 ---
 
 <BaseLayout
-  title="初めての方へ"
-  description="湘南桑田歯科の初診案内。来院時の流れ、持ち物、所要時間、痛みへの配慮をご案内します。"
+  title="いきなり治療はしません | 初めての方へ"
+  description="初めての方へ。初回はお話を聞くところから始めます。持ち物、流れ、所要時間、痛みへの配慮をまとめています。"
 >
   <PageHero
     title="初めての方へ"
-    subtitle="初診の流れを先に知っておくことで、来院前の不安を少し減らせます"
-  image="/images/stock/asian-consultation.jpg"
+    subtitle="初回は、話を聞く時間から始まります。"
+    image="/images/stock/asian-consultation.jpg"
   />
 
   <div class="container-narrow">
@@ -34,21 +34,21 @@ import { SITE } from "../../data/site";
           その日に治療まで進むかどうかは、症状とご希望に合わせて決めていきます。
         </p>
         <div class="intro-actions">
-          <a href="/reserve/" class="btn-primary">予約方法を見る</a>
+          <a href="/reserve/" class="btn-primary">WEB予約する</a>
           <a href="/dental-anxiety/" class="btn-secondary">歯医者が怖い方へ</a>
         </div>
       </div>
       <div class="intro-panel card">
-        <p class="panel-label">来院前に確認しておきたいこと</p>
+        <p class="panel-label">ちょっと安心していただきたいこと</p>
         <ul class="check-list">
-          <li>保険証またはマイナンバーカード</li>
-          <li>お薬手帳、紹介状があればご持参ください</li>
+          <li>初回はカウンセリングが中心です</li>
+          <li>痛みが強いときは応急処置を優先します</li>
+          <li>説明を聞いてから決めていただけます</li>
           <li>予約時間の10分前を目安にお越しください</li>
-          <li>痛みが強い場合は、受付時にそのままお伝えください</li>
         </ul>
         <div class="panel-note">
           <strong>初診の所要時間</strong>
-          <p>ちょっとだけ早めに来てもらえると、ゆっくり始められます。問診・検査・ご説明を含めて、45分から1時間程度が目安です。</p>
+          <p>ちょっとだけ早めに来てもらえると、ゆっくり始められます。初回は45分から1時間ほど、お話を聞く時間も含めてご用意しています。</p>
         </div>
       </div>
     </div>
@@ -90,15 +90,15 @@ import { SITE } from "../../data/site";
       <div class="faq-grid">
         <article class="faq-card card">
           <h3>久しぶりで怒られないか不安です</h3>
-          <p>大丈夫です。怒ることはありません。来てくれた時点で、もう十分大きな一歩です。今の状態からどう整えるかを一緒に考えます。</p>
+          <p>怒りません。何年ぶりでも大丈夫です。今の状態からどう整えるかを一緒に考えます。</p>
         </article>
         <article class="faq-card card">
           <h3>痛みに弱いのですが大丈夫ですか</h3>
-          <p>教えてください。最大限配慮します。手を挙げてくれれば、すぐ止めます。我慢したまま進めることはしません。</p>
+          <p>教えてください。痛みが不安な方には、麻酔や進め方を調整します。手を挙げていただければ、その場で止めます。</p>
         </article>
         <article class="faq-card card">
           <h3>その日に治療まで進みますか</h3>
-          <p>症状やご希望によりますが、まずは検査とご説明を優先します。急を要する痛みがある場合は、応急処置を先に行うことがあります。</p>
+          <p>初日は検査とご説明が中心です。痛みが強い場合のみ、応急処置を行うことがあります。</p>
         </article>
       </div>
     </div>
@@ -108,14 +108,17 @@ import { SITE } from "../../data/site";
     <div class="container-narrow cta-linkbox">
       <div>
         <p class="eyebrow">歯医者が怖い方へ</p>
-        <h2>不安が強い方は、こちらもご覧ください。</h2>
-        <p>歯医者が怖い方へ向けた案内ページで、当院の進め方をさらに詳しくご紹介しています。</p>
+        <h2>不安が強い方は、「歯医者が怖い方へ」もご覧ください。</h2>
+        <p>気持ちの準備のしかたや、当院での受け止め方をまとめています。</p>
       </div>
       <a href="/dental-anxiety/" class="btn-primary">歯医者が怖い方へ</a>
     </div>
   </section>
 
-  <SectionCTA />
+  <SectionCTA
+    heading="初回は、相談だけでも大丈夫です。"
+    text="来てから治療するかどうかを決めたい方も、そのままご予約ください。"
+  />
 </BaseLayout>
 
 <style>

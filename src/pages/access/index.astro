@@ -4,6 +4,8 @@ import PageHero from "../../components/PageHero.astro";
 import Breadcrumb from "../../components/Breadcrumb.astro";
 import SectionCTA from "../../components/SectionCTA.astro";
 import { SITE } from "../../data/site";
+
+const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(SITE.address.full)}`;
 ---
 
 <BaseLayout
@@ -12,7 +14,7 @@ import { SITE } from "../../data/site";
 >
   <PageHero
     title="アクセス"
-    subtitle="JR藤沢駅南口から徒歩3分です。初めての方も来ていただきやすい場所にあります。"
+    subtitle="JR藤沢駅南口から徒歩3分です。"
   />
 
   <div class="container-narrow">
@@ -39,15 +41,16 @@ import { SITE } from "../../data/site";
           </dd>
         </dl>
         <div class="access-actions">
-          <a href={SITE.phoneHref} class="btn-secondary">電話する</a>
-          <a href="/reserve/" class="btn-primary">予約する</a>
+          <a href={SITE.phoneHref} class="btn-secondary">電話で相談する</a>
+          <a href="/reserve/" class="btn-primary">WEB予約する</a>
         </div>
       </div>
 
       <div class="map-card">
         <div class="map-frame">
-          <p>Google Maps 埋め込み予定</p>
+          <p>Google マップで場所を確認</p>
           <span>{SITE.address.short}</span>
+          <a href={mapsUrl} class="btn-secondary" target="_blank" rel="noopener">Google マップを開く</a>
         </div>
       </div>
     </div>
@@ -61,22 +64,22 @@ import { SITE } from "../../data/site";
         <article class="direction-card card">
           <span class="direction-num">01</span>
           <h3>駅からの道順</h3>
-          <p>{SITE.address.station}。出口を出たら大通り沿いにまっすぐ進むだけなので、初めての方でも迷いにくい立地です。</p>
+          <p>{SITE.address.station}。南口を出て大通り沿いをまっすぐ進んだ場所なので、初めての方も比較的わかりやすい道順です。</p>
         </article>
         <article class="direction-card card">
           <span class="direction-num">02</span>
           <h3>来院の目安</h3>
-          <p>予約時間の10分前を目安にお越しください。初診時は問診票の記入と受付があります。</p>
+          <p>初回は10分ほど早めに来ていただけると、受付から落ち着いて始められます。</p>
         </article>
         <article class="direction-card card">
           <span class="direction-num">03</span>
           <h3>急いでいる場合</h3>
-          <p>痛みが強い、詰め物が取れた、腫れているといった場合は、まずお電話で状況をお知らせください。</p>
+          <p>痛みが強い、詰め物が取れた、腫れているときは、まずお電話ください。状況に合わせてご案内します。</p>
         </article>
         <article class="direction-card card">
           <span class="direction-num">04</span>
           <h3>お車でお越しの方</h3>
-          <p>お車でお越しの際は、近隣の駐車場をご利用ください。場所がわかりにくい場合は、お電話でご案内します。</p>
+          <p>近隣の駐車場をご利用ください。場所がわかりにくいときは、お電話でもご案内します。</p>
         </article>
       </div>
     </div>
@@ -86,14 +89,17 @@ import { SITE } from "../../data/site";
     <div class="container-narrow cta-linkbox">
       <div>
         <p class="eyebrow">ご予約について</p>
-          <h2>場所をご確認のうえ、そのままご予約いただけます。</h2>
-          <p>WEB、LINE、お電話から、ご都合のよい方法でご連絡ください。相談だけでも大丈夫です。</p>
+          <h2>ご予約はWEB・LINE・お電話から。</h2>
+          <p>場所をご確認いただけたら、そのままご予約いただけます。相談だけでも大丈夫です。</p>
       </div>
       <a href="/reserve/" class="btn-primary">ご予約・ご相談はこちら</a>
     </div>
   </section>
 
-  <SectionCTA />
+  <SectionCTA
+    heading="場所がわかったら、そのままご予約いただけます。"
+    text="WEB、LINE、お電話から、ご都合のよい方法でご連絡ください。相談だけでも大丈夫です。"
+  />
 </BaseLayout>
 
 <style>
