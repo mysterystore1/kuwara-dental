@@ -6,12 +6,26 @@ interface Props extends astroHTML.JSX.ImgHTMLAttributes {
 }
 
 const { defaultSrc, warmSrc = defaultSrc, alt, ...props } = Astro.props;
+
+const withBase = (src: string) => {
+  if (!src || /^(?:https?:)?\/\//.test(src) || src.startsWith("data:")) {
+    return src;
+  }
+
+  const base = import.meta.env.BASE_URL || "/";
+  return src.startsWith("/")
+    ? `${base.replace(/\/$/, "")}${src}`
+    : src;
+};
+
+const resolvedDefaultSrc = withBase(defaultSrc);
+const resolvedWarmSrc = withBase(warmSrc);
 ---
 
 <img
-  src={defaultSrc}
+  src={resolvedDefaultSrc}
   alt={alt}
-  data-theme-default={defaultSrc}
-  data-theme-warm={warmSrc}
+  data-theme-default={resolvedDefaultSrc}
+  data-theme-warm={resolvedWarmSrc}
   {...props}
 />

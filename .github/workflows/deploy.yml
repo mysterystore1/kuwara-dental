@@ -30,10 +30,16 @@ jobs:
           BASE="/kuwara-dental"
           find dist -name "*.html" -exec sed -i "s|href=\"/|href=\"${BASE}/|g" {} \;
           find dist -name "*.html" -exec sed -i "s|src=\"/images/|src=\"${BASE}/images/|g" {} \;
+          find dist -name "*.html" -exec sed -i "s|data-theme-default=\"/images/|data-theme-default=\"${BASE}/images/|g" {} \;
+          find dist -name "*.html" -exec sed -i "s|data-theme-warm=\"/images/|data-theme-warm=\"${BASE}/images/|g" {} \;
           find dist -name "*.html" -exec sed -i "s|content=\"/images/|content=\"${BASE}/images/|g" {} \;
+          find dist -name "*.html" -exec sed -i "s|href=\"/favicon.svg|href=\"${BASE}/favicon.svg|g" {} \;
           find dist -name "*.html" -exec sed -i "s|href=\"${BASE}${BASE}/|href=\"${BASE}/|g" {} \;
           find dist -name "*.html" -exec sed -i "s|src=\"${BASE}${BASE}/images/|src=\"${BASE}/images/|g" {} \;
+          find dist -name "*.html" -exec sed -i "s|data-theme-default=\"${BASE}${BASE}/images/|data-theme-default=\"${BASE}/images/|g" {} \;
+          find dist -name "*.html" -exec sed -i "s|data-theme-warm=\"${BASE}${BASE}/images/|data-theme-warm=\"${BASE}/images/|g" {} \;
           find dist -name "*.html" -exec sed -i "s|content=\"${BASE}${BASE}/images/|content=\"${BASE}/images/|g" {} \;
+          find dist -name "*.html" -exec sed -i "s|href=\"${BASE}${BASE}/favicon.svg|href=\"${BASE}/favicon.svg|g" {} \;
           find dist -name "*.html" -exec sed -i "s|href=\"${BASE}/http|href=\"http|g" {} \;
           find dist -name "*.html" -exec sed -i "s|href=\"${BASE}/tel:|href=\"tel:|g" {} \;
           find dist -name "*.html" -exec sed -i "s|href=\"${BASE}/#|href=\"#|g" {} \;

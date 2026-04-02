@@ -46,6 +46,13 @@ const {
       linear-gradient(180deg, #fffaf4 0%, #f4f9fd 100%);
   }
 
+  :global(html[data-theme="warm"]) .page-hero {
+    background:
+      radial-gradient(circle at left top, rgba(229, 138, 82, 0.18), transparent 36%),
+      radial-gradient(circle at right 10%, rgba(123, 128, 96, 0.16), transparent 28%),
+      linear-gradient(180deg, #fff2e6 0%, #fffaf4 100%);
+  }
+
   .page-hero::after {
     content: "";
     position: absolute;
@@ -98,6 +105,11 @@ const {
     border-radius: 48% 52% 58% 42% / 42% 46% 54% 58%;
   }
 
+  :global(html[data-theme="warm"]) .page-hero__shape {
+    background: rgba(229, 138, 82, 0.14);
+    border-radius: 2.8rem;
+  }
+
   .page-hero__visual img {
     position: relative;
     z-index: 1;
@@ -106,6 +118,11 @@ const {
     object-fit: cover;
     border-radius: 38% 62% 42% 58% / 48% 44% 56% 52%;
     box-shadow: var(--shadow-float);
+  }
+
+  :global(html[data-theme="warm"]) .page-hero__visual img {
+    border-radius: 2.4rem;
+    transform: rotate(-2deg);
   }
 
   @media (max-width: 860px) {
